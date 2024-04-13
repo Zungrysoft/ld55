@@ -93,10 +93,10 @@ function App() {
         }));
     }
 
-    function executeConfirm() {
+    function executeConfirm(input) {
         if (inputState === 'type') {
             setInputState('read')
-            addLogEntry("vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv", 'clive')
+            addLogEntry(input, 'clive')
         }
         if (inputState === 'read') {
             setInputState('type')
