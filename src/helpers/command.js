@@ -1,18 +1,48 @@
 import { getJurorData } from "./juror"
 import commandData from '../data/commands.json';
-
+import defaultSaveData from '../data/save.json';
 
 export function parseCommand(input, saveData) {
-    const argv = input.split(" ")
+    const argv = input.toLowerCase().split(" ")
 
     // if (argv[0] === 'volume') {return commandVolume(argv, saveData)}
     if (argv[0] === 'help') {return commandHelp(argv, saveData)}
+    if (argv[0] === 'restart') {return commandRestart(argv, saveData)}
+    if (argv[0] === 'debug') {return commandDebug(argv, saveData)}
 
     return commandError(argv, saveData)
 }
 
+function commandDebug(argv, saveData) {
+    // return {
+    //     logEntries: speakText('system', localStorage.getItem("save")),
+    //     saveData: {},
+    // }
+    return {
+        logEntries: speakText('system', JSON.stringify(saveData)),
+        saveData: {aDebug: Math.random()},
+    }
+}
+
 function commandVolume(argv, saveData) {
 
+}
+
+
+
+function commandRestart(argv, saveData) {
+    if (argv[1] === "force") {
+        return {
+            logEntries: speakSnippet('system', 'restartForce'),
+            saveData: "WIPE",
+        }
+    }
+    else {
+        return {
+            logEntries: speakSnippet('system', 'restart'),
+            saveData: {},
+        }
+    }
 }
 
 function commandHelp(argv, saveData) {
@@ -25,7 +55,7 @@ function commandHelp(argv, saveData) {
     }
     for (const command in commandData) {
         if (saveData.commandsUnlocked.includes(command)) {
-            ret += "\n"
+            ret += "\n\t"
             ret += command
             ret += ":"
             const numSpaces = (longest - command.length) + 1
@@ -52,7 +82,7 @@ function commandError(argv, saveData) {
     }
 }
 
-function speakSnippet(juror, snippet, replacements) {
+function speakSnippet(juror, snippet, replacements=[]) {
     const jurorData = getJurorData(juror)
     const snippetText = jurorData?.textSnippets?.[snippet]
     if (snippetText) {
@@ -72,5 +102,12 @@ function speakSnippet(juror, snippet, replacements) {
     return [{
         speaker: 'error',
         text: "Error: Invalid text snippet."
+    }]
+}
+
+function speakText(juror, snippet) {
+    return [{
+        speaker: juror,
+        text: snippet,
     }]
 }

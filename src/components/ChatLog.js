@@ -25,8 +25,9 @@ function ChatLog({ logData }) {
     }
 
     function isScrolledToBottom() {
-        const chatLog = chatLogRef.current;
-        return chatLog.scrollHeight - chatLog.scrollTop <= chatLog.clientHeight + 50;
+        return true
+        // const chatLog = chatLogRef.current;
+        // return chatLog.scrollHeight - chatLog.scrollTop <= chatLog.clientHeight + 50;
     }
 
     return (

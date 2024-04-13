@@ -1,0 +1,9 @@
+{
+    "history": [],
+    "commandsUnlocked": ["help", "interview", "examine", "reference", "select", "restart"],
+    "topics": {},
+    "attributes": {},
+    "settings": {
+        "volume": 80
+    }
+}

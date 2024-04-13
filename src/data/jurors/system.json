@@ -13,12 +13,14 @@
             "You will have an opportunity to interview all ten of the jurors the prosecutor approved and make your selection from there.",
             "Good luck!"
         ],
-        "commandError": ["Unknown command {}\nEnter \"help\" for a list of commands."],
+        "commandError": ["Unknown command \"{}\". Enter \"help\" for a list of commands."],
         "volume": ["Volume set to {}%."],
         "volumeNoArgs": ["Volume is currently set to {}%.\nIf you would like to change the volume, use: volume [desired_volume]"],
         "volumeError": ["Invalid volume. Please enter an integer between 0 and 100."],
         "badArgs": ["Usage: {} {}"],
         "interviewError": ["Invalid juror. Please enter a juror from the following list:\n{}"],
+        "restart": ["Type \"restart FORCE\" to wipe save data."],
+        "restartForce": ["Save data has been wiped."],
         "unlockCommand": ["New command unlocked: {}"]
     }
 }

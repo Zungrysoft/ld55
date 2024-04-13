@@ -2,8 +2,11 @@ import { useEffect, useRef } from 'react';
 import '../App.css';
 
 function buttonText(inputState) {
-    if (inputState === 'type') {
+    if (inputState === 'send') {
         return "Send"
+    }
+    if (inputState === 'next') {
+        return "Next"
     }
 
     return "Skip"
@@ -24,10 +27,10 @@ function Console({ inputState, onConfirm }) {
         return () => {
             window.removeEventListener('keydown', handleKeyPress);
         };
-    }, []);
+    }, [onConfirm]);
 
     useEffect(() => {
-        if (inputState === 'type' && inputRef.current) {
+        if (inputState === 'send' && inputRef.current) {
             inputRef.current.focus();
         }
     }, [inputState]);
@@ -38,12 +41,10 @@ function Console({ inputState, onConfirm }) {
             inputRef.current.value = ""
             onConfirm(inputString)
         }
-        else if (inputState === 'read') {
+        else {
             onConfirm("")
         }
     }
-
-    console.log(inputState)
 
     return (
         <div className="console">
@@ -51,7 +52,7 @@ function Console({ inputState, onConfirm }) {
                 type="text"
                 ref={inputRef}
                 className="user-input"
-                disabled={inputState !== 'type'}
+                disabled={inputState !== 'send'}
                 placeholder="Enter command..."
             />
             <button
