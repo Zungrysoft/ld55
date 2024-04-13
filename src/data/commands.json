@@ -1,0 +1,23 @@
+{
+    "help": {
+        "description": "Show this screen"
+    },
+    "back": {
+        "description": "Return to the previous menu"
+    },
+    "jurors": {
+        "description": "List the jurors available to interview"
+    },
+    "interview": {
+        "description": "Interview a juror about a particular topic"
+    },
+    "evidence": {
+        "description": "List the pieces of evidence to inspect"
+    },
+    "inspect": {
+        "description": "Examine a piece of evidence"
+    },
+    "select": {
+        "description": "Select your jury and hear their deliberation"
+    }
+}

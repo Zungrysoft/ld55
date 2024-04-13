@@ -1,0 +1,43 @@
+{
+    "properties": {
+        "name": "Clive Evans",
+        "qualities": {
+            "sureness": 0.4,
+            "anger": 0.2,
+            "compassion": 0.5
+        },
+        "textColor": "#40b35f",
+        "voice": "voiceClive.wav"
+    },
+    "responses": {
+        "start": [
+            {
+                "text": [
+                    "Well, I suppose the level-headed thing to do is discuss the shotgun the kid used in the crime."
+                ],
+                "points": [
+                    "talkAboutShotgun",
+                    "defUsedShotgun"
+                ],
+                "sureness": 0.1,
+                "offensiveTo": {},
+                "conditions": [],
+                "desire": 1
+            }
+        ],
+        "default": [
+            {
+                "text": [
+                    "I suppose we should talk about the shotgun next."
+                ],
+                "points": [
+                    "talkAboutShotgun"
+                ],
+                "sureness": 0,
+                "offensiveTo": {},
+                "conditions": [],
+                "desire": 1
+            }
+        ]
+    }
+}

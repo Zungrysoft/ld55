@@ -1,0 +1,11 @@
+{
+    "properties": {
+        "name": "Narrator",
+        "qualities": {},
+        "textColor": "#d0d4db",
+        "voice": "voiceNarrator.wav"
+    },
+    "tutorialText": [
+        "Well isn't this a fine song and dance!"
+    ]
+}
