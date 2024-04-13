@@ -2,14 +2,14 @@
     "help": {
         "description": "Show this screen"
     },
+    "document": {
+        "description": "Read a document (Start here!)"
+    },
     "interview": {
         "description": "Interview a juror about a particular topic"
     },
     "examine": {
         "description": "Examine a piece of evidence"
-    },
-    "reference": {
-        "description": "View a legal document"
     },
     "select": {
         "description": "Select your jury and hear their deliberation"

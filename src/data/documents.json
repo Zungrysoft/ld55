@@ -1,0 +1,16 @@
+{
+    "goal": {
+        "name": "Introduction",
+        "text": [
+            "Welcome to the Jury-Picker 4000, the 21st century way to select jurors for your upcoming trial!",
+            "Today's client is James Dunn. He is on trial for murder in the first degree, accused of having killed his girlfriend in a dispute regarding his father's inheritance. Your job is to get him acquitted!",
+            "Now, you won't actually be his defense attourney. We've just hired you to pick the jury. So your job is to pick four jurors whom you think will acquit the defendant.",
+            "You will have an opportunity to interview all ten of the jurors the prosecutor approved and make your selection from there.",
+            "Good luck!"
+        ]
+    },
+    "procedure": {
+        "name": "Jury Selection Procedure",
+        "text": ["The Jury Selection Procedure is simple. Twenty jurors are summoned from around the country. Then the prosecution dismisses half of them. The defense gets the last pick, selecting four jurors out of the remaining then to serve on the jury."]
+    }
+}

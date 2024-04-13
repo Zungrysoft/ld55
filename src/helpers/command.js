@@ -1,6 +1,7 @@
 import { getJurorData, getAllJurors } from "./juror"
 import commandData from '../data/commands.json';
 import topicData from '../data/topics.json';
+import documentData from '../data/documents.json';
 
 export function parseCommand(input, saveData) {
     const argv = input.toLowerCase().split(" ")
@@ -19,6 +20,7 @@ export function parseCommand(input, saveData) {
     if ('help'.includes(argv[0])) {return commandHelp(argv.slice(1), saveData)}
     if ('restart'.includes(argv[0])) {return commandRestart(argv.slice(1), saveData)}
     if ('interview'.includes(argv[0])) {return commandInterview(argv.slice(1), saveData)}
+    if ('document'.includes(argv[0])) {return commandDocument(argv.slice(1), saveData)}
 
     return commandError(argv, saveData)
 }
@@ -161,16 +163,61 @@ function listTopics(juror, saveData) {
     }
 }
 
+function commandDocument(argv, saveData) {
+    if (argv.length === 0) {
+        return listDocuments(saveData)
+    }
+
+    if (argv[0].length < 3) {
+        return errorTooShort()
+    }
+
+    for (const doc in documentData) {
+        const document = documentData[doc]
+        if (document.name.toLowerCase().replaceAll(" ", "").includes(argv[0])) {
+            return {
+                logEntries: document.text.map(e => ({
+                    text: e,
+                    speaker: 'system',
+                })),
+                saveData: {},
+            }
+        }
+    }
+    
+    // No juror found
+    return {
+        logEntries: speakText('system', "No juror by that name found. Type \"interview\" to see the list of jurors."),
+        saveData: {},
+    }
+}
+
+function listDocuments(saveData) {
+    let ret = "Type \"document [name]\" to read that document:"
+    for (const entry in documentData) {
+        ret += "\n\t"
+        ret += documentData[entry].name
+    }
+
+    return {
+        logEntry: {
+            text: ret,
+            speaker: 'system',
+        },
+        saveData: {},
+    }
+}
+
 function commandRestart(argv, saveData) {
     if (argv[0] === "force") {
         return {
-            logEntries: speakSnippet('system', 'restartForce'),
+            logEntries: speakText('system', "Save data has been wiped."),
             saveData: "WIPE",
         }
     }
     else {
         return {
-            logEntries: speakSnippet('system', 'restart'),
+            logEntries: speakText('system', "Type \"restart force\" to wipe save data."),
             saveData: {},
         }
     }
@@ -185,7 +232,7 @@ function commandHelp(argv, saveData) {
         }
     }
     for (const command in commandData) {
-        if (saveData.commandsUnlocked.includes(command)) {
+        if (saveData.commands.includes(command)) {
             ret += "\n\t"
             ret += command
             ret += ":"
@@ -208,32 +255,9 @@ function commandHelp(argv, saveData) {
 
 function commandError(argv, saveData) {
     return {
-        logEntries: speakSnippet('system', 'commandError', [argv[0]]),
+        logEntries: speakText('system', `Unknown command \"${argv[0]}\". Enter \"help\" for a list of commands.`),
         saveData: {},
     }
-}
-
-function speakSnippet(juror, snippet, replacements=[]) {
-    const jurorData = getJurorData(juror)
-    const snippetText = jurorData?.textSnippets?.[snippet]
-    if (snippetText) {
-        const builtResponse = []
-        for (let entry of snippetText) {
-            while (entry.includes("{}")) {
-                entry = entry.replace("{}", replacements.shift())
-            }
-            builtResponse.push({
-                text: entry,
-                speaker: juror,
-            })
-        }
-        return builtResponse
-    }
-
-    return [{
-        speaker: 'error',
-        text: "Error: Invalid text snippet."
-    }]
 }
 
 function speakText(juror, snippet) {

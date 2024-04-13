@@ -4,23 +4,5 @@
         "textColor": "#d0d4db",
         "textSpeedMultiplier": 2,
         "voice": 18
-    },
-    "textSnippets": {
-        "intro": [
-            "Welcome to the Jury-Picker 4000, the 21st century way to select jurors for your upcoming trial!",
-            "Today's client is James Dunn. He is on trial for murder in the first degree, accused of having killed his girlfriend in a dispute regarding his father's inheritance. Your job is to get him acquitted!",
-            "Now, you won't actually be his defense attourney. We've just hired you to pick the jury. So your job is to pick four jurors whom you think will acquit the defendant.",
-            "You will have an opportunity to interview all ten of the jurors the prosecutor approved and make your selection from there.",
-            "Good luck!"
-        ],
-        "commandError": ["Unknown command \"{}\". Enter \"help\" for a list of commands."],
-        "volume": ["Volume set to {}%."],
-        "volumeNoArgs": ["Volume is currently set to {}%.\nIf you would like to change the volume, use: volume [desired_volume]"],
-        "volumeError": ["Invalid volume. Please enter an integer between 0 and 100."],
-        "badArgs": ["Usage: {} {}"],
-        "interviewError": ["Invalid juror. Please enter a juror from the following list:\n{}"],
-        "restart": ["Type \"restart FORCE\" to wipe save data."],
-        "restartForce": ["Save data has been wiped."],
-        "unlockCommand": ["New command unlocked: {}"]
     }
 }
