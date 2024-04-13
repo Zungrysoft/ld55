@@ -43,7 +43,7 @@ function getSoundObject(voice) {
 export function playVoice(voice) {
   const soundObject = getSoundObject(voice)
   if (soundObject) {
-    const audio = new Audio()
+    const audio = new Audio(soundObject)
     audio.play()
   }
 }

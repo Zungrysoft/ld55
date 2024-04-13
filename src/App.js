@@ -10,7 +10,7 @@ import { parseCommand } from './helpers/command.js';
 import defaultSaveData from './data/save.json';
 
 const CHAT_SPEED = 10
-const CHAT_SOUND_RATE = 2
+const CHAT_SOUND_RATE = 4
 
 function logDataToInputState(logData) {
     if (logData.queue.length === 0) {
@@ -75,13 +75,18 @@ function App() {
     }
 
     function advanceQueue() {
-        if (logData.queue.length % CHAT_SOUND_RATE === 1) {
+        // Sound effect
+        if (logData.queue[0]?.text.length % CHAT_SOUND_RATE === 1) {
             if (isTabVisible) {
                 playVoice(getSpeakerData().properties.voice)
             }
         }
 
         setLogData(prevLogData => {
+            if (prevLogData.queue.length === 0 || prevLogData.queue[0].text.length === 0) {
+                return prevLogData
+            }
+
             // New log entry
             if (prevLogData.log.length === 0 || prevLogData.log[prevLogData.log.length-1].key !== prevLogData.queue[0].key) {
                 return {

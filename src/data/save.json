@@ -1,6 +1,6 @@
 {
     "history": [],
-    "commandsUnlocked": ["help", "interview", "examine", "reference", "select", "restart"],
+    "commandsUnlocked": ["help", "interview", "examine", "reference", "select", "setting", "restart"],
     "topics": {},
     "attributes": {},
     "settings": {
