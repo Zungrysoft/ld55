@@ -1,7 +1,7 @@
 {
     "properties": {
         "name": "You",
-        "textColor": "#d0d4db",
+        "textColor": "#656a73",
         "textSpeedMultiplier": 100000.0,
         "voice": null
     }

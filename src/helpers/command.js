@@ -4,11 +4,21 @@ import topicData from '../data/topics.json';
 
 export function parseCommand(input, saveData) {
     const argv = input.toLowerCase().split(" ")
+
+    if (argv[0] === 'ls') {return commandUnix(argv.slice(1), saveData)}
+    if (argv[0] === 'pwd') {return commandUnix(argv.slice(1), saveData)}
+
+    if (argv[0].length < 3) {
+        return {
+            logEntries: speakText('system', "You must provide at least three letters when entering a command."),
+            saveData: {},
+        }
+    }
     
-    if (argv[0] === 'debug') {return commandDebug(argv.slice(1), saveData)}
-    if (argv[0] === 'help') {return commandHelp(argv.slice(1), saveData)}
-    if (argv[0] === 'restart') {return commandRestart(argv.slice(1), saveData)}
-    if (argv[0] === 'interview') {return commandInterview(argv.slice(1), saveData)}
+    if ('debug'.includes(argv[0])) {return commandDebug(argv.slice(1), saveData)}
+    if ('help'.includes(argv[0])) {return commandHelp(argv.slice(1), saveData)}
+    if ('restart'.includes(argv[0])) {return commandRestart(argv.slice(1), saveData)}
+    if ('interview'.includes(argv[0])) {return commandInterview(argv.slice(1), saveData)}
 
     return commandError(argv, saveData)
 }
@@ -20,7 +30,14 @@ function commandDebug(argv, saveData) {
     // }
     return {
         logEntries: speakText('system', JSON.stringify(saveData)),
-        saveData: {aDebug: Math.random()},
+        saveData: {},
+    }
+}
+
+function commandUnix(argv, saveData) {
+    return {
+        logEntries: speakText('system', "This is not a Unix operating system, buddy."),
+        saveData: {},
     }
 }
 

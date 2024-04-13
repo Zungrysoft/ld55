@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import '../App.css';
 
 function buttonText(inputState) {
@@ -14,11 +14,18 @@ function buttonText(inputState) {
 
 function Console({ inputState, onConfirm }) {
     const inputRef = useRef(null);
+    const [lastCommand, setLastCommand] = useState()
 
     useEffect(() => {
         const handleKeyPress = (event) => {
             if (event.key === 'Enter') {
                 clickButton()
+            }
+            if (event.key === 'ArrowUp') {
+                getLast()
+            }
+            if (event.key === 'ArrowDown') {
+                clearBox()
             }
         };
 
@@ -40,9 +47,23 @@ function Console({ inputState, onConfirm }) {
         if (inputString) {
             inputRef.current.value = ""
             onConfirm(inputString)
+            setLastCommand(inputString)
         }
         else {
             onConfirm("")
+        }
+    }
+
+    function clearBox() {
+        if (inputRef.current) {
+            inputRef.current.value = ""
+        }
+    }
+
+    function getLast() {
+        if (inputRef.current) {
+            inputRef.current.value = lastCommand
+            setTimeout(() => {inputRef.current.setSelectionRange(lastCommand.length, lastCommand.length)}, 10)
         }
     }
 
