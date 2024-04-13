@@ -1,0 +1,8 @@
+{
+    "properties": {
+        "name": "You",
+        "textColor": "#d0d4db",
+        "textSpeedMultiplier": 100.0,
+        "voice": null
+    }
+}

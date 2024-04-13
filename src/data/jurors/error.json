@@ -1,0 +1,8 @@
+{
+    "properties": {
+        "name": "Error",
+        "textColor": "#ff0000",
+        "textSpeedMultiplier": 1,
+        "voice": 18
+    }
+}

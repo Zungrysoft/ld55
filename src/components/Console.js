@@ -43,6 +43,8 @@ function Console({ inputState, onConfirm }) {
         }
     }
 
+    console.log(inputState)
+
     return (
         <div className="console">
             <input

@@ -7,7 +7,7 @@ function paragraphToElement(paragraph) {
     const textSpeaker = paragraph?.speaker
     const textColor = getJurorData(textSpeaker).properties.textColor
 
-    return <p className="console-text" style={{color: textColor}}>{textString}</p>
+    return <p className="console-text" key={paragraph.key} style={{color: textColor}}>{textString}</p>
 }
 
 function ChatLog({ logData }) {
@@ -31,7 +31,7 @@ function ChatLog({ logData }) {
 
     return (
         <div className="chat-log" ref={chatLogRef}>
-            {(logData.log || []).map(paragraph => paragraphToElement(paragraph))}
+            {(logData || []).map(paragraph => paragraphToElement(paragraph))}
             <div ref={endRef}/>
         </div>
     );

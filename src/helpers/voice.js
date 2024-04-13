@@ -15,8 +15,10 @@ import voice14 from '../audio/voice14.wav'
 import voice15 from '../audio/voice15.wav'
 import voice16 from '../audio/voice16.wav'
 import voice17 from '../audio/voice17.wav'
+import voice18 from '../audio/voice18.wav'
 
 function getSoundObject(voice) {
+  if (voice === 2) {return voice1}
   if (voice === 2) {return voice2}
   if (voice === 3) {return voice3}
   if (voice === 4) {return voice4}
@@ -33,11 +35,15 @@ function getSoundObject(voice) {
   if (voice === 15) {return voice15}
   if (voice === 16) {return voice16}
   if (voice === 17) {return voice17}
+  if (voice === 18) {return voice18}
   
-  return voice1
+  return undefined
 }
 
 export function playVoice(voice) {
-  const audio = new Audio(getSoundObject(voice))
-  audio.play()
+  const soundObject = getSoundObject(voice)
+  if (soundObject) {
+    const audio = new Audio()
+    audio.play()
+  }
 }

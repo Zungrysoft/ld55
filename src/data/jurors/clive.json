@@ -1,14 +1,14 @@
 {
     "properties": {
         "name": "Clive Evans",
+        "textColor": "#40b35f",
+        "textSpeedMultiplier": 1.0,
+        "voice": 1,
         "qualities": {
             "sureness": 0.4,
             "anger": 0.2,
             "compassion": 0.5
-        },
-        "textColor": "#40b35f",
-        "textSpeedMultiplier": 1.0,
-        "voice": 1
+        }
     },
     "responses": {
         "start": [
