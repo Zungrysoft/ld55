@@ -7,7 +7,8 @@
             "compassion": 0.5
         },
         "textColor": "#40b35f",
-        "voice": "voiceClive.wav"
+        "textSpeedMultiplier": 1.0,
+        "voice": 1
     },
     "responses": {
         "start": [

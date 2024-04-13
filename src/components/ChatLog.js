@@ -1,13 +1,6 @@
 import '../App.css';
-import narratorData from '../data/jurors/narrator.json';
-import cliveData from '../data/jurors/clive.json';
 import { useEffect, useRef } from 'react';
-
-function getJurorData(juror) {
-    if (juror === 'clive') {return cliveData}
-
-    return narratorData
-}
+import { getJurorData } from '../helpers/juror';
 
 function paragraphToElement(paragraph) {
     const textString = paragraph?.text || ""

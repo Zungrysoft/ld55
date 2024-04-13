@@ -8,7 +8,7 @@ function buttonText(inputState) {
     return "Skip"
 }
 
-function Console({ text, inputState, onChange, onConfirm }) {
+function Console({ text, inputState, onChange, onConfirm, }) {
     return (
         <div className="console">
             <input

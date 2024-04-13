@@ -70,3 +70,13 @@ body, html {
 .confirm-button:hover {
     background-color: #3e424a;
 }
+
+::-moz-selection {
+    color: black;
+    background: #d0d4db;
+}
+
+::selection {
+    color: black;
+    background: #d0d4db;
+}

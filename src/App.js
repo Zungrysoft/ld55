@@ -3,6 +3,11 @@ import './App.css';
 
 import ChatLog from './components/ChatLog.js';
 import Console from './components/Console.js';
+import { getJurorData } from './helpers/juror.js';
+import { playVoice } from './helpers/voice.js';
+
+const CHAT_SPEED = 18
+const CHAT_SOUND_RATE = 2
 
 function getSave() {
     let FAILCASE = {
@@ -27,6 +32,7 @@ function App() {
     const [logData, setLogData] = useState({log: [], queue: ""})
     const [userText, setUserText] = useState("")
     const [inputState, setInputState] = useState('type')
+    // const [isMuted, setIsMuted] = useState(false)
 
     function buildTextAll() {
         setLogData(prevLogData => ({
@@ -45,6 +51,9 @@ function App() {
     }
 
     function buildText() {
+        if (logData.queue.length % CHAT_SOUND_RATE === 0) {
+            playVoice(getSpeakerData().properties.voice)
+        }
         setLogData(prevLogData => ({
             log: prevLogData.log.map((logEntry, i) => {
                 if (i === prevLogData.log.length-1) {
@@ -81,19 +90,29 @@ function App() {
     }
 
     function executeConfirm() {
-        if (inputState == 'type') {
+        if (inputState === 'type') {
             setInputState('read')
             addLogEntry("Clive here!", 'clive')
         }
-        if (inputState == 'read') {
+        if (inputState === 'read') {
             setInputState('type')
             buildTextAll()
         }
     }
 
+    function getSpeakerData() {
+        return getJurorData(logData.log?.[logData.log.length-1].speaker)
+    }
+
+    // function toggleMute() {
+    //     setIsMuted(prevIsMuted => !prevIsMuted)
+    // }
+
     useEffect(() => {
         if (logData.queue.length > 0) {
-            setTimeout(buildText, 20)
+            const speakerData = getSpeakerData()
+            const speedMultiplier = speakerData.properties.textSpeedMultiplier
+            setTimeout(buildText, 18 / speedMultiplier)
         }
         else {
             setInputState('type')
@@ -110,6 +129,8 @@ function App() {
                 inputState={inputState}
                 onChange={setUserText}
                 onConfirm={executeConfirm}
+                // soundMuted={isMuted}
+                // onToggleMute={toggleMute}
             />
         </>
     );

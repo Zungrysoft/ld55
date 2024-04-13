@@ -3,7 +3,8 @@
         "name": "Narrator",
         "qualities": {},
         "textColor": "#d0d4db",
-        "voice": "voiceNarrator.wav"
+        "textSpeedMultiplier": 1.0,
+        "voice": 2
     },
     "tutorialText": [
         "Well isn't this a fine song and dance!"
