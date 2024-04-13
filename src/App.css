@@ -28,7 +28,6 @@ body, html {
     white-space: pre-wrap;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    word-break: break-all;
 }
 
 .console {

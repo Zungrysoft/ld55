@@ -14,9 +14,6 @@
     "select": {
         "description": "Select your jury and hear their deliberation"
     },
-    "setting": {
-        "description": "Edit the game settings"
-    },
     "restart": {
         "description": "Wipe all of your saved data"
     }

@@ -1,7 +1,7 @@
 {
     "history": [],
     "commandsUnlocked": ["help", "interview", "examine", "reference", "select", "setting", "restart"],
-    "topics": {},
+    "topics": ["defendant", "law"],
     "attributes": {},
     "settings": {
         "volume": 80

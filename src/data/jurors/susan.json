@@ -1,18 +1,14 @@
 {
     "properties": {
-        "name": "Clive",
-        "textColor": "#40b35f",
-        "textSpeedMultiplier": 1.0,
-        "voice": 1,
+        "name": "Susan",
+        "textColor": "#c26d82",
+        "textSpeedMultiplier": 1.2,
+        "voice": 3,
         "qualities": {
-            "sureness": 0.4,
-            "anger": 0.2,
-            "compassion": 0.5
+            "sureness": 0.9,
+            "anger": 0.0,
+            "compassion": 0.3
         }
-    },
-    "topics": {
-        "default": ["I'm not sure I could say much on that particular matter."],
-        "law": ["I'd consider myself a believer in the concept of small-goverment. This country has too many rules and regulations that only serve to hinder small business.", "That said, when it comes to matters of the criminal nature, I ain't gonna question what Uncle Sam has laid out for us.", "Murder is murder, my friend. No way you're weasling outta that one."]
     },
     "responses": {
         "start": [
