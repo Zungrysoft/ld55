@@ -31,10 +31,8 @@ function getSave() {
 
 function App() {
     const [logData, setLogData] = useState({log: [], queue: ""})
-    const [userText, setUserText] = useState("")
     const [inputState, setInputState] = useState('type')
     const [isTabVisible, setIsTabVisible] = useState(true)
-    // const [isMuted, setIsMuted] = useState(false)
 
     function buildTextAll() {
         setLogData(prevLogData => ({
@@ -73,22 +71,14 @@ function App() {
         }))
     }
 
-    function setQueuedText(text) {
-        setLogData(prevLogData => ({
-            ...prevLogData,
-            queue: text,
-        }))
-    }
-
     function addLogEntry(text, speaker) {
         const newEntry = {
             text: "",
             speaker: speaker,
             key: logData.length,
         }
-        setQueuedText(text)
         setLogData(prevLogData => ({
-            ...prevLogData,
+            queue: text,
             log: [...prevLogData.log, newEntry]
         }));
     }
@@ -105,12 +95,8 @@ function App() {
     }
 
     function getSpeakerData() {
-        return getJurorData(logData.log?.[logData.log.length-1].speaker)
+        return getJurorData(logData.log?.[logData.log.length-1]?.speaker)
     }
-
-    // function toggleMute() {
-    //     setIsMuted(prevIsMuted => !prevIsMuted)
-    // }
 
     useEffect(() => {
         if (logData.queue.length > 0) {
@@ -129,12 +115,8 @@ function App() {
                 logData={logData}
             />
             <Console
-                text={userText}
                 inputState={inputState}
-                onChange={setUserText}
                 onConfirm={executeConfirm}
-                // soundMuted={isMuted}
-                // onToggleMute={toggleMute}
             />
             <TabMonitor onChangeVisibility={setIsTabVisible}/>
         </>

@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import '../App.css';
 
 function buttonText(inputState) {
@@ -9,14 +9,37 @@ function buttonText(inputState) {
     return "Skip"
 }
 
-function Console({ inputState, onConfirm, }) {
+function Console({ inputState, onConfirm }) {
     const inputRef = useRef(null);
+
+    useEffect(() => {
+        const handleKeyPress = (event) => {
+            if (event.key === 'Enter') {
+                clickButton()
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyPress);
+
+        return () => {
+            window.removeEventListener('keydown', handleKeyPress);
+        };
+    }, []);
+
+    useEffect(() => {
+        if (inputState === 'type' && inputRef.current) {
+            inputRef.current.focus();
+        }
+    }, [inputState]);
 
     function clickButton() {
         const inputString = inputRef.current?.value
-        if (inputString || inputString === "") {
+        if (inputString) {
             inputRef.current.value = ""
             onConfirm(inputString)
+        }
+        else if (inputState === 'read') {
+            onConfirm("")
         }
     }
 
