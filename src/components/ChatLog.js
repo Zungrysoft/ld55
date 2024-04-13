@@ -7,7 +7,7 @@ function paragraphToElement(paragraph) {
     const textSpeaker = paragraph?.speaker
     const textColor = getJurorData(textSpeaker).properties.textColor
 
-    return <p style={{color: textColor}}>{textString}</p>
+    return <p className="console-text" style={{color: textColor}}>{textString}</p>
 }
 
 function ChatLog({ logData }) {

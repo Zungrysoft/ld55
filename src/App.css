@@ -25,6 +25,9 @@ body, html {
     background-color: #000000;
     font-family: 'Courier New', Courier, monospace;
     font-size: 20px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-all;
 }
 
 .console {

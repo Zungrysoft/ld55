@@ -3,6 +3,7 @@ import './App.css';
 
 import ChatLog from './components/ChatLog.js';
 import Console from './components/Console.js';
+import TabMonitor from './components/TabMonitor.js';
 import { getJurorData } from './helpers/juror.js';
 import { playVoice } from './helpers/voice.js';
 
@@ -32,6 +33,7 @@ function App() {
     const [logData, setLogData] = useState({log: [], queue: ""})
     const [userText, setUserText] = useState("")
     const [inputState, setInputState] = useState('type')
+    const [isTabVisible, setIsTabVisible] = useState(true)
     // const [isMuted, setIsMuted] = useState(false)
 
     function buildTextAll() {
@@ -51,8 +53,10 @@ function App() {
     }
 
     function buildText() {
-        if (logData.queue.length % CHAT_SOUND_RATE === 0) {
-            playVoice(getSpeakerData().properties.voice)
+        if (logData.queue.length % CHAT_SOUND_RATE === 1) {
+            if (isTabVisible) {
+                playVoice(getSpeakerData().properties.voice)
+            }
         }
         setLogData(prevLogData => ({
             log: prevLogData.log.map((logEntry, i) => {
@@ -92,7 +96,7 @@ function App() {
     function executeConfirm() {
         if (inputState === 'type') {
             setInputState('read')
-            addLogEntry("Clive here!", 'clive')
+            addLogEntry("vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv", 'clive')
         }
         if (inputState === 'read') {
             setInputState('type')
@@ -112,7 +116,7 @@ function App() {
         if (logData.queue.length > 0) {
             const speakerData = getSpeakerData()
             const speedMultiplier = speakerData.properties.textSpeedMultiplier
-            setTimeout(buildText, 18 / speedMultiplier)
+            setTimeout(buildText, CHAT_SPEED / speedMultiplier)
         }
         else {
             setInputState('type')
@@ -132,6 +136,7 @@ function App() {
                 // soundMuted={isMuted}
                 // onToggleMute={toggleMute}
             />
+            <TabMonitor onChangeVisibility={setIsTabVisible}/>
         </>
     );
 }
