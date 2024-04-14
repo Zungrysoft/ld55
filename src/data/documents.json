@@ -3,14 +3,21 @@
         "name": "Introduction",
         "text": [
             "Welcome to the Jury-Picker 4000, the 21st century way to select jurors for your upcoming trial!",
-            "Today's client is James Dunn. He is on trial for murder in the first degree, accused of having killed his girlfriend in a dispute regarding his father's inheritance. Your job is to get him acquitted!",
-            "Now, you won't actually be his defense attourney. We've just hired you to pick the jury. So your job is to pick four jurors whom you think will acquit the defendant.",
-            "You will have an opportunity to interview all ten of the jurors the prosecutor approved and make your selection from there.",
-            "Good luck!"
+            "Today's client is James Dunn. He is on trial for murder in the first degree, accused of having killed his girlfriend in a dispute regarding his father's inheritance. Your job is to get him acquitted! Now, you won't actually be his defense attourney. We've just hired you to pick the jury. So your job is to pick four jurors whom you think will acquit the defendant.",
+            "You will have an opportunity to interview all ten of the jurors the prosecutor approved and make your selection from there. Good luck!"
         ]
     },
     "procedure": {
         "name": "Jury Selection Procedure",
-        "text": ["The Jury Selection Procedure is simple. Twenty jurors are summoned from around the country. Then the prosecution dismisses half of them. The defense gets the last pick, selecting four jurors out of the remaining then to serve on the jury."]
+        "text": ["The Jury Selection Procedure is simple. Twenty jurors are summoned from around the country. Then the prosecution dismisses half of them. The defense gets the last pick, selecting four jurors out of the remaining ten to serve on the jury."]
+    },
+    "case": {
+        "name": "The Facts of the Case",
+        "text": ["At 3:13 PM on April 16th, James Dunn's neighbor called in a domestic disturbance. The neighbor mentioned hearing a loud bang (later identified as a shotgun blast) as well as loud screaming from a female voice. However, due to the aftermath of the Spring Pageant disaster that took place on the same day, police were unable to respond.",
+        "Two hours later, a 911 call was made by James Dunn, reporting that he came home to find his girlfriend dead in the kitchen. When the police arrived, they collected evidence, which later showed that James's fingerprints were on the gun."]
+    },
+    "controls": {
+        "name": "Controls",
+        "text": ["\n\tEnter: Submit command / Next Message / Skip\n\tArrow Keys: Look through command history\n\n\tTip: You only have to type the first three letters of a command. For example, you can access this document using the command \"doc con\""]
     }
 }

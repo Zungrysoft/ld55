@@ -14,7 +14,7 @@ function buttonText(inputState) {
 
 function Console({ inputState, onConfirm }) {
     const inputRef = useRef(null);
-    const [lastCommand, setLastCommand] = useState()
+    const [history, setHistory] = useState({list: [], selection: 0})
 
     useEffect(() => {
         const handleKeyPress = (event) => {
@@ -22,10 +22,10 @@ function Console({ inputState, onConfirm }) {
                 clickButton()
             }
             if (event.key === 'ArrowUp') {
-                getLast()
+                historyBack()
             }
             if (event.key === 'ArrowDown') {
-                clearBox()
+                historyForward()
             }
         };
 
@@ -47,23 +47,59 @@ function Console({ inputState, onConfirm }) {
         if (inputString) {
             inputRef.current.value = ""
             onConfirm(inputString)
-            setLastCommand(inputString)
+            setHistory(prevHistory => ({
+                list: [...prevHistory.list, inputString],
+                selection: 0,
+            }))
         }
         else {
             onConfirm("")
         }
     }
 
-    function clearBox() {
+    function historyBack() {
         if (inputRef.current) {
-            inputRef.current.value = ""
+            setHistory(prevHistory => {
+                const newSelection = Math.min(prevHistory.selection + 1, prevHistory.list.length)
+                
+                // Set text box value
+                if (newSelection === 0) {
+                    inputRef.current.value = ""
+                }
+                else {
+                    inputRef.current.value = prevHistory.list[prevHistory.list.length-newSelection]
+                }
+                const selectionPos = inputRef.current?.value?.length || 0
+                setTimeout(() => {inputRef.current.setSelectionRange(selectionPos, selectionPos)}, 10)
+
+                return {
+                    list: prevHistory.list,
+                    selection: newSelection,
+                }
+            })
         }
     }
 
-    function getLast() {
+    function historyForward() {
         if (inputRef.current) {
-            inputRef.current.value = lastCommand
-            setTimeout(() => {inputRef.current.setSelectionRange(lastCommand.length, lastCommand.length)}, 10)
+            setHistory(prevHistory => {
+                const newSelection = Math.max(prevHistory.selection - 1, 0)
+
+                // Set text box value
+                if (newSelection === 0) {
+                    inputRef.current.value = ""
+                }
+                else {
+                    inputRef.current.value = prevHistory.list[prevHistory.list.length-newSelection]
+                }
+                const selectionPos = inputRef.current?.value?.length || 0
+                setTimeout(() => {inputRef.current.setSelectionRange(selectionPos, selectionPos)}, 10)
+
+                return {
+                    list: prevHistory.list,
+                    selection: newSelection,
+                }
+            })
         }
     }
 
