@@ -4,12 +4,7 @@
         "number": 3,
         "textColor": "#596ac9",
         "textSpeedMultiplier": 0.8,
-        "voice": 20,
-        "qualities": {
-            "sureness": 0.6,
-            "anger": 0.7,
-            "compassion": 0.2
-        }
+        "voice": 20
     },
     "topics": {
         "default": {
@@ -24,8 +19,8 @@
             "response": ["She certainly picked the wrong man. I hate to blame the victim, but there must have been signs beforehand. No man suddenly becomes a killer."],
             "relatedTopics": []
         },
-        "judge": {
-            "response": ["Now there's a respectable gentleman."],
+        "officer": {
+            "response": [""],
             "relatedTopics": []
         },
         "attourneyGeneral": {
@@ -36,11 +31,11 @@
             "response": [""],
             "relatedTopics": []
         },
-        "inheritance": {
-            "response": [""],
+        "nullification": {
+            "response": ["No idea."],
             "relatedTopics": []
         },
-        "neighbor": {
+        "inheritance": {
             "response": [""],
             "relatedTopics": []
         },
@@ -55,37 +50,20 @@
         "arms": {
             "response": [""],
             "relatedTopics": []
+        },
+        "men": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "women": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "money": {
+            "response": [""],
+            "relatedTopics": []
         }
     },
     "responses": {
-        "start": [
-            {
-                "text": [
-                    "Well, I suppose the level-headed thing to do is discuss the shotgun the kid used in the crime."
-                ],
-                "points": [
-                    "talkAboutShotgun",
-                    "defUsedShotgun"
-                ],
-                "sureness": 0.1,
-                "offensiveTo": {},
-                "conditions": [],
-                "desire": 1
-            }
-        ],
-        "default": [
-            {
-                "text": [
-                    "I suppose we should talk about the shotgun next."
-                ],
-                "points": [
-                    "talkAboutShotgun"
-                ],
-                "sureness": 0,
-                "offensiveTo": {},
-                "conditions": [],
-                "desire": 1
-            }
-        ]
     }
 }

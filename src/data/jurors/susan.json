@@ -4,12 +4,7 @@
         "number": 2,
         "textColor": "#c26d82",
         "textSpeedMultiplier": 1.2,
-        "voice": 3,
-        "qualities": {
-            "sureness": 0.9,
-            "anger": 0.0,
-            "compassion": 0.3
-        }
+        "voice": 3
     },
     "topics": {
         "default": {
@@ -24,8 +19,8 @@
             "response": ["This man deserves to rot for what he did to that poor lady!"],
             "relatedTopics": []
         },
-        "judge": {
-            "response": ["He seemed nice. Real dry though."],
+        "officer": {
+            "response": [""],
             "relatedTopics": []
         },
         "attourneyGeneral": {
@@ -36,11 +31,11 @@
             "response": [""],
             "relatedTopics": []
         },
-        "inheritance": {
-            "response": [""],
+        "nullification": {
+            "response": ["I don't know about that."],
             "relatedTopics": []
         },
-        "neighbor": {
+        "inheritance": {
             "response": [""],
             "relatedTopics": []
         },
@@ -55,36 +50,47 @@
         "arms": {
             "response": [""],
             "relatedTopics": []
+        },
+        "men": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "women": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "money": {
+            "response": [""],
+            "relatedTopics": []
         }
     },
     "responses": {
         "start": [
             {
                 "text": [
-                    "Well, I suppose the level-headed thing to do is discuss the shotgun the kid used in the crime."
+                    "Which piece of evidence should we examine first?"
                 ],
-                "points": [
-                    "talkAboutShotgun",
-                    "defUsedShotgun"
+                "claims": [
+                    "pickTopic"
                 ],
-                "sureness": 0.1,
-                "offensiveTo": {},
-                "conditions": [],
-                "desire": 1
+                "conclusions": {},
+                "requirements": [],
+                "anger": 0,
+                "score": 0.91
             }
         ],
-        "default": [
+        "pickTopic": [
             {
                 "text": [
-                    "I suppose we should talk about the shotgun next."
+                    "I think we should talk about the coworker. He testified against the defendant's alibi that he was at work until 7 PM."
                 ],
-                "points": [
-                    "talkAboutShotgun"
+                "claims": [
+                    "talkAboutCoworker"
                 ],
-                "sureness": 0,
-                "offensiveTo": {},
-                "conditions": [],
-                "desire": 1
+                "conclusions": {},
+                "requirements": [],
+                "anger": 0,
+                "score": 1
             }
         ]
     }

@@ -2,10 +2,11 @@ import { getJurorData, getAllJurors } from "./juror"
 import commandData from '../data/commands.json';
 import topicData from '../data/topics.json';
 import documentData from '../data/documents.json';
-import { runSimulation } from "./simulator";
+import { runDeliberation } from "./deliberation";
 
 export function parseCommand(input, saveData) {
-    const argv = input.toLowerCase().split(" ")
+    // Parse input into args
+    const argv = input.toLowerCase().split(" ").filter(e => e.length > 0)
 
     if (argv[0] === 'ls') {return commandUnix(argv.slice(1), saveData)}
     if (argv[0] === 'pwd') {return commandUnix(argv.slice(1), saveData)}
@@ -89,7 +90,7 @@ function commandInterviewTopic(juror, argv, saveData) {
     
     // No juror found
     return {
-        logEntries: speakText('system', "Unknown topic. Type \"interview\" to see the list of jurors."),
+        logEntries: speakText('system', `Unknown topic. Type \"interview ${juror}\" to see the list of topics.`),
     }
 }
 
@@ -280,9 +281,9 @@ function commandSelect(argv, saveData) {
         jurors.push(juror)
     }
 
-    // Run simulation
+    // Perform the deliberation
     return {
-        logEntries: runSimulation(jurors),
+        logEntries: runDeliberation(jurors),
     }
 }
 

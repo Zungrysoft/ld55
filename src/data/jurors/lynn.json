@@ -4,12 +4,7 @@
         "number": 5,
         "textColor": "#5296d1",
         "textSpeedMultiplier": 1.0,
-        "voice": 14,
-        "qualities": {
-            "sureness": -0.2,
-            "anger": 0.0,
-            "compassion": 0.8
-        }
+        "voice": 14
     },
     "topics": {
         "default": {
@@ -24,23 +19,23 @@
             "response": [""],
             "relatedTopics": []
         },
-        "judge": {
-            "response": ["He has a habit of putting jurors to sleep."],
+        "officer": {
+            "response": [""],
             "relatedTopics": []
         },
         "attourneyGeneral": {
-            "response": ["From what I've seen, she seems much more interested in putting the accused behind bars than administering justice."],
+            "response": ["From what I've heard, she seems much more interested in putting the accused behind bars than administering justice."],
             "relatedTopics": []
         },
         "law": {
             "response": ["The emphasis on incarceration over rehabilitation in the U.S. legal system does more harm than good. We need to focus on reformative measures rather than punitive ones to truly reduce crime rates."],
             "relatedTopics": []
         },
-        "inheritance": {
-            "response": [""],
+        "nullification": {
+            "response": ["It's an unfortunate consequence of our legal system. A necessary evil, if you will. Since jurors can vote however they wish without fear of reprisal, they can vote not guilty even if they know the defendant is guilty. Jury Nullification is essentially a form of mob rule, where the jurors' personal feelings toward the defendant trump the rule of law."],
             "relatedTopics": []
         },
-        "neighbor": {
+        "inheritance": {
             "response": [""],
             "relatedTopics": []
         },
@@ -55,37 +50,20 @@
         "arms": {
             "response": [""],
             "relatedTopics": []
+        },
+        "men": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "women": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "money": {
+            "response": [""],
+            "relatedTopics": []
         }
     },
     "responses": {
-        "start": [
-            {
-                "text": [
-                    "Well, I suppose the level-headed thing to do is discuss the shotgun the kid used in the crime."
-                ],
-                "points": [
-                    "talkAboutShotgun",
-                    "defUsedShotgun"
-                ],
-                "sureness": 0.1,
-                "offensiveTo": {},
-                "conditions": [],
-                "desire": 1
-            }
-        ],
-        "default": [
-            {
-                "text": [
-                    "I suppose we should talk about the shotgun next."
-                ],
-                "points": [
-                    "talkAboutShotgun"
-                ],
-                "sureness": 0,
-                "offensiveTo": {},
-                "conditions": [],
-                "desire": 1
-            }
-        ]
     }
 }

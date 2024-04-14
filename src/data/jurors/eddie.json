@@ -4,12 +4,7 @@
         "number": 4,
         "textColor": "#c21a17",
         "textSpeedMultiplier": 0.9,
-        "voice": 5,
-        "qualities": {
-            "sureness": 0.3,
-            "anger": -0.4,
-            "compassion": 0.4
-        }
+        "voice": 5
     },
     "topics": {
         "default": {
@@ -24,8 +19,8 @@
             "response": ["What a damn shame, a woman that pretty ending up with a fate like that."],
             "relatedTopics": []
         },
-        "judge": {
-            "response": ["A stuffy law man if I ever saw one."],
+        "officer": {
+            "response": [""],
             "relatedTopics": []
         },
         "attourneyGeneral": {
@@ -33,14 +28,14 @@
             "relatedTopics": []
         },
         "law": {
-            "response": ["Man, I've been all 'round this country. And in my travels I've seen every manner of stuffy law man thinking he's a big shot on account of that badge he wears. But I tell ya, there's a lot more to bein' a man than just followin' the law.", "There's a certain code in this world that any righteous man should live by. And the law has nothin' to do with that."],
+            "response": ["Man, I've been all 'round this country. And in my travels I've seen every manner of stuffy law man thinking he's a big shot on account of that badge he wears. But I tell ya, there's a lot more to bein' a man than just followin' the law.", "There's a certain code in this world that any righteous individual should live by. And the law has nothin' to do with that."],
+            "relatedTopics": []
+        },
+        "nullification": {
+            "response": ["Never heard of it."],
             "relatedTopics": []
         },
         "inheritance": {
-            "response": [""],
-            "relatedTopics": []
-        },
-        "neighbor": {
             "response": [""],
             "relatedTopics": []
         },
@@ -63,36 +58,25 @@
         "men": {
             "response": ["A man is defined by his code."],
             "relatedTopics": []
+        },
+        "money": {
+            "response": [""],
+            "relatedTopics": []
         }
     },
     "responses": {
         "start": [
             {
                 "text": [
-                    "Well, I suppose the level-headed thing to do is discuss the shotgun the kid used in the crime."
+                    "Let's get this show on the road, then."
                 ],
-                "points": [
-                    "talkAboutShotgun",
-                    "defUsedShotgun"
+                "claims": [
+                    "pickTopic"
                 ],
-                "sureness": 0.1,
-                "offensiveTo": {},
-                "conditions": [],
-                "desire": 1
-            }
-        ],
-        "default": [
-            {
-                "text": [
-                    "I suppose we should talk about the shotgun next."
-                ],
-                "points": [
-                    "talkAboutShotgun"
-                ],
-                "sureness": 0,
-                "offensiveTo": {},
-                "conditions": [],
-                "desire": 1
+                "conclusions": {},
+                "requirements": [],
+                "anger": 0,
+                "score": 0.2
             }
         ]
     }

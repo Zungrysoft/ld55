@@ -44,7 +44,7 @@ function App() {
     const [isTabVisible, setIsTabVisible] = useState(true)
     const [gameSave, setGameSave] = useState(loadSave())
     const [timeoutId, setTimeoutId] = useState(null)
-
+    console.log(gameSave)
     function randomKey() {
         return Math.floor(Math.random() * Number.MAX_SAFE_INTEGER)
     }
@@ -246,6 +246,7 @@ function App() {
             const speedMultiplier = speakerData.properties.textSpeedMultiplier
             clearTimeout(timeoutId)
             const newTimeoutId = setTimeout(advanceQueue, CHAT_SPEED / speedMultiplier)
+            console.log(CHAT_SPEED / speedMultiplier)
             setTimeoutId(newTimeoutId)
         }
     }, [logData])

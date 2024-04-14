@@ -2,7 +2,7 @@
     "properties": {
         "name": "System",
         "textColor": "#d0d4db",
-        "textSpeedMultiplier": 2.0,
+        "textSpeedMultiplier": 1.5,
         "voice": 18
     }
 }

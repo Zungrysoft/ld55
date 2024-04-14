@@ -1,11 +1,12 @@
 {
     "defendant": "The Defendant",
     "girlfriend": "The Girlfriend",
+    "officer": "The Police Officer",
     "judge": "The Judge",
     "attourneyGeneral": "The Attourney General",
     "law": "The Law",
+    "nullification": "Jury Nullification",
     "inheritance": "The Father's Inheritance",
-    "neighbor": "The Neighbor",
     "coworker": "The Coworker",
     "shotgun": "The Shotgun",
     "arms": "The Right to Bear Arms",
