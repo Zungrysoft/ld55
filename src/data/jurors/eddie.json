@@ -72,7 +72,7 @@
                 ],
                 "claims": ["pickTopic"],
                 "conclusions": {},
-                "requirements": [],
+                "requirements": {},
                 "anger": 0,
                 "score": 0.2
             }
@@ -84,7 +84,7 @@
                 ],
                 "claims": ["defDidNotUseShotgun"],
                 "conclusions": {"shotgun": 0.2},
-                "requirements": [],
+                "requirements": {},
                 "anger": 0,
                 "score": 1.5
             }
@@ -96,7 +96,7 @@
                 ],
                 "claims": ["boughtAtGunShow"],
                 "conclusions": {"shotgun": 0.4},
-                "requirements": [],
+                "requirements": {},
                 "anger": 0,
                 "score": 1.0
             }

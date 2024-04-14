@@ -1,7 +1,7 @@
 import { getJurorData } from "./juror"
 
 const CLAIM_STACK_SIZE = 10
-const CLAIM_AGE_LIMIT = 4
+const CLAIM_AGE_LIMIT = 10
 const DOUBLE_SPEAK_SCORE_MULTIPLIER = 0.4
 
 export function runDeliberation(jurors) {
@@ -70,7 +70,7 @@ export function runDeliberation(jurors) {
             for (let i = 0; i < claims.length; i ++) {
                 const claim = claims[i]
 
-                // Never use a default claim if this claim has been answered already
+                // Never use a default response if this claim has been answered already
                 if (answeredClaims.includes(claim.name)) {
                     continue
                 }
@@ -86,7 +86,7 @@ export function runDeliberation(jurors) {
                     if (score > bestResponseScore) {
                         // Pick an arbitrary juror to say this line
                         const possibleJurors = jurors.filter(e => e !== claim.speaker)
-                        const juror = jurors[responseNumber % possibleJurors.length]
+                        const juror = possibleJurors[responseNumber % possibleJurors.length]
 
                         bestResponseScore = score
                         bestResponse = response

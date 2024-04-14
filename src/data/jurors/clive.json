@@ -72,7 +72,7 @@
                 ],
                 "claims": ["pickTopic"],
                 "conclusions": {},
-                "requirements": [],
+                "requirements": {},
                 "anger": 0,
                 "score": 0.9
             }
@@ -84,7 +84,7 @@
                 ],
                 "claims": ["talkAboutShotgun", "defUsedShotgun"],
                 "conclusions": {},
-                "requirements": [],
+                "requirements": {},
                 "anger": 0,
                 "score": 1
             }
@@ -96,7 +96,7 @@
                 ],
                 "claims": ["doesNotOwnShotgun", "noRecordForShotgun"],
                 "conclusions": {"shotgun": -0.2},
-                "requirements": [],
+                "requirements": {},
                 "anger": 0,
                 "score": 1.0
             },
@@ -106,7 +106,7 @@
                 ],
                 "claims": ["dumb"],
                 "conclusions": {"shotgun": -0.2},
-                "requirements": [],
+                "requirements": {},
                 "anger": 0,
                 "score": 1.0
             }

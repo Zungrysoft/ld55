@@ -72,7 +72,7 @@
                 ],
                 "claims": ["pickTopic"],
                 "conclusions": {},
-                "requirements": [],
+                "requirements": {},
                 "anger": 0,
                 "score": 0.91
             }
@@ -84,9 +84,33 @@
                 ],
                 "claims": ["talkAboutCoworker"],
                 "conclusions": {},
-                "requirements": [],
+                "requirements": {},
                 "anger": 0,
                 "score": 1
+            }
+        ],
+        "defUsedShotgun": [
+            {
+                "text": [
+                    "Wait, how do we know that the girl was shot by that shotgun and not some other shotgun?"
+                ],
+                "claims": ["differentShotgun"],
+                "conclusions": {"shotgun": 0.5},
+                "requirements": {},
+                "anger": 0,
+                "score": 0.6
+            }
+        ],
+        "shotgunWasAnalyzed": [
+            {
+                "text": [
+                    "Oh right, I remember."
+                ],
+                "claims": ["rememberShotgunWasAnalyzed"],
+                "conclusions": {"shotgun": -0.4},
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 10.0
             }
         ]
     }

@@ -13,7 +13,7 @@
                 ],
                 "claims": ["pickTopic"],
                 "conclusions": {},
-                "requirements": [],
+                "requirements": {},
                 "anger": 0,
                 "score": 1.0
             }
@@ -25,7 +25,7 @@
                 ],
                 "claims": [],
                 "conclusions": {},
-                "requirements": [],
+                "requirements": {},
                 "anger": 0,
                 "score": 1.0
             }
@@ -37,9 +37,21 @@
                 ],
                 "claims": ["doesNotOwnShotgun"],
                 "conclusions": {},
-                "requirements": [],
+                "requirements": {},
                 "anger": 0,
                 "score": 1.0
+            }
+        ],
+        "differentShotgun": [
+            {
+                "text": [
+                    "They had a forensic ballistics expert testify in court. They compared the shotgun to the pellets from the crime scene."
+                ],
+                "claims": ["shotgunWasAnalyzed"],
+                "conclusions": {"shotgun": -0.3},
+                "requirements": {},
+                "anger": 0,
+                "score": 0.6
             }
         ]
     }
