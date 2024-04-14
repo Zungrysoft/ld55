@@ -4,7 +4,7 @@ The defendant has two charges: First degree murder and assaulting a police offic
 
 The only motive provided by the prosecution is that his girlfriend had recently inherited a large amount of money. He wouldn't have actually gotten that money since they weren't married, but the prosecution went to great lengths to convince the jury that the defendant *thought* he would have. She had a will. Maybe he assumed he was the primary benefactor?
 
-The evidence is that the shotgun used to kill the girlfriend has the defendant's prints on the trigger and handle. The defendant claimed that the gun belonged to him and that is why his prints were on it, but he had no record of purchase.
+The evidence is that the shotgun used to kill the girlfriend has the defendant's prints on the trigger and handle. The defendant claimed that the gun belonged to him and that is why his prints were on it, but he had no record of purchase. Additionally, a seller at a gun show claims he saw the defendant at his gun show just two days earlier. The defendant claims he was not there.
 
 The defendant's alibi was that he stayed late at work to finish a big project. He told the police that his coworker may corroborate his story. However, the coworker testified that he did not recall seeing the defendant at work that late. The coworker is not exactly an unimpeachable witness and in fact had good reason to want to get back at the defendant.
 
@@ -14,7 +14,7 @@ Questions to bring up:
     Is the defendant dumb enough to think that the inheritance would have transferred to him? This is his only identifiable motive.
     Should the coworker's testimony be thrown out?
     Is there reason to believe someone else could have handled the shotgun?
-    Why would the real killer have left the shotgun behind if it belonged to him instead of the defendant?
+    Could the gun show seller be mistaken?
     Could the officer be lying about the assault charge? How could the defendant have punched him if he was already in cuffs?
     Can we excuse the assault charge with jury nullification?
 

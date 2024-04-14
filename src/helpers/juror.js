@@ -6,7 +6,8 @@ import cliveData from '../data/jurors/clive.json';
 import susanData from '../data/jurors/susan.json';
 import geoffData from '../data/jurors/geoff.json';
 import eddieData from '../data/jurors/eddie.json';
-import lynnData from '../data/jurors/lynn.json';
+import lynneData from '../data/jurors/lynne.json';
+import henryData from '../data/jurors/henry.json';
 
 export function getJurorData(juror) {
     if (juror === 'error') {return errorData}
@@ -16,7 +17,8 @@ export function getJurorData(juror) {
     if (juror === 'susan') {return susanData}
     if (juror === 'geoff') {return geoffData}
     if (juror === 'eddie') {return eddieData}
-    if (juror === 'lynn') {return lynnData}
+    if (juror === 'lynne') {return lynneData}
+    if (juror === 'henry') {return henryData}
 
     return systemData
 }
@@ -27,6 +29,7 @@ export function getAllJurors() {
         susan: susanData,
         geoff: geoffData,
         eddie: eddieData,
-        lynn: lynnData,
+        lynne: lynneData,
+        henry: henryData,
     }
 }

@@ -51,14 +51,6 @@
             "response": ["I don't leave home without packin'. Excludin' here, of course. I'm sure the bailiff wouldn't take too kindly to that."],
             "relatedTopics": []
         },
-        "women": {
-            "response": ["I'm a womanizer. That's God's honest truth."],
-            "relatedTopics": []
-        },
-        "men": {
-            "response": ["A man is defined by his code."],
-            "relatedTopics": []
-        },
         "money": {
             "response": [""],
             "relatedTopics": []
@@ -72,18 +64,59 @@
                 ],
                 "claims": ["pickTopic"],
                 "conclusions": {},
+                "receivesAgreement": false,
                 "requirements": {},
                 "anger": 0,
                 "score": 0.2
             }
         ],
-        "defUsedShotgun": [
+        "pickTopic": [
+            {
+                "text": [
+                    "I suppose the first thing to talk about would be that shotgun they say he used to kill the girl. Personally, I don't buy it. The persecution says that he must have bought the gun recently and for this specific task. But he says he owned it for years beforehand."
+                ],
+                "claims": ["talkAboutShotgun", "didNotUseShotgun", "alreadyOwnedShotgun", "persecution"],
+                "conclusions": {"shotgun": 0.4},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1
+            }
+        ],
+        "prosecutionNotPersecution": [
+            {
+                "text": [
+                    "Sure"
+                ],
+                "claims": ["prosecutionNotPersecutionSure"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0.1,
+                "score": 100.0
+            }
+        ],
+        "usedShotgun": [
             {
                 "text": [
                     "Well hold on there. We don't know for sure it was him that fired it."
                 ],
-                "claims": ["defDidNotUseShotgun"],
+                "claims": ["didNotUseShotgun"],
                 "conclusions": {"shotgun": 0.2},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.5
+            }
+        ],
+        "printsOnShotgun": [
+            {
+                "text": [
+                    "His prints were on the gun because it was his gun. He said he had owned it for years."
+                ],
+                "claims": ["alreadyOwnedShotgun"],
+                "conclusions": {"shotgun": 0.3},
+                "receivesAgreement": false,
                 "requirements": {},
                 "anger": 0,
                 "score": 1.5
@@ -92,10 +125,11 @@
         "noRecordForShotgun": [
             {
                 "text": [
-                    "He said he bought it at a gun show. I can't figure the last time I've seen a seller at a gun show print out a receipt. It's all cash and no questions asked."
+                    "He had no record of buying the gun because he bought it at a gun show. I can't figure the last time I've seen a seller at a gun show print out a receipt. It's all cash and no questions asked."
                 ],
                 "claims": ["boughtAtGunShow"],
                 "conclusions": {"shotgun": 0.4},
+                "receivesAgreement": false,
                 "requirements": {},
                 "anger": 0,
                 "score": 1.0

@@ -1,6 +1,6 @@
 {
     "properties": {
-        "name": "Lynn",
+        "name": "Lynne",
         "number": 5,
         "textColor": "#5296d1",
         "textSpeedMultiplier": 1.0,
@@ -51,19 +51,24 @@
             "response": [""],
             "relatedTopics": []
         },
-        "men": {
-            "response": [""],
-            "relatedTopics": []
-        },
-        "women": {
-            "response": [""],
-            "relatedTopics": []
-        },
         "money": {
             "response": [""],
             "relatedTopics": []
         }
     },
     "responses": {
+        "persecution": [
+            {
+                "text": [
+                    "It's \"prosecution\", not \"persecution\"."
+                ],
+                "claims": ["prosecutionNotPersecution"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0.1,
+                "score": 1.7
+            }
+        ]
     }
 }

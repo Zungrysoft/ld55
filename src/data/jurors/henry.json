@@ -1,0 +1,87 @@
+{
+    "properties": {
+        "name": "Henry",
+        "number": 6,
+        "textColor": "#c0de2a",
+        "textSpeedMultiplier": 1.1,
+        "voice": 13
+    },
+    "topics": {
+        "default": {
+            "response": ["No idea, man."],
+            "relatedTopics": []
+        },
+        "defendant": {
+            "response": [""],
+            "relatedTopics": [""]
+        },
+        "girlfriend": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "officer": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "attourneyGeneral": {
+            "response": ["I've never met her."],
+            "relatedTopics": []
+        },
+        "law": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "nullification": {
+            "response": ["Never heard of it."],
+            "relatedTopics": []
+        },
+        "inheritance": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "coworker": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "shotgun": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "arms": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "money": {
+            "response": [""],
+            "relatedTopics": []
+        }
+    },
+    "responses": {
+        "start": [
+            {
+                "text": [
+                    "Why don't we get going here?"
+                ],
+                "claims": ["pickTopic"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 0.3
+            }
+        ],
+        "boughtShotgunForMurder": [
+            {
+                "text": [
+                    "You think he went out and bought a shotgun just to waste his old lady? If I were gonna kill someone, I wouldn't pick that as my weapon of choice. Just saying."
+                ],
+                "claims": ["didNotBuyShotgunForMurder"],
+                "conclusions": {"shotgun": -0.5},
+                "receivesAgreement": true,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 1.3
+            }
+        ]
+    }
+}

@@ -51,14 +51,6 @@
             "response": [""],
             "relatedTopics": []
         },
-        "men": {
-            "response": [""],
-            "relatedTopics": []
-        },
-        "women": {
-            "response": [""],
-            "relatedTopics": []
-        },
         "money": {
             "response": [""],
             "relatedTopics": []
@@ -72,6 +64,7 @@
                 ],
                 "claims": ["pickTopic"],
                 "conclusions": {},
+                "receivesAgreement": false,
                 "requirements": {},
                 "anger": 0,
                 "score": 0.91
@@ -84,18 +77,20 @@
                 ],
                 "claims": ["talkAboutCoworker"],
                 "conclusions": {},
+                "receivesAgreement": false,
                 "requirements": {},
                 "anger": 0,
                 "score": 1
             }
         ],
-        "defUsedShotgun": [
+        "usedShotgun": [
             {
                 "text": [
                     "Wait, how do we know that the girl was shot by that shotgun and not some other shotgun?"
                 ],
                 "claims": ["differentShotgun"],
                 "conclusions": {"shotgun": 0.5},
+                "receivesAgreement": false,
                 "requirements": {},
                 "anger": 0,
                 "score": 0.6
@@ -108,9 +103,10 @@
                 ],
                 "claims": ["rememberShotgunWasAnalyzed"],
                 "conclusions": {"shotgun": -0.4},
+                "receivesAgreement": false,
                 "requirements": {"immediate": true},
                 "anger": 0,
-                "score": 10.0
+                "score": 100.0
             }
         ]
     }

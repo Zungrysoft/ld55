@@ -13,6 +13,7 @@
                 ],
                 "claims": ["pickTopic"],
                 "conclusions": {},
+                "receivesAgreement": false,
                 "requirements": {},
                 "anger": 0,
                 "score": 1.0
@@ -25,6 +26,7 @@
                 ],
                 "claims": [],
                 "conclusions": {},
+                "receivesAgreement": false,
                 "requirements": {},
                 "anger": 0,
                 "score": 1.0
@@ -33,10 +35,11 @@
         "talkAboutShotgun": [
             {
                 "text": [
-                    "The defendant's fingerprints were on the gun left behind at the scene. He says this is because the gun belongs to him."
+                    "The defendant's fingerprints were on the gun left behind at the scene."
                 ],
-                "claims": ["doesNotOwnShotgun"],
+                "claims": ["doesNotOwnShotgun", "printsOnShotgun"],
                 "conclusions": {},
+                "receivesAgreement": false,
                 "requirements": {},
                 "anger": 0,
                 "score": 1.0
@@ -49,6 +52,7 @@
                 ],
                 "claims": ["shotgunWasAnalyzed"],
                 "conclusions": {"shotgun": -0.3},
+                "receivesAgreement": false,
                 "requirements": {},
                 "anger": 0,
                 "score": 0.6

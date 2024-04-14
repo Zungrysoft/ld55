@@ -10,7 +10,7 @@ export function runDeliberation(jurors) {
     
     let log = []
     let claims = [{name: 'start', speaker: 'system', age: 0}]
-    let allClaims = []
+    let allClaims = new Set()
     let answeredClaims = []
     let responseNumber = 0
     let previousSpeaker = null
@@ -107,11 +107,23 @@ export function runDeliberation(jurors) {
 
             // Add new claims made by this response
             claims.push(...bestResponse.claims.map(e => ({name: e, age: 0, speaker: bestResponseSpeaker})))
-            allClaims.push(...bestResponse.claims)
+            allClaims = new Set([...allClaims, ...bestResponse.claims])
             answeredClaims.push(bestResponseClaim)
 
             // Set previous speaker
             previousSpeaker = bestResponseSpeaker
+
+            // Add agreement message
+            if (bestResponse.receivesAgreement) {
+                // Pick an arbitrary juror to say this line
+                const possibleJurors = jurors.filter(e => e !== bestResponseSpeaker)
+                const juror = possibleJurors[responseNumber % possibleJurors.length]
+
+                log.push({
+                    speaker: juror,
+                    text: responseNumber % 3 === 0 ? "That's true." : "Good point."
+                })
+            }
 
             // Count number of responses
             responseNumber ++
@@ -176,6 +188,11 @@ function getResponseToClaim(juror, claim, allClaims) {
                 continue
             }
 
+            // If a response is marked as "immediate", the claim it response to must have been the last thing said
+            if (response.requirements?.immediate && claim.age > 1) {
+                continue
+            }
+
             return response
         }
     }
@@ -186,7 +203,7 @@ function getResponseToClaim(juror, claim, allClaims) {
 
 function hasBeenBroughtUp(response, allClaims) {
     for (const claim of response.claims) {
-        if (allClaims.includes(claim)) {
+        if (allClaims.has(claim)) {
             return true
         }
     }
