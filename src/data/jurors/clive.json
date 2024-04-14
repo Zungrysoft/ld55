@@ -1,6 +1,7 @@
 {
     "properties": {
         "name": "Clive",
+        "number": 1,
         "textColor": "#40b35f",
         "textSpeedMultiplier": 1.0,
         "voice": 1,
@@ -15,8 +16,44 @@
             "response": ["I'm not sure I could say much on that particular matter."],
             "relatedTopics": []
         },
+        "defendant": {
+            "response": ["I'm pretty sure the guy's guilty. The neighbor heard the gun shot at 5:36 PM. He claimed he had stayed late at work and didn't get home until after 7, but none of his coworkers could corroborate his story.", "What actually happened is that he spent that hour and a half getting his story straight for the authorities."],
+            "relatedTopics": ["neighbor"]
+        },
+        "girlfriend": {
+            "response": ["What an awful fate. I just hope we can bring her killer to justice."],
+            "relatedTopics": []
+        },
+        "judge": {
+            "response": ["I don't know. He seemed on the level."],
+            "relatedTopics": []
+        },
+        "attourneyGeneral": {
+            "response": ["I've never her."],
+            "relatedTopics": []
+        },
         "law": {
             "response": ["I'd consider myself a believer in the concept of small-goverment. This country has too many rules and regulations that only serve to hinder small businesses.", "That said, when it comes to matters of the criminal nature, there's no question. Murder is murder, my friend. No way you're weasling outta that one."],
+            "relatedTopics": []
+        },
+        "inheritance": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "neighbor": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "coworker": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "shotgun": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "arms": {
+            "response": [""],
             "relatedTopics": []
         }
     },

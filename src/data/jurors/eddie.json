@@ -1,6 +1,7 @@
 {
     "properties": {
         "name": "Eddie",
+        "number": 4,
         "textColor": "#c21a17",
         "textSpeedMultiplier": 0.9,
         "voice": 5,
@@ -15,13 +16,45 @@
             "response": ["Couldn't tell ya."],
             "relatedTopics": []
         },
+        "defendant": {
+            "response": ["The way these lawyers talk. Well, it makes you crazy. They seemed to have a good case for the guy's guilt. Finger prints on the trigger and all.", "But I look at that guy and I just can't see it.", "I figure I can size up any man with enough time. And given that I've spend enough time in this goddamn court room to last me a lifetime, I just can't figure that man as a killer.", "Evidence bein' what it is, he's probably guilty. But something about him gives me pause."],
+            "relatedTopics": ["shotgun"]
+        },
+        "girlfriend": {
+            "response": ["What a damn shame, a woman that pretty ending up with a fate like that."],
+            "relatedTopics": []
+        },
+        "judge": {
+            "response": ["A stuffy law man if I ever saw one."],
+            "relatedTopics": []
+        },
+        "attourneyGeneral": {
+            "response": ["I don't know her, sorry."],
+            "relatedTopics": []
+        },
         "law": {
             "response": ["Man, I've been all 'round this country. And in my travels I've seen every manner of stuffy law man thinking he's a big shot on account of that badge he wears. But I tell ya, there's a lot more to bein' a man than just followin' the law.", "There's a certain code in this world that any righteous man should live by. And the law has nothin' to do with that."],
             "relatedTopics": []
         },
-        "defendant": {
-            "response": ["The way these lawyers talk. Well, it makes you crazy. They seemed to have a good case for the guy's guilt. Finger prints on the trigger and all.", "But I look at that guy and I just can't see it.", "I figure I can size up any man with enough time. And given that I've spend enough time in this goddamn court room to last me a lifetime, I just can't figure that man as a killer.", "Evidence bein' what it is, he's probably guilty. But something about him gives me pause."],
-            "relatedTopics": ["shotgun"]
+        "inheritance": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "neighbor": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "coworker": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "shotgun": {
+            "response": ["The guy's prints were found on the shotgun. That seems pretty iron clad right there. But I'd be lyin' if I hadn't ended up in a few scrapes where my gun was in the other guy's hands.", "Point is, he owns the gun. 'Course his prints are on it. Doesn't mean he was the one who shot it."],
+            "relatedTopics": []
+        },
+        "arms": {
+            "response": ["I don't leave home without packin'. Excludin' here, of course. I'm sure the bailiff wouldn't take too kindly to that."],
+            "relatedTopics": []
         },
         "women": {
             "response": ["I'm a womanizer. That's God's honest truth."],

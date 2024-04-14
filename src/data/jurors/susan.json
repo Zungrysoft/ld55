@@ -1,6 +1,7 @@
 {
     "properties": {
         "name": "Susan",
+        "number": 2,
         "textColor": "#c26d82",
         "textSpeedMultiplier": 1.2,
         "voice": 3,
@@ -13,6 +14,46 @@
     "topics": {
         "default": {
             "response": ["I'm really not sure. Sorry."],
+            "relatedTopics": []
+        },
+        "defendant": {
+            "response": ["Oh, he's guilty for sure. It's just obvious! The guy's lawyers couldn't give a single bit of proof for why he's innocent!"],
+            "relatedTopics": []
+        },
+        "girlfriend": {
+            "response": ["This man deserves to rot for what he did to that poor lady!"],
+            "relatedTopics": []
+        },
+        "judge": {
+            "response": ["He seemed nice. Real dry though."],
+            "relatedTopics": []
+        },
+        "attourneyGeneral": {
+            "response": ["Oh, she's great! We go out to dinner at least once a month. She's actually the reason I found out about this whole thing. She said I would make the perfect juror!"],
+            "relatedTopics": []
+        },
+        "law": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "inheritance": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "neighbor": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "coworker": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "shotgun": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "arms": {
+            "response": [""],
             "relatedTopics": []
         }
     },

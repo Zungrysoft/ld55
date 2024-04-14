@@ -1,39 +1,39 @@
 {
     "properties": {
-        "name": "Geoff",
-        "number": 3,
-        "textColor": "#596ac9",
-        "textSpeedMultiplier": 0.8,
-        "voice": 20,
+        "name": "Lynn",
+        "number": 5,
+        "textColor": "#5296d1",
+        "textSpeedMultiplier": 1.0,
+        "voice": 14,
         "qualities": {
-            "sureness": 0.6,
-            "anger": 0.7,
-            "compassion": 0.2
+            "sureness": -0.2,
+            "anger": 0.0,
+            "compassion": 0.8
         }
     },
     "topics": {
         "default": {
-            "response": ["I wouldn't know."],
+            "response": ["I don't know."],
             "relatedTopics": []
         },
         "defendant": {
-            "response": ["I swear there's something wrong with this country nowadays. Some jobless slacker sees dollar signs in his eyes and it blinds him to his morals. What kind of man kills his girlfriend of five years for some money? ", "That poor woman."],
-            "relatedTopics": ["girlfriend"]
+            "response": [""],
+            "relatedTopics": []
         },
         "girlfriend": {
-            "response": ["She certainly picked the wrong man. I hate to blame the victim, but there must have been signs beforehand. No man suddenly becomes a killer."],
+            "response": [""],
             "relatedTopics": []
         },
         "judge": {
-            "response": ["Now there's a respectable gentleman."],
+            "response": ["He has a habit of putting jurors to sleep."],
             "relatedTopics": []
         },
         "attourneyGeneral": {
-            "response": ["I've never met her myself. Though I seem to remember my wife saying something about her stacking juries.", "Not sure whether or not I believe it. If I were her, I wouldn't put me on any jury."],
+            "response": ["From what I've seen, she seems much more interested in putting the accused behind bars than administering justice."],
             "relatedTopics": []
         },
         "law": {
-            "response": [""],
+            "response": ["The emphasis on incarceration over rehabilitation in the U.S. legal system does more harm than good. We need to focus on reformative measures rather than punitive ones to truly reduce crime rates."],
             "relatedTopics": []
         },
         "inheritance": {

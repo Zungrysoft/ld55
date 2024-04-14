@@ -2,6 +2,7 @@ import { getJurorData, getAllJurors } from "./juror"
 import commandData from '../data/commands.json';
 import topicData from '../data/topics.json';
 import documentData from '../data/documents.json';
+import { runSimulation } from "./simulator";
 
 export function parseCommand(input, saveData) {
     const argv = input.toLowerCase().split(" ")
@@ -20,6 +21,7 @@ export function parseCommand(input, saveData) {
     if ('restart'.includes(argv[0])) {return commandRestart(argv.slice(1), saveData)}
     if ('interview'.includes(argv[0])) {return commandInterview(argv.slice(1), saveData)}
     if ('document'.includes(argv[0])) {return commandDocument(argv.slice(1), saveData)}
+    if ('select'.includes(argv[0])) {return commandSelect(argv.slice(1), saveData)}
 
     return commandError(argv, saveData)
 }
@@ -238,6 +240,61 @@ function commandHelp(argv, saveData) {
             speaker: 'system',
         },
     }
+}
+
+function commandSelect(argv, saveData) {
+    // Help with command
+    if (argv.length === 0) {
+        return {
+            logEntries: speakText('system', "Select four jurors: \"select [juror 1] [juror 2] [juror 3] [juror 4]\""),
+        }
+    }
+
+    // Wrong number of jurors
+    if (argv.length !== 4) {
+        return {
+            logEntries: speakText('system', "You must select exactly four jurors."),
+        }
+    }
+
+    // Validate juror names
+    let jurors = []
+    for (const jurorArg of argv) {
+        let juror = getJurorFromName(jurorArg)
+
+        // Unknown juror
+        if (!juror) {
+            return {
+                logEntries: speakText('system', "Invalid juror: " + jurorArg),
+            }
+        }
+
+        // Duplicate juror
+        if (jurors.includes(juror)) {
+            return {
+                logEntries: speakText('system', "Duplicate juror: " + juror),
+            }
+        }
+
+        // Valid juror
+        jurors.push(juror)
+    }
+
+    // Run simulation
+    return {
+        logEntries: runSimulation(jurors),
+    }
+}
+
+function getJurorFromName(jurorArg) {
+    const allJurors = getAllJurors()
+    for (const juror in allJurors) {
+        const jurorName = allJurors[juror].properties.name
+        if (jurorName.toLowerCase().includes(jurorArg.toLowerCase())) {
+            return juror
+        }
+    }
+    return null
 }
 
 function commandError(argv, saveData) {
