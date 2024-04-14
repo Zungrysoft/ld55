@@ -19,17 +19,28 @@
                 "score": 1.0
             }
         ],
-        "talkAboutCoworker": [
+        "pickTopic": [
             {
                 "text": [
-                    "Damn right!"
+                    "Let's discuss the shotgun."
                 ],
-                "claims": [],
+                "claims": ["talkAboutShotgun"],
                 "conclusions": {},
                 "receivesAgreement": false,
                 "requirements": {},
                 "anger": 0,
-                "score": 1.0
+                "score": 1
+            },
+            {
+                "text": [
+                    "Let's discuss the defendant's coworker."
+                ],
+                "claims": ["talkAboutCoworker"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1
             }
         ],
         "talkAboutShotgun": [

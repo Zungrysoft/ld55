@@ -11,13 +11,14 @@ export function runDeliberation(jurors) {
     let log = []
     let claims = [{name: 'start', speaker: 'system', age: 0}]
     let allClaims = new Set()
-    let answeredClaims = []
+    let answeredClaims = new Set()
     let responseNumber = 0
     let previousSpeaker = null
+    let topicChanges = 10
     let jurorAnger = {}
 
     // Deliberation
-    while (claims.length > 0) {
+    while (true) {
         // Limit size of claim stack. Oldest claims are removed first.
         // This allows the jurors to forget certain claims if they get distracted by others
         while (claims.length > CLAIM_STACK_SIZE) {
@@ -71,7 +72,7 @@ export function runDeliberation(jurors) {
                 const claim = claims[i]
 
                 // Never use a default response if this claim has been answered already
-                if (answeredClaims.includes(claim.name)) {
+                if (answeredClaims.has(claim.name)) {
                     continue
                 }
     
@@ -108,7 +109,7 @@ export function runDeliberation(jurors) {
             // Add new claims made by this response
             claims.push(...bestResponse.claims.map(e => ({name: e, age: 0, speaker: bestResponseSpeaker})))
             allClaims = new Set([...allClaims, ...bestResponse.claims])
-            answeredClaims.push(bestResponseClaim)
+            answeredClaims.add(bestResponseClaim)
 
             // Set previous speaker
             previousSpeaker = bestResponseSpeaker
@@ -128,9 +129,18 @@ export function runDeliberation(jurors) {
             // Count number of responses
             responseNumber ++
         }
-        // If the jurors have nothing to say, end the deliberation
+        // If the jurors have nothing to say, change the topic
         else {
-            break
+            if (topicChanges > 0) {
+                topicChanges --
+                claims = [{name: 'pickTopic', speaker: 'system', age: 1}]
+
+                // Remove pickTopic from the list of asnwered claims so it can be answered again
+                answeredClaims.delete('pickTopic')
+            }
+            else {
+                break
+            }
         }
     }
 
