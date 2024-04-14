@@ -1,21 +1,26 @@
 Clive:
     Description: Practical guy.
     Player goal: He's simple. Just convince him of the facts of the case.
+    Skeptical about: the coworker
 
 Susan:
     Description: Not the smartest tool in the shed, but her heart's in the right place.
     Player goal: Turn her against the attourney general.
+    Skeptical about: Nothing
 
 Geoff:
     Description: A gruff older guy. Not a big talker unless he has something to say.
     Player goal: Make the defendant seem sympathetic. This is about the soul of America for Geoff, and the defendant represents everything he is against.
+    Skeptical about: Nothing, but he's a bit more easily swayed than the others
 
 Eddie:
     Description: A rambin' gamblin man. Lives a bit outside the law, but cares about justice.
     Player goal: Convince him he is innocent of the murder, then teach him about jury nullification for the assaulting a police officer charge.
+    Skeptical about: The shotgun
 
 Lynn:
     Description: An idealist who wants to see justice done. She is very informed on the law.
     Player goal: Convince her of the facts of the case. 
+    Skeptical about: The police officer
 
 

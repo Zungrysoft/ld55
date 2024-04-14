@@ -13,14 +13,14 @@
         },
         "defendant": {
             "response": ["I'm pretty sure the guy's guilty. The neighbor heard the gun shot at 5:36 PM. He claimed he had stayed late at work and didn't get home until after 7, but none of his coworkers could corroborate his story.", "What actually happened is that he spent that hour and a half getting his story straight for the authorities."],
-            "relatedTopics": ["neighbor"]
+            "relatedTopics": []
         },
         "girlfriend": {
             "response": ["What an awful fate. I just hope we can bring her killer to justice."],
             "relatedTopics": []
         },
         "officer": {
-            "response": [""],
+            "response": ["He seemed generally on the level. He seemed to have a real disdain for the defendant during his testimony though."],
             "relatedTopics": []
         },
         "attourneyGeneral": {
@@ -70,9 +70,7 @@
                 "text": [
                     "Should we get started then?"
                 ],
-                "claims": [
-                    "pickTopic"
-                ],
+                "claims": ["pickTopic"],
                 "conclusions": {},
                 "requirements": [],
                 "anger": 0,
@@ -82,16 +80,35 @@
         "pickTopic": [
             {
                 "text": [
-                    "I suppose the level-headed thing to do is discuss the shotgun the kid used in the crime."
+                    "I suppose the level-headed thing to do is discuss the shotgun the defendant used in the crime."
                 ],
-                "claims": [
-                    "talkAboutShotgun",
-                    "defUsedShotgun"
-                ],
+                "claims": ["talkAboutShotgun", "defUsedShotgun"],
                 "conclusions": {},
                 "requirements": [],
                 "anger": 0,
                 "score": 1
+            }
+        ],
+        "defDidNotUseShotgun": [
+            {
+                "text": [
+                    "His prints were on the gun. He says it's because he owns the gun. But he could not produce any evidence of having bought the gun."
+                ],
+                "claims": ["doesNotOwnShotgun", "noRecordForShotgun"],
+                "conclusions": {"shotgun": -0.2},
+                "requirements": [],
+                "anger": 0,
+                "score": 1.0
+            },
+            {
+                "text": [
+                    "You're just dumb"
+                ],
+                "claims": ["dumb"],
+                "conclusions": {"shotgun": -0.2},
+                "requirements": [],
+                "anger": 0,
+                "score": 1.0
             }
         ]
     }

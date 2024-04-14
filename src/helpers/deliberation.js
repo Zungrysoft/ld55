@@ -1,6 +1,7 @@
 import { getJurorData } from "./juror"
 
-const CLAIM_STACK_SIZE = 3
+const CLAIM_STACK_SIZE = 10
+const CLAIM_AGE_LIMIT = 4
 const DOUBLE_SPEAK_SCORE_MULTIPLIER = 0.4
 
 export function runDeliberation(jurors) {
@@ -9,7 +10,8 @@ export function runDeliberation(jurors) {
     
     let log = []
     let claims = [{name: 'start', speaker: 'system', age: 0}]
-    let resolvedClaims = []
+    let allClaims = []
+    let answeredClaims = []
     let responseNumber = 0
     let previousSpeaker = null
     let jurorAnger = {}
@@ -17,14 +19,17 @@ export function runDeliberation(jurors) {
     // Deliberation
     while (claims.length > 0) {
         // Limit size of claim stack. Oldest claims are removed first.
-        // This allows the jurors to forget certain claims they get distracted by others
+        // This allows the jurors to forget certain claims if they get distracted by others
         while (claims.length > CLAIM_STACK_SIZE) {
             claims.shift()
         }
 
-        // Advance age of all entries
+        // Advance age of all entries and remove claims that are too old
         for (let i = 0; i < claims.length; i ++) {
             claims[i].age ++
+            if (claims[i].age > CLAIM_AGE_LIMIT) {
+                claims.splice(i, 1)
+            }
         }
 
         // Go through all possible responses to claims and pick the best one
@@ -37,7 +42,7 @@ export function runDeliberation(jurors) {
 
             // Iterate over jurors
             for (const juror of jurors) {
-                const response = getResponseToClaim(juror, claim, resolvedClaims)
+                const response = getResponseToClaim(juror, claim, allClaims)
                 if (response && response.score) {
                     let score = response.score
                     
@@ -59,6 +64,39 @@ export function runDeliberation(jurors) {
             }
         }
 
+        // If no responses were found, see if there is a default response to one of these claims.
+        // Default responses should only be used if nobody has a specific response to a claim.
+        if (!bestResponse) {
+            for (let i = 0; i < claims.length; i ++) {
+                const claim = claims[i]
+
+                // Never use a default claim if this claim has been answered already
+                if (answeredClaims.includes(claim.name)) {
+                    continue
+                }
+    
+                // Iterate over jurors
+                const response = getResponseToClaim('default', claim, allClaims)
+                if (response && response.score) {
+                    let score = response.score
+                    
+                    // Make jurors less likely to answer older claims
+                    score /= claim.age
+
+                    if (score > bestResponseScore) {
+                        // Pick an arbitrary juror to say this line
+                        const possibleJurors = jurors.filter(e => e !== claim.speaker)
+                        const juror = jurors[responseNumber % possibleJurors.length]
+
+                        bestResponseScore = score
+                        bestResponse = response
+                        bestResponseSpeaker = juror
+                        bestResponseClaim = claim.name
+                    }
+                }
+            }
+        }
+
         // Execute the best response
         if (bestResponse) {
             // Add response text to log
@@ -69,14 +107,8 @@ export function runDeliberation(jurors) {
 
             // Add new claims made by this response
             claims.push(...bestResponse.claims.map(e => ({name: e, age: 0, speaker: bestResponseSpeaker})))
-
-            // Remove resolved claim
-            for (let i = claims.length-1; i >= 0; i --) {
-                if (claims[i].name === bestResponseClaim) {
-                    resolvedClaims.push(claims[i].name)
-                    claims.splice(i, 1)
-                }
-            }
+            allClaims.push(...bestResponse.claims)
+            answeredClaims.push(bestResponseClaim)
 
             // Set previous speaker
             previousSpeaker = bestResponseSpeaker
@@ -129,7 +161,7 @@ export function runDeliberation(jurors) {
     return log
 }
 
-function getResponseToClaim(juror, claim, resolvedClaims) {
+function getResponseToClaim(juror, claim, allClaims) {
     // A juror can't respond to their own claim
     if (juror === claim.speaker) {
         return null
@@ -139,8 +171,8 @@ function getResponseToClaim(juror, claim, resolvedClaims) {
     let possibleResponses = getJurorData(juror)?.responses?.[claim.name]
     if (possibleResponses) {
         for (const response of possibleResponses) {
-            // Responses can't bring up an already resolved claim
-            if (isResolved(response, resolvedClaims)) {
+            // Responses can't bring up a claim that was already brought up
+            if (hasBeenBroughtUp(response, allClaims)) {
                 continue
             }
 
@@ -152,9 +184,9 @@ function getResponseToClaim(juror, claim, resolvedClaims) {
     return null
 }
 
-function isResolved(response, resolvedClaims) {
+function hasBeenBroughtUp(response, allClaims) {
     for (const claim of response.claims) {
-        if (resolvedClaims.includes(claim)) {
+        if (allClaims.includes(claim)) {
             return true
         }
     }

@@ -3,7 +3,7 @@
         "name": "Introduction",
         "text": [
             "Welcome to the Jury-Picker 4000, the 21st century way to select jurors for your upcoming trial!",
-            "We've got a job for you today. It's the big one. Murder in the first degree! Now, you won't actually be the defense attourney. We've just hired you to pick the jury. So your job is to pick four jurors whom you think will acquit the defendant.",
+            "We've got a job for you today. It's the big one. Murder in the first degree, with assaulting a police officer on top of that! Now, you won't actually be the defense attourney. We've just hired you to pick the jury. So your job is to pick four jurors whom you think will acquit the defendant.",
             "You will have an opportunity to interview all ten of the jurors the prosecution approved and make your selection from there. Good luck!"
         ]
     },
@@ -14,5 +14,9 @@
     "controls": {
         "name": "Controls",
         "text": ["\n\tEnter: Submit command / Next Message / Skip\n\tArrow Keys: Look through command history\n\n\tTip: You only have to type the first three letters of a command. For example, you can access this document using the command \"doc con\""]
+    },
+    "tips": {
+        "name": "Tips for Jury Selection",
+        "text": ["\n- Each juror has different topics they will introduce during deliberation.\n- Different jurors will need to be convinced in different ways.\n- Jurors have a limited attention span. If they go off topic for too long they may forget what they were talking about."]
     }
 }

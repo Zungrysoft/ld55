@@ -24,7 +24,7 @@
             "relatedTopics": []
         },
         "attourneyGeneral": {
-            "response": ["Oh, she's great! We go out to dinner at least once a month. She's actually the reason I found out about this whole thing. She said I would make the perfect juror!"],
+            "response": ["Oh, she's great! We go out to dinner at least once a month. She's actually the reason I found out about this whole thing. She said I would make the perfect juror for this big case she was working on!"],
             "relatedTopics": []
         },
         "law": {
@@ -70,9 +70,7 @@
                 "text": [
                     "Which piece of evidence should we examine first?"
                 ],
-                "claims": [
-                    "pickTopic"
-                ],
+                "claims": ["pickTopic"],
                 "conclusions": {},
                 "requirements": [],
                 "anger": 0,
@@ -84,9 +82,7 @@
                 "text": [
                     "I think we should talk about the coworker. He testified against the defendant's alibi that he was at work until 7 PM."
                 ],
-                "claims": [
-                    "talkAboutCoworker"
-                ],
+                "claims": ["talkAboutCoworker"],
                 "conclusions": {},
                 "requirements": [],
                 "anger": 0,

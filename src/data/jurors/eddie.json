@@ -20,7 +20,7 @@
             "relatedTopics": []
         },
         "officer": {
-            "response": [""],
+            "response": ["A stuffy law man if I ever saw one."],
             "relatedTopics": []
         },
         "attourneyGeneral": {
@@ -44,7 +44,7 @@
             "relatedTopics": []
         },
         "shotgun": {
-            "response": ["The guy's prints were found on the shotgun. That seems pretty iron clad right there. But I'd be lyin' if I hadn't ended up in a few scrapes where my gun was in the other guy's hands.", "Point is, he owns the gun. 'Course his prints are on it. Doesn't mean he was the one who shot it."],
+            "response": ["The guy's prints were found on the shotgun. That seems pretty iron clad right there. But I'd be lyin' if I hadn't ended up in a few scrapes where my gun was in the other guy's hands.", "Point is, he says he owns the gun. 'Course his prints are on it. Doesn't mean he was the one who shot it."],
             "relatedTopics": []
         },
         "arms": {
@@ -70,13 +70,35 @@
                 "text": [
                     "Let's get this show on the road, then."
                 ],
-                "claims": [
-                    "pickTopic"
-                ],
+                "claims": ["pickTopic"],
                 "conclusions": {},
                 "requirements": [],
                 "anger": 0,
                 "score": 0.2
+            }
+        ],
+        "defUsedShotgun": [
+            {
+                "text": [
+                    "Well hold on there. We don't know for sure it was him that fired it."
+                ],
+                "claims": ["defDidNotUseShotgun"],
+                "conclusions": {"shotgun": 0.2},
+                "requirements": [],
+                "anger": 0,
+                "score": 1.5
+            }
+        ],
+        "noRecordForShotgun": [
+            {
+                "text": [
+                    "He said he bought it at a gun show. I can't figure the last time I've seen a seller at a gun show print out a receipt. It's all cash and no questions asked."
+                ],
+                "claims": ["boughtAtGunShow"],
+                "conclusions": {"shotgun": 0.4},
+                "requirements": [],
+                "anger": 0,
+                "score": 1.0
             }
         ]
     }

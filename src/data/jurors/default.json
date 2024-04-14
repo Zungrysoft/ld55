@@ -1,0 +1,46 @@
+{
+    "properties": {
+        "name": "DEFAULT",
+        "textColor": "#d0d4db",
+        "textSpeedMultiplier": 1.0,
+        "voice": 0
+    },
+    "responses": {
+        "start": [
+            {
+                "text": [
+                    "Which piece of evidence should we examine first?"
+                ],
+                "claims": ["pickTopic"],
+                "conclusions": {},
+                "requirements": [],
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
+        "talkAboutCoworker": [
+            {
+                "text": [
+                    "Damn right!"
+                ],
+                "claims": [],
+                "conclusions": {},
+                "requirements": [],
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
+        "talkAboutShotgun": [
+            {
+                "text": [
+                    "The defendant's fingerprints were on the gun left behind at the scene. He says this is because the gun belongs to him."
+                ],
+                "claims": ["doesNotOwnShotgun"],
+                "conclusions": {},
+                "requirements": [],
+                "anger": 0,
+                "score": 1.0
+            }
+        ]
+    }
+}
