@@ -16,6 +16,8 @@ import voice15 from '../audio/voice15.wav'
 import voice16 from '../audio/voice16.wav'
 import voice17 from '../audio/voice17.wav'
 import voice18 from '../audio/voice18.wav'
+import voice19 from '../audio/voice19.wav'
+import voice20 from '../audio/voice20.wav'
 
 function getSoundObject(voice) {
   if (voice === 1) {return voice1}
@@ -36,6 +38,8 @@ function getSoundObject(voice) {
   if (voice === 16) {return voice16}
   if (voice === 17) {return voice17}
   if (voice === 18) {return voice18}
+  if (voice === 19) {return voice19}
+  if (voice === 20) {return voice20}
   
   return undefined
 }

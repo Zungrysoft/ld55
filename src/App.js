@@ -8,6 +8,7 @@ import { getJurorData } from './helpers/juror.js';
 import { playVoice } from './helpers/voice.js';
 import { parseCommand } from './helpers/command.js';
 import defaultSaveData from './data/save.json';
+import topicData from './data/topics.json';
 
 const CHAT_SPEED = 10
 const CHAT_SOUND_RATE = 4
@@ -42,6 +43,7 @@ function App() {
     const [logData, setLogData] = useState({log: [], queue: []})
     const [isTabVisible, setIsTabVisible] = useState(true)
     const [gameSave, setGameSave] = useState(loadSave())
+    const [timeoutId, setTimeoutId] = useState(null)
 
     function randomKey() {
         return Math.floor(Math.random() * Number.MAX_SAFE_INTEGER)
@@ -164,9 +166,6 @@ function App() {
             if (input.length > 0) {
                 const commandResult = parseCommand(input, gameSave)
                 
-                // If this command edits save data, do that
-                writeSaveData(commandResult.saveData)
-                
                 // addLogEntryInstant()
                 let queuePush = commandResult.logEntries || []
                 if (commandResult.logEntry) {
@@ -176,6 +175,27 @@ function App() {
                 addToLog([{speaker: 'you', text: input}])
                 nextQueue()
                 addToQueue(queuePush)
+
+                // If this command edits save data, do that
+                if (commandResult.saveData) {
+                    writeSaveData(commandResult.saveData)
+                }
+                if (commandResult.wipeSave) {
+                    wipeSaveData()
+                }
+
+                // Unlock new topics
+                if (commandResult.newTopics) {
+                    for (const topic of commandResult.newTopics) {
+                        if (!gameSave.topics.includes(topic)) {
+                            addToQueue([{
+                                speaker: 'system',
+                                text: "New topic available: " + topicData[topic]
+                            }])
+                            addEntryToSaveList('topics', topic)
+                        }
+                    }
+                }
             }
         }
         else if (inputState === 'next') {
@@ -185,18 +205,34 @@ function App() {
             skipQueue()
         }
     }
-
+    
     function writeSaveData(saveData) {
         setGameSave(prevGameSave => {
-            let ret
-            if (saveData === "WIPE") {
-                ret = defaultSaveData
+            let ret = {
+                ...prevGameSave,
+                ...saveData,
             }
-            else {
-                ret = {
-                    ...prevGameSave,
-                    ...saveData,
-                }
+            localStorage.setItem("save", JSON.stringify(ret))
+
+            return ret
+        });
+    }
+
+    function wipeSaveData() {
+        setGameSave(prevGameSave => {
+            let ret = defaultSaveData
+
+            localStorage.setItem("save", JSON.stringify(ret))
+
+            return ret
+        });
+    }
+
+    function addEntryToSaveList(key, value) {
+        setGameSave(prevGameSave => {
+            let ret = {
+                ...prevGameSave,
+                [key]: prevGameSave[key].includes(value) ? prevGameSave[key] : [...prevGameSave[key], value]
             }
             localStorage.setItem("save", JSON.stringify(ret))
 
@@ -208,7 +244,9 @@ function App() {
         if (logData.queue.length > 0 && logData.queue[0].text.length > 0) {
             const speakerData = getSpeakerData()
             const speedMultiplier = speakerData.properties.textSpeedMultiplier
-            setTimeout(advanceQueue, CHAT_SPEED / speedMultiplier)
+            clearTimeout(timeoutId)
+            const newTimeoutId = setTimeout(advanceQueue, CHAT_SPEED / speedMultiplier)
+            setTimeoutId(newTimeoutId)
         }
     }, [logData])
 

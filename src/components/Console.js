@@ -58,6 +58,10 @@ function Console({ inputState, onConfirm }) {
     }
 
     function historyBack() {
+        if (inputState !== 'send') {
+            return
+        }
+
         if (inputRef.current) {
             setHistory(prevHistory => {
                 const newSelection = Math.min(prevHistory.selection + 1, prevHistory.list.length)
@@ -81,6 +85,10 @@ function Console({ inputState, onConfirm }) {
     }
 
     function historyForward() {
+        if (inputState !== 'send') {
+            return
+        }
+        
         if (inputRef.current) {
             setHistory(prevHistory => {
                 const newSelection = Math.max(prevHistory.selection - 1, 0)

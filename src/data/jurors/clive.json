@@ -11,8 +11,14 @@
         }
     },
     "topics": {
-        "default": ["I'm not sure I could say much on that particular matter."],
-        "law": ["I'd consider myself a believer in the concept of small-goverment. This country has too many rules and regulations that only serve to hinder small businesses.", "That said, when it comes to matters of the criminal nature, there's no question. Murder is murder, my friend. No way you're weasling outta that one."]
+        "default": {
+            "response": ["I'm not sure I could say much on that particular matter."],
+            "relatedTopics": []
+        },
+        "law": {
+            "response": ["I'd consider myself a believer in the concept of small-goverment. This country has too many rules and regulations that only serve to hinder small businesses.", "That said, when it comes to matters of the criminal nature, there's no question. Murder is murder, my friend. No way you're weasling outta that one."],
+            "relatedTopics": []
+        }
     },
     "responses": {
         "start": [

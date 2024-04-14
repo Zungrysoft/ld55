@@ -1,18 +1,18 @@
 {
     "properties": {
-        "name": "Susan",
-        "textColor": "#c26d82",
-        "textSpeedMultiplier": 1.2,
-        "voice": 3,
+        "name": "Geoff",
+        "textColor": "#596ac9",
+        "textSpeedMultiplier": 0.8,
+        "voice": 20,
         "qualities": {
-            "sureness": 0.9,
-            "anger": 0.0,
-            "compassion": 0.3
+            "sureness": 0.7,
+            "anger": 0.7,
+            "compassion": 0.2
         }
     },
     "topics": {
         "default": {
-            "response": ["I'm really not sure. Sorry."],
+            "response": ["I wouldn't know."],
             "relatedTopics": []
         }
     },

@@ -12,7 +12,6 @@ export function parseCommand(input, saveData) {
     if (argv[0].length < 3) {
         return {
             logEntries: speakText('system', "You must provide at least three letters when entering a command."),
-            saveData: {},
         }
     }
     
@@ -32,14 +31,12 @@ function commandDebug(argv, saveData) {
     // }
     return {
         logEntries: speakText('system', JSON.stringify(saveData)),
-        saveData: {},
     }
 }
 
 function commandUnix(argv, saveData) {
     return {
         logEntries: speakText('system', "This is not a Unix operating system, buddy."),
-        saveData: {},
     }
 }
 
@@ -64,7 +61,6 @@ function commandInterview(argv, saveData) {
     // No juror found
     return {
         logEntries: speakText('system', "No juror by that name found. Type \"interview\" to see the list of jurors."),
-        saveData: {},
     }
 }
 
@@ -92,7 +88,6 @@ function commandInterviewTopic(juror, argv, saveData) {
     // No juror found
     return {
         logEntries: speakText('system', "Unknown topic. Type \"interview\" to see the list of jurors."),
-        saveData: {},
     }
 }
 
@@ -102,26 +97,25 @@ function interview(juror, topic) {
     if (jurorData.topics) {
         if (jurorData.topics[topic]) {
             return {
-                logEntries: jurorData.topics[topic].map(e => ({
+                logEntries: jurorData.topics[topic].response.map(e => ({
                     text: e,
                     speaker: juror,
                 })),
-                saveData: {},
+                newTopics: jurorData.topics[topic].relatedTopics
             }
         }
         if (jurorData.topics.default) {
             return {
-                logEntries: jurorData.topics.default.map(e => ({
+                logEntries: jurorData.topics.default.response.map(e => ({
                     text: e,
                     speaker: juror,
                 })),
-                saveData: {},
+                newTopics: jurorData.topics.default.relatedTopics
             }
         }
     }
     return {
         logEntries: speakText(juror, "I don't know."),
-        saveData: {},
     }
     
 }
@@ -140,7 +134,6 @@ function listJurors() {
             text: ret,
             speaker: 'system',
         },
-        saveData: {},
     }
 }
 
@@ -159,7 +152,6 @@ function listTopics(juror, saveData) {
             text: ret,
             speaker: 'system',
         },
-        saveData: {},
     }
 }
 
@@ -180,7 +172,6 @@ function commandDocument(argv, saveData) {
                     text: e,
                     speaker: 'system',
                 })),
-                saveData: {},
             }
         }
     }
@@ -188,7 +179,6 @@ function commandDocument(argv, saveData) {
     // No juror found
     return {
         logEntries: speakText('system', "No juror by that name found. Type \"interview\" to see the list of jurors."),
-        saveData: {},
     }
 }
 
@@ -204,7 +194,6 @@ function listDocuments(saveData) {
             text: ret,
             speaker: 'system',
         },
-        saveData: {},
     }
 }
 
@@ -212,13 +201,12 @@ function commandRestart(argv, saveData) {
     if (argv[0] === "force") {
         return {
             logEntries: speakText('system', "Save data has been wiped."),
-            saveData: "WIPE",
+            wipeSave: true,
         }
     }
     else {
         return {
             logEntries: speakText('system', "Type \"restart force\" to wipe save data."),
-            saveData: {},
         }
     }
 }
@@ -249,14 +237,12 @@ function commandHelp(argv, saveData) {
             text: ret,
             speaker: 'system',
         },
-        saveData: {},
     }
 }
 
 function commandError(argv, saveData) {
     return {
         logEntries: speakText('system', `Unknown command \"${argv[0]}\". Enter \"help\" for a list of commands.`),
-        saveData: {},
     }
 }
 
@@ -270,6 +256,5 @@ function speakText(juror, snippet) {
 function errorTooShort() {
     return {
         logEntries: speakText('system', "You must provide at least three letters in a search."),
-        saveData: {},
     }
 }

@@ -1,0 +1,66 @@
+{
+    "properties": {
+        "name": "Eddie",
+        "textColor": "#c21a17",
+        "textSpeedMultiplier": 0.9,
+        "voice": 5,
+        "qualities": {
+            "sureness": 0.3,
+            "anger": -0.4,
+            "compassion": 0.4
+        }
+    },
+    "topics": {
+        "default": {
+            "response": ["Couldn't tell ya."],
+            "relatedTopics": []
+        },
+        "law": {
+            "response": ["Man, I've been all 'round this country. And in my travels I've seen every manner of stuffy law man thinking he's a big shot on account of that badge he wears. But I tell ya, there's a lot more to bein' a man than just followin' the law.", "There's a certain code in this world that any righteous man should live by. And the law has nothin' to do with that."],
+            "relatedTopics": []
+        },
+        "defendant": {
+            "response": ["The way these lawyers talk. Well, it makes you crazy. They seemed to have a good case for the guy's guilt. Finger prints on the trigger and all.", "But I look at that guy and I just can't see it.", "I figure I can size up any man with enough time. And given that I've spend enough time in this goddamn court room to last me a lifetime, I just can't figure that man as a killer.", "Evidence bein' what it is, he's probably guilty. But something about him gives me pause."],
+            "relatedTopics": ["shotgun"]
+        },
+        "women": {
+            "response": ["I'm a womanizer. That's God's honest truth."],
+            "relatedTopics": []
+        },
+        "men": {
+            "response": ["A man is defined by his code."],
+            "relatedTopics": []
+        }
+    },
+    "responses": {
+        "start": [
+            {
+                "text": [
+                    "Well, I suppose the level-headed thing to do is discuss the shotgun the kid used in the crime."
+                ],
+                "points": [
+                    "talkAboutShotgun",
+                    "defUsedShotgun"
+                ],
+                "sureness": 0.1,
+                "offensiveTo": {},
+                "conditions": [],
+                "desire": 1
+            }
+        ],
+        "default": [
+            {
+                "text": [
+                    "I suppose we should talk about the shotgun next."
+                ],
+                "points": [
+                    "talkAboutShotgun"
+                ],
+                "sureness": 0,
+                "offensiveTo": {},
+                "conditions": [],
+                "desire": 1
+            }
+        ]
+    }
+}
