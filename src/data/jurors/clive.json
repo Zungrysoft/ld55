@@ -31,10 +31,6 @@
             "response": ["I'd consider myself a believer in the concept of small-goverment. This country has too many rules and regulations that only serve to hinder small businesses.", "That said, when it comes to matters of the criminal nature, there's no question. Murder is murder, my friend. No way you're weasling outta that one."],
             "relatedTopics": []
         },
-        "nullification": {
-            "response": ["I don't know what that is."],
-            "relatedTopics": []
-        },
         "inheritance": {
             "response": [""],
             "relatedTopics": []
@@ -121,6 +117,26 @@
                 "anger": 0,
                 "score": 100.0
             }
+        ],
+        "maybeUsedGloves": [
+            {
+                "text": [
+                    "Couldn't the forensic scientists tell if someone held the gun after the defendant, even if he was wearing gloves?", "Wouldn't the gloves smudge the prints?"
+                ],
+                "claims": ["canGlovesSmudge"],
+                "conclusions": {"shotgun": -0.1},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 0.5
+            }
         ]
+    },
+    "voteJustifications": {
+        "acquitEntirely": ["I hope we are doing the right thing."],
+        "chargeWithAssault": ["Guilty of assault, not guilty of murder."],
+        "completelyGuilty": ["He's clearly guilty. A man like that needs to be locked away."],
+        "guiltyShotgun": ["Regardless of the other facts, he definitely fired the shotgun."],
+        "guiltyMotivePlusOpportunity": ["Regardless of the other facts, he had both motive and opportunity."]
     }
 }

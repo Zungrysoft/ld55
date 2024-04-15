@@ -12,47 +12,43 @@
             "relatedTopics": []
         },
         "defendant": {
-            "response": ["I live down the street from him. Nice guy. Last I talked to him was a couple months ago. He talked about saving up to buy a house.","Imagine my surprise when I found out he was charged for killing his girlfriend!", "Based on the facts, I'm not sure yet whether he did it.", "All those conversations we had about all sorts of things. For him to turn out a cold-hearted killer...", "I'll try to be impartial during the deliberation. In fact, I might just keep my mouth shut for most of it and let other less biased people do the talking."],
-            "relatedTopics": [""]
+            "response": ["I live down the street from James. Nice guy. Last I talked to him was a couple months ago. He talked about saving up to buy a house.","Imagine my surprise when I found out he was charged with killing his girlfriend!", "Based on the facts, I'm not sure yet whether he did it.", "All those conversations we had about all sorts of things. For him to turn out a cold-hearted killer...", "I'll try to be impartial during the deliberation. In fact, I might just keep my mouth shut for most of it and let the other less biased people do the talking."],
+            "relatedTopics": ["girlfriend"]
         },
         "girlfriend": {
-            "response": [""],
-            "relatedTopics": []
+            "response": ["I only talked to her a couple of times, mostly when shooting the shit with James. Real nice girl and a damn shame.", "Seeing those two together, it just seems unfathomable that either of them could have killed the other.", "They say the motive was money, but I never saw him as the money-grubbing sort. He knew there was more to life than that.", "I just can't make sense of it."],
+            "relatedTopics": ["money"]
         },
         "officer": {
-            "response": [""],
-            "relatedTopics": []
+            "response": ["I was one of the gawkers seeing what all of the fuss was about when James was arrested. That cop was bleeding something awful all over his face.", "He was probably angrier about the broken nose than the murdered girl laying 20 feet away."],
+            "relatedTopics": ["girlfriend"]
         },
         "attourneyGeneral": {
             "response": ["I've never met her."],
             "relatedTopics": []
         },
         "law": {
-            "response": [""],
-            "relatedTopics": []
-        },
-        "nullification": {
-            "response": ["Never heard of it."],
+            "response": ["James may be a friend of mine, but if he's guilty, he's got to be punished. We have laws in this country."],
             "relatedTopics": []
         },
         "inheritance": {
-            "response": [""],
-            "relatedTopics": []
+            "response": ["I didn't think James was the money-grubbing sort. Even for that amount of money."],
+            "relatedTopics": ["money"]
         },
         "coworker": {
             "response": [""],
             "relatedTopics": []
         },
         "shotgun": {
-            "response": [""],
-            "relatedTopics": []
+            "response": ["James went rifle shooting a lot, but I never knew he owned a shotgun."],
+            "relatedTopics": ["arms"]
         },
         "arms": {
-            "response": [""],
+            "response": ["I'm not a big fan of guns, myself. James tried a few times to take me rifle shooting, but I always declined. It was a hobby of his, for sure."],
             "relatedTopics": []
         },
         "money": {
-            "response": [""],
+            "response": ["There's more to life than a little bit of money. Didn't he know that?"],
             "relatedTopics": []
         }
     },
@@ -67,7 +63,7 @@
                 "receivesAgreement": false,
                 "requirements": {},
                 "anger": 0,
-                "score": 0.4
+                "score": 0.1
             }
         ],
         "lookAtHimHeIsGuilty": [
@@ -80,6 +76,26 @@
                 "anger": 0,
                 "score": 100.0
             }
-        ]
+        ],
+        "officerHurtBadly": [
+            {
+                "text": [
+                    "I got to see his face in person during all the commotion. I didn't know he had so much power behind those fists!"
+                ],
+                "claims": ["sawOfficerInPerson"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 2.0
+            }
+        ],
+        "voteJustifications": {
+            "acquitEntirely": ["It's a real relief to be able to vote not guilty in good conscience. I just hope James can move past all of this darkness."],
+            "chargeWithAssault": ["We have to find him guilty of assault."],
+            "completelyGuilty": ["I wish there was some other way of seeing the facts. But they're plain as day. He is guilty."],
+            "guiltyShotgun": ["I wish there was another explanation, but he was indisputably the one who fired the gun."],
+            "guiltyMotivePlusOpportunity": ["I guess I misjudged James. He really is the kind of person who would commit murder for a little bit of money."]
+        }
     }
 }

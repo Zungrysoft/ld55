@@ -31,10 +31,6 @@
             "response": [""],
             "relatedTopics": []
         },
-        "nullification": {
-            "response": ["Never heard of it."],
-            "relatedTopics": []
-        },
         "inheritance": {
             "response": [""],
             "relatedTopics": []
@@ -83,19 +79,6 @@
                 "score": 1.05
             }
         ],
-        "boughtShotgunForMurder": [
-            {
-                "text": [
-                    "You think he went out and bought a shotgun just to waste his old lady? If I were gonna kill someone, I wouldn't pick that as my weapon of choice. Just saying."
-                ],
-                "claims": ["didNotBuyShotgunForMurder"],
-                "conclusions": {"shotgun": -0.5},
-                "receivesAgreement": true,
-                "requirements": {"immediate": true},
-                "anger": 0,
-                "score": 1.3
-            }
-        ],
         "talkAboutInheritance": [
             {
                 "text": [
@@ -108,6 +91,52 @@
                 "anger": 0,
                 "score": 1.3
             }
+        ],
+        "boughtShotgunForMurder": [
+            {
+                "text": [
+                    "You think he went out and bought a shotgun just to waste his old lady? If I were gonna kill someone, that wouldn't be my weapon of choice. Just saying."
+                ],
+                "claims": ["didNotBuyShotgunForMurder"],
+                "conclusions": {"shotgun": -0.7},
+                "receivesAgreement": true,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 1.3
+            }
+        ],
+        "noOtherPrints": [
+            {
+                "text": [
+                    "They could have used gloves so that their prints wouldn't end up on the gun."
+                ],
+                "claims": ["maybeUsedGloves"],
+                "conclusions": {"shotgun": 0.3},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
+        "attackedOfficer": [
+            {
+                "text": [
+                    "I had to look away when they showed those pictures of him."
+                ],
+                "claims": ["officerHurtBadly"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.1
+            }
         ]
+    },
+    "voteJustifications": {
+        "acquitEntirely": ["Against all odds, he seems to be innocent."],
+        "chargeWithAssault": ["He did still assault a police officer, even if he is innocent of murder."],
+        "completelyGuilty": ["Guilty, as expected."],
+        "guiltyShotgun": ["There's too much evidence that he fired the gun."],
+        "guiltyMotivePlusOpportunity": ["I still can't believe he was dumb enough to think he could get that inheritance money, but all the facts point to that being the case."]
     }
 }

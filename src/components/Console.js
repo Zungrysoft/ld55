@@ -48,7 +48,7 @@ function Console({ inputState, onConfirm }) {
             inputRef.current.value = ""
             onConfirm(inputString)
             setHistory(prevHistory => ({
-                list: [...prevHistory.list, inputString],
+                list: [...prevHistory.list, inputString.endsWith(" ") ? inputString : inputString + " "],
                 selection: 0,
             }))
         }

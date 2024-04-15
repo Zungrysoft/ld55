@@ -6,12 +6,12 @@ Clive:
 Susan:
     Description: Not the smartest tool in the shed, but her heart's in the right place.
     Player goal: Turn her against the attourney general.
-    Skeptical about: Nothing
+    Skeptical about: 
 
 Geoff:
     Description: A gruff older guy. Not a big talker unless he has something to say.
     Player goal: Make the defendant seem sympathetic. This is about the soul of America for Geoff, and the defendant represents everything he is against.
-    Skeptical about: Nothing, but he's a bit more easily swayed than the others
+    Skeptical about: 
 
 Eddie:
     Description: A rambin' gamblin man. Lives a bit outside the law, but cares about justice.
@@ -28,4 +28,7 @@ Henry:
     Player goal: Convince him of the facts of the case.
     Skeptical about: The motives. ie: the inheritance.
 
-Mikey: 
+Mason:
+    Description: Lives down the street from the defendant.
+    Player goal: Use him to sway geoff about the defendant.
+    Skeptical about: 

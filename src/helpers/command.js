@@ -283,7 +283,7 @@ function commandSelect(argv, saveData) {
 
     // Perform the deliberation
     return {
-        logEntries: runDeliberation(jurors),
+        logEntries: runDeliberation(jurors).log,
     }
 }
 

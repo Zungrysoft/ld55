@@ -106,5 +106,61 @@
             "text": "This isn't entertainment. A woman is dead and we hold this man's fate in our hands. We must take it seriously.",
             "speaker": "lynne"
         }
+    ],
+    "juryNullification": [
+        {
+            "text": "What's that?",
+            "speaker": "eddie"
+        },
+        {
+            "text": "Oh god, please don't tell him.",
+            "speaker": "lynne"
+        },
+        {
+            "text": "When you're on a jury, you don't actually have to vote guilty just because he's guilty. You can vote not guilty if you don't think the defendant should be punished. Or if you think he had a good reason for doing what he did.",
+            "speaker": "kylie"
+        },
+        {
+            "text": "Is that right?",
+            "speaker": "eddie"
+        },
+        {
+            "text": "How long has that been around?",
+            "speaker": "eddie"
+        },
+        {
+            "text": "It's always been around. The jurors are the ones who decide whether someone is guilty. You're told to decide based on the facts of the case. But there's nothing stopping you from making your decision on another basis.",
+            "speaker": "kylie"
+        },
+        {
+            "text": "Well alright. I might just try that out.",
+            "speaker": "eddie"
+        },
+        {
+            "text": "I'm not up for lettin' a man get away with murder. But him sockin' some stuffy law man in the face?",
+            "speaker": "eddie"
+        },
+        {
+            "text": "That I can do.",
+            "speaker": "eddie"
+        },
+        {
+            "text": "You really shouldn't have told him.",
+            "speaker": "lynne"
+        }
+    ],
+    "justDoingHisJob": [
+        {
+            "text": "That is a horrible thing to say! He is a public servant and he does not deserve to be attacked while he is doing his job!",
+            "speaker": "lynne"
+        },
+        {
+            "text": "Ah, whatever.",
+            "speaker": "eddie"
+        },
+        {
+            "text": "He was kind of an tool in that court room though.",
+            "speaker": "henry"
+        }
     ]
 }

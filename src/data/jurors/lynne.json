@@ -20,16 +20,16 @@
             "relatedTopics": []
         },
         "officer": {
-            "response": [""],
-            "relatedTopics": []
+            "response": ["As terrible as it is for a sworn officer to be attacked in the line of duty, I can't say he handled the situation very well.", "The question is whether he resisted arrest because of sheer shock and panick from being arrested for the murder of his girlfriend or because he was making a desperate attempt to flee the crime scene."],
+            "relatedTopics": ["girlfriend"]
         },
         "attourneyGeneral": {
-            "response": ["From what I've heard, she seems much more interested in putting the accused behind bars than administering justice."],
+            "response": ["From what I've heard, she is much more interested in putting the accused behind bars than administering justice."],
             "relatedTopics": []
         },
         "law": {
-            "response": ["The emphasis on incarceration over rehabilitation in the U.S. legal system does more harm than good. We need to focus on reformative measures rather than punitive ones to truly reduce crime rates."],
-            "relatedTopics": []
+            "response": ["Participating in jury duty is one of the most important things a person can do for their country. It is important that each person on trial has the benefit of a fair and impartial jury looking at the facts of the case.", "It is paramount that jurors to respect the facts of the case and the letter of the law first and forements. Letting personal feelings cloud one's judgement or inciting jury nullification only results in the erosion of justice."],
+            "relatedTopics": ["nullification"]
         },
         "nullification": {
             "response": ["It's an unfortunate consequence of our legal system. A necessary evil, if you will. Since jurors can vote however they wish without fear of reprisal, they can vote not guilty even if they know the defendant is guilty. Jury Nullification is essentially a form of mob rule, where the jurors' personal feelings toward the defendant trump the rule of law."],
@@ -106,6 +106,63 @@
                 "anger": 0,
                 "score": 100.0
             }
+        ],
+        "canGlovesSmudge": [
+            {
+                "text": [
+                    "I don't think that was ever brought up in the trial. That seems like a mistake on the part of the defense."
+                ],
+                "claims": ["canGlovesSmudgeUnsure"],
+                "conclusions": {"shotgun": 0.1},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
+        "attackedOfficer": [
+            {
+                "text": [
+                    "He took a beating for sure."
+                ],
+                "claims": ["officerHurtBadly"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.1
+            }
+        ],
+        "officerHurtNotThatBad": [
+            {
+                "fixedConversation": "justDoingHisJob",
+                "claims": ["justDoingHisJob"],
+                "conclusions": {"nullification": 100.0},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 1,
+                "score": 50.0
+            }
+        ],
+        "juryNullification": [
+            {
+                "text": [
+                    "No! We are not doing jury nullification! We are here to make a judgement based on the letter of the law!"
+                ],
+                "claims": ["juryNullificationAsked"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 100.0
+            }
         ]
+    },
+    "voteJustifications": {
+        "acquitEntirely": ["I have a reasonable doubt as to the facts of the case."],
+        "chargeWithAssault": ["He doesn't seem to be guilty of murder, but he did still assault a police officer."],
+        "completelyGuilty": ["The justice system in action. I just hope that when he gets out he does not return to his old life of crime."],
+        "guiltyShotgun": ["Due to the evidence surrounding the firing of the shotgun, I have to vote guilty."],
+        "guiltyMotivePlusOpportunity": ["Due to the existence of strong motive and opportunity, I have to vote guilty."]
     }
 }

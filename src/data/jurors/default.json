@@ -78,6 +78,19 @@
                 "score": 1.0
             }
         ],
+        "talkAboutOfficer": [
+            {
+                "text": [
+                    "The police officer that arrested the defendant claims he attacked him."
+                ],
+                "claims": ["attackedOfficer"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
         "differentShotgun": [
             {
                 "text": [
@@ -89,6 +102,58 @@
                 "requirements": {},
                 "anger": 0,
                 "score": 0.6
+            }
+        ],
+        "printsOnShotgun": [
+            {
+                "text": [
+                    "And nobody else's prints were found on the gun. Just his."
+                ],
+                "claims": ["noOtherPrints"],
+                "conclusions": {"shotgun": -0.2},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
+        "noOtherPrints": [
+            {
+                "text": [
+                    "He's the only one with DNA evidence linked to the crime."
+                ],
+                "claims": ["noOtherPrintsAgree"],
+                "conclusions": {"shotgun": -2.0},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
+        "canGlovesSmudge": [
+            {
+                "text": [
+                    "I'm not sure."
+                ],
+                "claims": ["canGlovesSmudgeUnsure"],
+                "conclusions": {"shotgun": 0.1},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
+        "canGlovesSmudgeYes": [
+            {
+                "text": [
+                    "That would mean he must have been the last person to hold the shotgun. So he's the only one who could have fired it!"
+                ],
+                "claims": ["canGlovesSmudgeYesConfirm"],
+                "conclusions": {"shotgun": -100.0},
+                "receivesAgreement": true,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 1.0
             }
         ]
     }

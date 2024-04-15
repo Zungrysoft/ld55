@@ -29,11 +29,7 @@
             "relatedTopics": []
         },
         "law": {
-            "response": [""],
-            "relatedTopics": []
-        },
-        "nullification": {
-            "response": ["No idea."],
+            "response": ["I remember a time when people didn't talk about crime rates and recidivism all time. Back when people were decent.", "The law is just there to remove from society the people who are unwilling to respect their fellow man."],
             "relatedTopics": []
         },
         "inheritance": {
@@ -49,15 +45,28 @@
             "relatedTopics": []
         },
         "arms": {
-            "response": [""],
+            "response": ["The right to bear arms is an important institution in this country. Those who misuse that right should be locked away."],
             "relatedTopics": []
         },
         "money": {
-            "response": [""],
+            "response": ["Money is a motivator to get the lazy man off his ass and contribute something to society. It is not a reason to kill a person."],
             "relatedTopics": []
         }
     },
     "responses": {
+        "start": [
+            {
+                "text": [
+                    "Alright, quit standin' around, we haven't got all day! Let's lock this kid up and get out of here."
+                ],
+                "claims": ["pickTopic"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 0.05
+            }
+        ],
         "wouldNotGetMoney": [
             {
                 "text": [

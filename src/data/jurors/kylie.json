@@ -32,8 +32,8 @@
             "relatedTopics": []
         },
         "nullification": {
-            "response": ["Never heard of it."],
-            "relatedTopics": []
+            "response": ["Oh, I've heard of that! It's that thing where jurors can decide to acquit a defendant even they know he's guilty. If the jurors think the defendant had a good reason for what they did, they can vote not guilty in spite of the facts.", "I'm surprised the attourney general didn't ask me about that when she interviewed me. Normally they always ask."],
+            "relatedTopics": ["attourneyGeneral"]
         },
         "inheritance": {
             "response": [""],
@@ -69,6 +69,65 @@
                 "anger": 0,
                 "score": 0.723
             }
+        ],
+        "printsOnShotgun": [
+            {
+                "text": [
+                    "He testified during the case that he had the gun for years."
+                ],
+                "claims": ["alreadyOwnedShotgun"],
+                "conclusions": {"shotgun": 0.3},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 0.5
+            }
+        ],
+        "maybeUsedGloves": [
+            {
+                "text": [
+                    "If you hold something while wearing gloves, would it smudge any existing fingerprints?", "Would it be possible to tell whether someone wearing gloves held the gun at some point after the defendant?"
+                ],
+                "claims": ["canGlovesSmudge"],
+                "conclusions": {"shotgun": -0.1},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
+        "attackedOfficer": [
+            {
+                "text": [
+                    "Those photos they showed of the officer's face had a lot of blood in them."
+                ],
+                "claims": ["officerHurtBadly"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 0.2
+            }
+        ],
+        "officerHurtNotThatBad": [
+            {
+                "text": [
+                    "There's always jury nullification."
+                ],
+                "claims": ["juryNullification"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 100.0
+            }
         ]
+    },
+    "voteJustifications": {
+        "acquitEntirely": ["I'm not saying he's definitely innocent, but there just isn't enough evidence to convict."],
+        "chargeWithAssault": ["It doesn't look like he was the killer, but he did assault that poor officer!"],
+        "completelyGuilty": ["The guy's guilty for sure."],
+        "guiltyShotgun": ["All of the evidence puts him on the other end of that shotgun."],
+        "guiltyMotivePlusOpportunity": ["The defendant had both motive and opportunity."]
     }
 }

@@ -1,4 +1,5 @@
 import { getJurorData } from "./juror.js"
+import { getVote } from "./voting.js"
 import fixedConversations from "../data/fixedConversations.json"
 
 const CLAIM_STACK_SIZE = 10
@@ -16,6 +17,7 @@ export function runDeliberation(jurors) {
     let responseNumber = 0
     let previousSpeaker = null
     let topicChanges = 10
+    let conclusions = {}
     let jurorAnger = {}
 
     // Deliberation
@@ -123,6 +125,18 @@ export function runDeliberation(jurors) {
             allClaims = new Set([...allClaims, ...bestResponse.claims])
             answeredClaims.add(bestResponseClaim)
 
+            // Track conclusions made by this response
+            for (const conclusion in bestResponse.conclusions) {
+                let conclusionModifier = bestResponse.conclusions[conclusion]
+
+                if (conclusions[conclusion]) {
+                    conclusions[conclusion] += conclusionModifier
+                }
+                else {
+                    conclusions[conclusion] = conclusionModifier
+                }
+            }
+
             // Add agreement message
             if (bestResponse.receivesAgreement) {
                 // Pick an arbitrary juror to say this line
@@ -152,13 +166,35 @@ export function runDeliberation(jurors) {
         }
     }
 
-    // Final voting
+    // Voting
+    log.push({
+        speaker: 'system',
+        text: "The jurors will now cast their votes."
+    })
     let acquittalVotes = 0
     for (const juror of jurors) {
-        log.push({
+        const vote = getVote(juror, conclusions)
+
+        // Add vote justification to log
+        log.push(...vote.text.map(e => ({
             speaker: juror,
-            text: "Voting..."
-        })
+            text: e
+        })))
+
+        // Count vote
+        if (vote.acquit) {
+            acquittalVotes += 1
+            log.push({
+                speaker: 'system',
+                text: getJurorData(juror).properties.name + " voted Not Guilty"
+            })
+        }
+        else {
+            log.push({
+                speaker: 'system',
+                text: getJurorData(juror).properties.name + " voted Guilty"
+            })
+        }
     }
 
     // Result
@@ -183,12 +219,15 @@ export function runDeliberation(jurors) {
     else {
         log.push({
             speaker: 'system',
-            text: `Only ${acquittalVotes} jurors voted for acquittal. Three are needed.`
+            text: `Only ${acquittalVotes} juror${acquittalVotes === 1 ? "" : "s"} voted for acquittal. Three votes are needed.`
         })
     }
 
     // Return final result
-    return log
+    return {
+        log: log,
+        acquit: acquittalVotes > 3,
+    }
 }
 
 function getResponseToClaim(juror, claim, allClaims) {

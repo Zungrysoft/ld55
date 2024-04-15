@@ -20,7 +20,7 @@
             "relatedTopics": []
         },
         "officer": {
-            "response": ["A stuffy law man if I ever saw one."],
+            "response": ["A stuffy law man if I ever saw one.", "Maybe he deserved a good punch in the face."],
             "relatedTopics": []
         },
         "attourneyGeneral": {
@@ -29,10 +29,6 @@
         },
         "law": {
             "response": ["Man, I've been all 'round this country. And in my travels I've seen every manner of stuffy law man thinking he's a big shot on account of that badge he wears. But I tell ya, there's a lot more to bein' a man than just followin' the law.", "There's a certain code in this world that any righteous individual should live by. And the law has nothin' to do with that."],
-            "relatedTopics": []
-        },
-        "nullification": {
-            "response": ["Never heard of it."],
             "relatedTopics": []
         },
         "inheritance": {
@@ -44,7 +40,7 @@
             "relatedTopics": []
         },
         "shotgun": {
-            "response": ["The guy's prints were found on the shotgun. That seems pretty iron clad right there. But I'd be lyin' if I hadn't ended up in a few scrapes where my gun was in the other guy's hands.", "Point is, he says he owns the gun. 'Course his prints are on it. Doesn't mean he was the one who shot it."],
+            "response": ["The guy's prints were found on the shotgun. That seems pretty iron clad right there. But I'd be lyin' if I said I hadn't ended up in a few scrapes where my gun was in the other guy's hands.", "Point is, he says he owns the gun. 'Course his prints are on it. Doesn't mean he was the one who shot it."],
             "relatedTopics": []
         },
         "arms": {
@@ -52,7 +48,7 @@
             "relatedTopics": []
         },
         "money": {
-            "response": [""],
+            "response": ["Most people in this world got far more than they need. And then they somehow find a way to think they need even more."],
             "relatedTopics": []
         }
     },
@@ -135,6 +131,32 @@
                 "score": 1.0
             }
         ],
+        "noOtherPrints": [
+            {
+                "text": [
+                    "It's possible someone else shot the woman and saw their way clear to puttin' on gloves before they did it."
+                ],
+                "claims": ["maybeUsedGloves"],
+                "conclusions": {"shotgun": 0.3},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
+        "canGlovesSmudge": [
+            {
+                "text": [
+                    "I'm not sure 'bout that. I don't think the defense ever brought it up."
+                ],
+                "claims": ["canGlovesSmudgeUnsure"],
+                "conclusions": {"shotgun": 0.1},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 0.5
+            }
+        ],
         "defendantIsBad": [
             {
                 "text": [
@@ -153,8 +175,45 @@
                 "text": [
                     "I just don't understand how you can think like that.", "I just don't."
                 ],
-                "claims": ["notGuiltyYet"],
+                "claims": ["lookAtHimHeIsGuiltySigh"],
                 "conclusions": {"defendant": 0.4},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 50.0
+            }
+        ],
+        "officerHurtBadly": [
+            {
+                "text": [
+                    "Big deal. It looks bad, but I've seen worse and I've gotten worse.", "The way that guy talked on the stand, it was like he had just gotten back from Vietnam. He probably deserved to get his lights knocked out for once.", "Is there any way we could just not charge him for the assault?"
+                ],
+                "claims": ["officerHurtNotThatBad"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.1
+            }
+        ],
+        "sawOfficerInPerson": [
+            {
+                "text": [
+                    "I hardly believed it either. He's a real scrawny guy, isn't he?"
+                ],
+                "claims": ["sawOfficerInPersonReply"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 2.0
+            }
+        ],
+        "juryNullification": [
+            {
+                "fixedConversation": "juryNullification",
+                "claims": ["juryNullificationAsked"],
+                "conclusions": {"nullification": 100.0},
                 "receivesAgreement": false,
                 "requirements": {"immediate": true},
                 "anger": 0,

@@ -24,15 +24,11 @@
             "relatedTopics": []
         },
         "attourneyGeneral": {
-            "response": ["Oh, she's great! We go out to dinner at least once a month. She's actually the reason I found out about this whole thing. She said I would make the perfect juror for this big case she was working on!"],
+            "response": ["Oh, Katie's great! We go out to dinner at least once a month. She's actually the reason I found out about this whole thing. She said I would make the perfect juror for this big case she was working on!"],
             "relatedTopics": []
         },
         "law": {
             "response": [""],
-            "relatedTopics": []
-        },
-        "nullification": {
-            "response": ["I don't know about that."],
             "relatedTopics": []
         },
         "inheritance": {
@@ -107,6 +103,32 @@
                 "requirements": {"immediate": true},
                 "anger": 0,
                 "score": 100.0
+            }
+        ],
+        "canGlovesSmudge": [
+            {
+                "text": [
+                    "I think so! I heard about this!", "If you hold something with those rubbery latex gloves, it wipes off all of the fingerprints!"
+                ],
+                "claims": ["canGlovesSmudgeYes"],
+                "conclusions": {"shotgun": -2.0},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 100
+            }
+        ],
+        "attackedOfficer": [
+            {
+                "text": [
+                    "Oh man, those photos they showed. I swear there was a gallon of blood on his face!"
+                ],
+                "claims": ["officerHurtBadly"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 1.3
             }
         ]
     }
