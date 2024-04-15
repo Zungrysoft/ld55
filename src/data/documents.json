@@ -13,10 +13,10 @@
     },
     "controls": {
         "name": "Controls",
-        "text": ["\n\tEnter: Submit command / Next Message / Skip\n\tArrow Keys: Look through command history\n\n\tTip: You only have to type the first three letters of a command. For example, you can access this document using the command \"doc con\""]
+        "text": ["\n\tEnter: Submit command / Next Message / Skip\n\tArrow Keys: Look through command history\n\n\tTip: You only have to type three letters of a command or argument. For example, you can access this document using the command \"doc con\""]
     },
     "tips": {
         "name": "Tips for Jury Selection",
-        "text": ["\n- Each juror has different topics they will introduce during deliberation.\n- Different jurors will need to be convinced in different ways.\n- Jurors have a limited attention span. If they go off topic for too long they may forget what they were talking about."]
+        "text": ["\n- Each juror has different topics they will introduce during deliberation.\n- Different jurors will need to be convinced in different ways.\n- Jurors have a limited attention span. If they go off topic for too long they may forget what they were talking about.\n- You want jurors to discuss as much as possible about each relevant fact. The more they talk, the more they'll realize the holes in the prosecution's case."]
     }
 }
