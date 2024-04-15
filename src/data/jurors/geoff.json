@@ -4,7 +4,8 @@
         "number": 3,
         "textColor": "#596ac9",
         "textSpeedMultiplier": 0.8,
-        "voice": 20
+        "voice": 20,
+        "noRandomResponses": true
     },
     "topics": {
         "default": {
@@ -57,5 +58,31 @@
         }
     },
     "responses": {
+        "wouldNotGetMoney": [
+            {
+                "text": [
+                    "Just some shitheaded kid who thought he could cash in big. He probably wasn't thinking."
+                ],
+                "claims": ["defendantIsBad"],
+                "conclusions": {"inheritance": -0.1, "defendant": -0.1},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 2.0
+            }
+        ],
+        "notGuiltyYet": [
+            {
+                "text": [
+                    "Oh come on! Look at him! That kid is guilty as sin! What the hell happened to this country? Where we have to waste thousands in tax dollars to give some murdering slime the time of day. I say skip the trial and just throw him to the wolves."
+                ],
+                "claims": ["lookAtHimHeIsGuilty"],
+                "conclusions": {"defendant": -0.4},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 100.0
+            }
+        ]
     }
 }

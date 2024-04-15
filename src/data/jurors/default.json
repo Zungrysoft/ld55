@@ -41,6 +41,28 @@
                 "requirements": {},
                 "anger": 0,
                 "score": 1
+            },
+            {
+                "text": [
+                    "Let's discuss the motive."
+                ],
+                "claims": ["talkAboutInheritance"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1
+            },
+            {
+                "text": [
+                    "Let's discuss the arresting police officer and the assault charge."
+                ],
+                "claims": ["talkAboutOfficer"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1
             }
         ],
         "talkAboutShotgun": [

@@ -57,6 +57,17 @@
         }
     },
     "responses": {
+        "murderIsCool": [
+            {
+                "fixedConversation": "murderIsUncool",
+                "claims": ["murderIsUncool"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 100.0
+            }
+        ],
         "persecution": [
             {
                 "text": [
@@ -68,6 +79,32 @@
                 "requirements": {"immediate": true},
                 "anger": 0.1,
                 "score": 1.7
+            }
+        ],
+        "wouldNotGetMoney": [
+            {
+                "text": [
+                    "She had a will written. Maybe he assumed he was named on it."
+                ],
+                "claims": ["girlfriendHadWill"],
+                "conclusions": {"inheritance": -0.5},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
+        "defendantIsBad": [
+            {
+                "text": [
+                    "Well I would like to determine this case based on the facts, not on personal feelings toward the defendant."
+                ],
+                "claims": ["factsAndLogic"],
+                "conclusions": {"defendant": 0.6},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 100.0
             }
         ]
     }

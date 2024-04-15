@@ -73,7 +73,7 @@
         "pickTopic": [
             {
                 "text": [
-                    "I suppose the first thing to talk about would be that shotgun they say he used to kill the girl. Personally, I don't buy it. The persecution says that he must have bought the gun recently and for this specific task. But he says he owned it for years beforehand."
+                    "I suppose we should talk about that shotgun they say he used to kill the girl. Personally, I don't buy it. The persecution says that he must have bought the gun recently and for this specific task. But he says he owned it for years beforehand."
                 ],
                 "claims": ["talkAboutShotgun", "didNotUseShotgun", "alreadyOwnedShotgun", "persecution"],
                 "conclusions": {"shotgun": 0.4},
@@ -133,6 +133,32 @@
                 "requirements": {},
                 "anger": 0,
                 "score": 1.0
+            }
+        ],
+        "defendantIsBad": [
+            {
+                "text": [
+                    "You're talkin' as if he's already been found guilty. Last I checked, we're here to determine his guilt, not sit around askin' \"why would someone do such a thing\"."
+                ],
+                "claims": ["notGuiltyYet"],
+                "conclusions": {"defendant": 0.4},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 50.0
+            }
+        ],
+        "lookAtHimHeIsGuilty": [
+            {
+                "text": [
+                    "I just don't understand how you can think like that.", "I just don't."
+                ],
+                "claims": ["notGuiltyYet"],
+                "conclusions": {"defendant": 0.4},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 50.0
             }
         ]
     }

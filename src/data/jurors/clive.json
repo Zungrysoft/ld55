@@ -108,6 +108,19 @@
                 "anger": 0,
                 "score": 1.0
             }
+        ],
+        "factsAndLogic": [
+            {
+                "text": [
+                    "Agreed. This is not a character trial."
+                ],
+                "claims": ["notACharacterTrial"],
+                "conclusions": {"defendant": 0.2},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 100.0
+            }
         ]
     }
 }

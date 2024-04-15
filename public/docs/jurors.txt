@@ -27,3 +27,5 @@ Henry:
     Description: Laid back kinda guy. More suburban in his dialect.
     Player goal: Convince him of the facts of the case.
     Skeptical about: The motives. ie: the inheritance.
+
+Mikey: 

@@ -1,0 +1,85 @@
+{
+    "properties": {
+        "name": "Mason",
+        "number": 7,
+        "textColor": "#a68d76",
+        "textSpeedMultiplier": 0.9,
+        "voice": 4
+    },
+    "topics": {
+        "default": {
+            "response": ["I'm not sure."],
+            "relatedTopics": []
+        },
+        "defendant": {
+            "response": [""],
+            "relatedTopics": [""]
+        },
+        "girlfriend": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "officer": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "attourneyGeneral": {
+            "response": ["I've never met her."],
+            "relatedTopics": []
+        },
+        "law": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "nullification": {
+            "response": ["Never heard of it."],
+            "relatedTopics": []
+        },
+        "inheritance": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "coworker": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "shotgun": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "arms": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "money": {
+            "response": [""],
+            "relatedTopics": []
+        }
+    },
+    "responses": {
+        "start": [
+            {
+                "text": [
+                    "Let's get 'er going, shall we? What should we discuss first?"
+                ],
+                "claims": ["pickTopic"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 0.4
+            }
+        ],
+        "lookAtHimHeIsGuilty": [
+            {
+                "fixedConversation": "moralFabricOfAmerica",
+                "claims": ["iKnowDefendant"],
+                "conclusions": {"defendant": 100.0},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 100.0
+            }
+        ]
+    }
+}

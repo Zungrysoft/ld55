@@ -1,4 +1,5 @@
-import { getJurorData } from "./juror"
+import { getJurorData } from "./juror.js"
+import fixedConversations from "../data/fixedConversations.json"
 
 const CLAIM_STACK_SIZE = 10
 const CLAIM_AGE_LIMIT = 10
@@ -86,8 +87,7 @@ export function runDeliberation(jurors) {
 
                     if (score > bestResponseScore) {
                         // Pick an arbitrary juror to say this line
-                        const possibleJurors = jurors.filter(e => e !== claim.speaker)
-                        const juror = possibleJurors[responseNumber % possibleJurors.length]
+                        const juror = pickRandomJuror(jurors, [claim.speaker], responseNumber)
 
                         bestResponseScore = score
                         bestResponse = response
@@ -101,24 +101,32 @@ export function runDeliberation(jurors) {
         // Execute the best response
         if (bestResponse) {
             // Add response text to log
-            log.push(...bestResponse.text.map(e => ({
-                speaker: bestResponseSpeaker,
-                text: e
-            })))
+            if (bestResponse.fixedConversation) {
+                const addedConversations = fixedConversations[bestResponse.fixedConversation].filter(e => jurors.includes(e.speaker))
+                log.push(...addedConversations)
+
+                // Set previous speaker
+                previousSpeaker = addedConversations[addedConversations.length-1].speaker
+            }
+            else {
+                log.push(...bestResponse.text.map(e => ({
+                    speaker: bestResponseSpeaker,
+                    text: e
+                })))
+
+                // Set previous speaker
+                previousSpeaker = bestResponseSpeaker
+            }
 
             // Add new claims made by this response
             claims.push(...bestResponse.claims.map(e => ({name: e, age: 0, speaker: bestResponseSpeaker})))
             allClaims = new Set([...allClaims, ...bestResponse.claims])
             answeredClaims.add(bestResponseClaim)
 
-            // Set previous speaker
-            previousSpeaker = bestResponseSpeaker
-
             // Add agreement message
             if (bestResponse.receivesAgreement) {
                 // Pick an arbitrary juror to say this line
-                const possibleJurors = jurors.filter(e => e !== bestResponseSpeaker)
-                const juror = possibleJurors[responseNumber % possibleJurors.length]
+                const juror = pickRandomJuror(jurors, [bestResponseSpeaker], responseNumber)
 
                 log.push({
                     speaker: juror,
@@ -135,7 +143,7 @@ export function runDeliberation(jurors) {
                 topicChanges --
                 claims = [{name: 'pickTopic', speaker: 'system', age: 1}]
 
-                // Remove pickTopic from the list of asnwered claims so it can be answered again
+                // Remove pickTopic from the list of answered claims so it can be answered again
                 answeredClaims.delete('pickTopic')
             }
             else {
@@ -218,4 +226,17 @@ function hasBeenBroughtUp(response, allClaims) {
         }
     }
     return false
+}
+
+function pickRandomJuror(jurors, cannotSpeak, responseNumber) {
+    let possibleJurors = jurors.filter(e => !cannotSpeak.includes(e))
+
+    // Some characters aren't big on conversation. They can only be chosen for random response if they're the only option.
+    let possibleJurorsFiltered = possibleJurors.filter(e => !getJurorData(e).properties?.noRandomResponses)
+    if (possibleJurorsFiltered.length > 1) {
+        possibleJurors = possibleJurorsFiltered
+    }
+
+    const juror = possibleJurors[responseNumber % possibleJurors.length]
+    return juror
 }
