@@ -13,14 +13,14 @@
         },
         "defendant": {
             "response": ["I'm pretty sure the guy's guilty. The neighbor heard the gun shot at 5:36 PM. He claimed he had stayed late at work and didn't get home until after 7, but none of his coworkers could corroborate his story.", "What actually happened is that he spent that hour and a half getting his story straight for the authorities."],
-            "relatedTopics": []
+            "relatedTopics": ["coworker"]
         },
         "girlfriend": {
             "response": ["What an awful fate. I just hope we can bring her killer to justice."],
             "relatedTopics": []
         },
         "officer": {
-            "response": ["He seemed generally on the level. He seemed to have a real disdain for the defendant during his testimony though."],
+            "response": ["He seemed generally on the level. He had a real disdain for the defendant during his testimony though.", "Can you blame him?"],
             "relatedTopics": []
         },
         "attourneyGeneral": {
@@ -32,11 +32,11 @@
             "relatedTopics": []
         },
         "inheritance": {
-            "response": [""],
+            "response": ["I have to wonder just how premeditated this all was. How long was he waiting for one of her rich family members to die so he could steal the inheritance for himself.", "Maybe it goes even farther than that. Maybe he killed her father.", "Probably not, but the evil acts some men are capable of can turn your blood cold."],
             "relatedTopics": []
         },
         "coworker": {
-            "response": [""],
+            "response": ["That coworker character seemed a bit too happy to get is former colleague locked up.", "It was like he was trying really hard to make himself look neutral, but inside he was celebrating."],
             "relatedTopics": []
         },
         "shotgun": {
@@ -254,12 +254,36 @@
                 "text": [
                     "That's right! He called the defendant a slacker and that the project \"would hopefully be in better hands moving forward.\""
                 ],
-                "claims": ["notUnimpeachableWitness"],
+                "claims": ["notUnimpeachableWitnessProject"],
                 "conclusions": {"coworker": 0.2},
                 "receivesAgreement": false,
                 "requirements": {"immediate": true},
                 "anger": 0,
                 "score": 0.4
+            },
+            {
+                "text": [
+                    "During his rant, the coworker called the defendant a slacker and that the project \"would hopefully be in better hands moving forward.\""
+                ],
+                "claims": ["notUnimpeachableWitnessProject"],
+                "conclusions": {"coworker": 0.2},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 0.4
+            }
+        ],
+        "whyNameCoworker": [
+            {
+                "text": [
+                    "It is weird that he would name a coworker at all if he really is guilty.", "It could just be that he felt he had to give some sort of proof of his alibi.", "Or maybe the coworker wanted him locked up and decided to lie about it.", "If I were to call it, I'd say that there's some sort of beef between the two of them."
+                ],
+                "claims": ["coworkerWantedHimLockedUp"],
+                "conclusions": {"coworker": 3.0},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 4.0
             }
         ]
     },

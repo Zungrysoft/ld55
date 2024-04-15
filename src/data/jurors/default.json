@@ -70,7 +70,7 @@
                 "text": [
                     "The defendant's fingerprints were on the gun left behind at the scene."
                 ],
-                "claims": ["doesNotOwnShotgun", "printsOnShotgun"],
+                "claims": ["printsOnShotgun"],
                 "conclusions": {},
                 "receivesAgreement": false,
                 "requirements": {},
@@ -174,7 +174,7 @@
                 "text": [
                     "The police officer who arrested the defendant claims he attacked him."
                 ],
-                "claims": ["attackedOfficer"],
+                "claims": ["attackedOfficer", "wordAttacked"],
                 "conclusions": {},
                 "receivesAgreement": false,
                 "requirements": {},
@@ -198,7 +198,7 @@
         "talkAboutCoworker": [
             {
                 "text": [
-                    "The defendant's only alibi wouldn't back him up."
+                    "The defendant's only named witness for his alibi denied that he was at work at the time."
                 ],
                 "claims": ["coworkerDidNotBackUp"],
                 "conclusions": {},
@@ -206,6 +206,19 @@
                 "requirements": {},
                 "anger": 0,
                 "score": 1.0
+            }
+        ],
+        "whyNameCoworker": [
+            {
+                "text": [
+                    "Who knows?"
+                ],
+                "claims": ["whyNameCoworkerWhoKnows"],
+                "conclusions": {"coworker": -1.0},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 4.0
             }
         ],
         "coworkerDidNotBackUp": [

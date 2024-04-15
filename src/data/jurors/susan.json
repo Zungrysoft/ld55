@@ -12,7 +12,7 @@
             "relatedTopics": []
         },
         "defendant": {
-            "response": [""],
+            "response": ["If this man is guilty, he deserves to burn. Alive, if possible."],
             "relatedTopics": []
         },
         "girlfriend": {
@@ -20,15 +20,15 @@
             "relatedTopics": []
         },
         "officer": {
-            "response": [""],
+            "response": ["What a mess! He couldn't just quit while he was ahead, could he?"],
             "relatedTopics": []
         },
         "attourneyGeneral": {
-            "response": [],
+            "response": ["I don't have much to say about her."],
             "relatedTopics": []
         },
         "law": {
-            "response": [""],
+            "response": ["I wonder whether sending people to prison really helps them be better people or if we're just separating them from the rest of us so they can't do any more harm."],
             "relatedTopics": []
         },
         "inheritance": {
@@ -165,7 +165,7 @@
         "heWouldHaveBeenCuffed": [
             {
                 "text": [
-                    "Maybe an officer put the cuffs on right after he was punched?"
+                    "Maybe one of the officers put the cuffs on right after he was punched."
                 ],
                 "claims": ["heWouldHaveBeenCuffedOtherOfficer"],
                 "conclusions": {"officer": -2.0},
@@ -201,7 +201,7 @@
                 "score": 1.0
             }
         ],
-        "notUnimpeachableWitness": [
+        "notUnimpeachableWitnessProject": [
             {
                 "text": [
                     "What if the coworker lied about not having seen him to get him indicted and off the project?"
@@ -212,6 +212,19 @@
                 "requirements": {},
                 "anger": 0,
                 "score": 0.4
+            }
+        ],
+        "coworkerWantedHimLockedUp": [
+            {
+                "text": [
+                    "But why would he just lie like that? I think he would have needed some reason for it."
+                ],
+                "claims": ["coworkerWantedHimLockedUpNoEvidence"],
+                "conclusions": {"coworker": -4.0},
+                "receivesAgreement": true,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 39.0
             }
         ]
     },

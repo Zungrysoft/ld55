@@ -12,23 +12,23 @@
             "relatedTopics": []
         },
         "defendant": {
-            "response": ["I'm not yet sure if he's guilty, but it seems more likely than not that he is. The alibi he provided was that he was at work, yet none of his coworkers would back up his story."],
-            "relatedTopics": ["coworker"]
+            "response": ["I'm not yet sure if he's guilty, but it seems more likely than not that he is. The alibi he provided was that he was at work, yet none of his coworkers would back up his story.", "And there was more than enough blood on that officer's face to justify the assault charge."],
+            "relatedTopics": ["coworker", "officer"]
         },
         "girlfriend": {
-            "response": ["Imagine being in her shoes. First your father dies, then your vulture of a boyfriend points a gun at you.", "And if he's not guilty, your killer is still at large, the police not having a single other suspect."],
+            "response": ["Imagine being in her shoes. First your father dies, then your vulture of a boyfriend points a gun at you.", "And it turns out it wasn't him, your killer is still at large, since the police don't have a single other suspect."],
             "relatedTopics": ["shotgun"]
         },
         "officer": {
-            "response": ["I honestly can't believe this guy. Sure, there was a lot of blood. And sure, he did get socked in the fact real good. But he acted as if he had survived some sort of near-death experience.", "It was a punch to the face, dude. Get over it."],
+            "response": ["I honestly can't believe this guy. Sure, there was a lot of blood. And sure, he did get socked in the fact real good. But he acted as if he had survived some sort of near-death experience.", "It was a punch to the face, dude. Get over it.", "I wouldn't be surprised if they had dumped some red paint on him before snapping those photos just to make the whole thing seem more gruesome."],
             "relatedTopics": []
         },
         "attourneyGeneral": {
-            "response": ["I met her during the first round of jury selection. She seemed very hurried to get the whole thing done."],
+            "response": ["I met her during the first round of jury selection. She seemed very hurried to get the whole thing done and over with."],
             "relatedTopics": []
         },
         "law": {
-            "response": [""],
+            "response": ["The best part about a jury trial is picking through the evidence. I love that sort of thing. It's like a fun little puzzle.", "A very tragic puzzle in this case, but a fun one nonetheless."],
             "relatedTopics": []
         },
         "nullification": {
@@ -37,14 +37,14 @@
         },
         "inheritance": {
             "response": ["Money is the motive to end all motives.", "People break into cars to steal the change from the cup holders. It's not a big leap to this, especially when the dollar value is so high."],
-            "relatedTopics": ["money"]
+            "relatedTopics": []
         },
         "coworker": {
             "response": ["He named one coworker in particular that he says he talked to that night. But when that coworker took the stand, he testified that he did not remember seeing him at all.", "Why would he name a specific person if it was all bullshit?"],
             "relatedTopics": []
         },
         "shotgun": {
-            "response": [""],
+            "response": ["The shotgun is an important piece of the puzzle. He's the only one with prints on it, so why is he claiming he never fired it that night?"],
             "relatedTopics": []
         }
     },
@@ -130,12 +130,36 @@
         "heWouldHaveBeenCuffed": [
             {
                 "text": [
-                    "Maybe kicked the officer instead of punshing him?"
+                    "Maybe kicked the officer instead of punching him?"
                 ],
                 "claims": ["heWouldHaveBeenCuffedKick"],
                 "conclusions": {"officer": -2.0},
                 "receivesAgreement": false,
                 "requirements": {},
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
+        "talkAboutCoworker": [
+            {
+                "text": [
+                    "Let's assume he's guilty: Why would he have named a specific coworker if he knew he wouldn't back him up? Was he just hoping he would lie for him?"
+                ],
+                "claims": ["whyNameCoworker"],
+                "conclusions": {"coworker": 2.0},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 4.0
+            }
+        ],
+        "tooMuchBlood": [
+            {
+                "fixedConversation": "tooMuchBlood",
+                "claims": ["tooMuchBloodYes"],
+                "conclusions": {"officer": 100.0},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
                 "anger": 0,
                 "score": 1.0
             }

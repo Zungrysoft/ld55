@@ -36,11 +36,11 @@
             "relatedTopics": []
         },
         "coworker": {
-            "response": [""],
+            "response": ["I love how he named a coworker to back up that he was there. And then not only did the coworker not back him up, he specifically said he was not there!", "What a blunder."],
             "relatedTopics": []
         },
         "shotgun": {
-            "response": ["The owner of that pawn shop says he sold a gun exactly like the one the defendant used only two days earlier. But his identification was very vague.", "In his initial report to the police, he described a tall, brown-haired man with blue eyes. That doesn't seem to match the defendant at all.", "He ID'ed him later in court though, so maybe I'm just crazy."],
+            "response": ["The owner of that pawn shop says he sold a gun exactly like the one the defendant used only two days earlier. But his identification was very vague.", "In his initial report to the police, he described a short, brown-haired man with blue eyes. That doesn't seem to match the defendant at all.", "He ID'ed him later in court though, so maybe I'm just crazy."],
             "relatedTopics": []
         }
     },
@@ -60,15 +60,26 @@
         ],
         "pawnShopOwnerId": [
             {
-                "text": [
-                    "That's actually something I wanted to bring up. I think the pawn shop owner's report to the police was a bit vague and innaccurate."
-                ],
+                "fixedConversation": "pawnShopOwnerMistaken",
                 "claims": ["pawnShopOwnerMistaken"],
-                "conclusions": {"shotgun": 0.2},
+                "conclusions": {"shotgun": 10.0},
                 "receivesAgreement": false,
                 "requirements": {"immediate": true},
                 "anger": 0,
-                "score": 100.0
+                "score": 1.0
+            }
+        ],
+        "talkAboutOfficer": [
+            {
+                "text": [
+                    "Apparently the defendant attacked the officer during his arrest."
+                ],
+                "claims": ["attackedOfficer"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 0.6
             }
         ]
     }

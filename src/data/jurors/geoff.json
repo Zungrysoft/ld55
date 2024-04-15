@@ -13,8 +13,8 @@
             "relatedTopics": []
         },
         "defendant": {
-            "response": ["I swear there's something wrong with this country nowadays. Some jobless slacker sees dollar signs in his eyes and it blinds him to his morals. What kind of man kills his girlfriend of seven years for some money? ", "That poor woman."],
-            "relatedTopics": ["girlfriend"]
+            "response": ["I swear there's something wrong with this country nowadays. Some jobless bum sees dollar signs in his eyes and it blinds him to his morals. What kind of man kills his girlfriend of seven years for some money? ", "That poor woman."],
+            "relatedTopics": ["girlfriend", "inheritance"]
         },
         "girlfriend": {
             "response": ["She certainly picked the wrong man. I hate to blame the victim, but there must have been signs beforehand. No man suddenly becomes a killer."],
@@ -34,7 +34,7 @@
         },
         "inheritance": {
             "response": ["Money is a motivator to get the lazy man off his ass and contribute something to society. It is not a reason to kill a person."],
-            "relatedTopics": []
+            "relatedTopics": ["girlfriend"]
         },
         "coworker": {
             "response": ["The defendant says his coworker would have seen him that night. The coworker says otherwise. Sounds to me like he was desperately trying to come up with some sort of alibi."],
@@ -107,6 +107,32 @@
                 "requirements": {"immediate": true},
                 "anger": 0,
                 "score": 0.3
+            }
+        ],
+        "tooMuchBlood": [
+            {
+                "text": [
+                    "He punched him right in the nose! Of course he was going to bleed! What kind of a question is that?"
+                ],
+                "claims": ["tooMuchBloodNo"],
+                "conclusions": {"officer": -0.5},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 200.0
+            }
+        ],
+        "talkAboutOfficer": [
+            {
+                "text": [
+                    "When young men think it's okay to attack a member of the local constabulary, that's how you know this country is goin' down the crapper.", "It's a lack of proper discipline, I tell you."
+                ],
+                "claims": ["attackedOfficer"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 0.5
             }
         ]
     }

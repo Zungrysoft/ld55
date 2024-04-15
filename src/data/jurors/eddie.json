@@ -36,7 +36,7 @@
             "relatedTopics": []
         },
         "coworker": {
-            "response": [""],
+            "response": ["I sure hope that guy wasn't a friend of his. You don't turn someone in like that and expect them not to hold a grudge."],
             "relatedTopics": []
         },
         "shotgun": {
@@ -286,6 +286,19 @@
                 "score": 0.3
             }
         ],
+        "tooMuchBlood": [
+            {
+                "text": [
+                    "Ah, I've seen worse."
+                ],
+                "claims": ["tooMuchBloodNo"],
+                "conclusions": {"officer": -0.5},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 100.0
+            }
+        ],
         "mightBeTooWeak": [
             {
                 "text": [
@@ -323,6 +336,19 @@
                 "score": 1.3
             }
         ],
+        "talkAboutCoworker": [
+            {
+                "text": [
+                    "The coworker wouldn't back him up when he said he was at work when the killin' happened. Clearly not a real friend. A real friend would back you up in cases like these."
+                ],
+                "claims": ["coworkerDidNotBackUp"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 0.2
+            }
+        ],
         "wouldCoworkerLie": [
             {
                 "text": [
@@ -334,6 +360,32 @@
                 "requirements": {"immediate": true},
                 "anger": 0,
                 "score": 11.0
+            }
+        ],
+        "photosProveHeAssaulted": [
+            {
+                "text": [
+                    "I should ask the judge afterwards if I can get some copies of those photos. I could hang 'em up on my mantle."
+                ],
+                "claims": ["photosProveHeAssaultedMaybe"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 0.01
+            }
+        ],
+        "usePreciseWording": [
+            {
+                "text": [
+                    "Thanks for the clarification, professor."
+                ],
+                "claims": ["noNeedToBePedantic"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 0.1
             }
         ]
     }

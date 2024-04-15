@@ -256,5 +256,105 @@
             "text": "That lying bastard!",
             "speaker": "eddie"
         }
+    ],
+    "pawnShopOwnerMistaken": [
+        {
+            "text": "That's actually something I wanted to bring up. I think the pawn shop owner's report to the police was a bit vague and innaccurate.",
+            "speaker": "alice"
+        },
+        {
+            "text": "How so?",
+            "speaker": "clive"
+        },
+        {
+            "text": "When the police first talked with him, he described a short, brown-haired man with brown eyes. Now, the defendant is definitely short.",
+            "speaker": "alice"
+        },
+        {
+            "text": "Scrawny, for sure.",
+            "speaker": "eddie"
+        },
+        {
+            "text": "And real anemic.",
+            "speaker": "geoff"
+        },
+        {
+            "text": "But his hair is more of a dirty blonde. I certainly wouldn't call it brown.",
+            "speaker": "alice"
+        },
+        {
+            "text": "That's a good point!",
+            "speaker": "kylie"
+        },
+        {
+            "text": "And all of these qualities are pretty vague, don't you think?",
+            "speaker": "logan"
+        },
+        {
+            "text": "There are a lot of brown-haired brown-eyed men walking around in this country.",
+            "speaker": "logan"
+        },
+        {
+            "text": "Although, he did still indentify him in court. So what do I know?",
+            "speaker": "alice"
+        },
+        {
+            "text": "Still, I'd say there's room for doubt as to whether he really recognized the defendant or just thought he did.",
+            "speaker": "logan"
+        },
+        {
+            "text": "You know what? That's a good point.",
+            "speaker": "clive"
+        },
+        {
+            "text": "I supposed there's room for reasonable doubt.",
+            "speaker": "lynne"
+        }
+    ],
+    "tooMuchBlood": [
+        {
+            "text": "Yeah, kinda. Do you think so?",
+            "speaker": "kylie"
+        },
+        {
+            "text": "Definitely.",
+            "speaker": "logan"
+        },
+        {
+            "text": "In fact, thinking about it now,",
+            "speaker": "logan"
+        },
+        {
+            "text": "it might have been caused by a medical condition called \"Hyper-Hemo-Epistaxis\".",
+            "speaker": "logan"
+        },
+        {
+            "text": "In the photos, do you remember if the area around his nose had a purple-ish color to it?",
+            "speaker": "logan"
+        },
+        {
+            "text": "In the few spots where there wasn't blood, I think so!",
+            "speaker": "kylie"
+        },
+        {
+            "text": "Yeah, I think it was a little purple there.",
+            "speaker": "clive"
+        },
+        {
+            "text": "I saw it too.",
+            "speaker": "alice"
+        },
+        {
+            "text": "Perhaps that's what caused all the bleeding. Maybe cop just had a flare-up of his Hyper-Hemo-Epistaxis and decided to blame it on the defendant!",
+            "speaker": "logan"
+        },
+        {
+            "text": "Why would he do that, though?",
+            "speaker": "clive"
+        },
+        {
+            "text": "Maybe he's embarrassed about his condition and came up with a way to cover it up.",
+            "speaker": "kylie"
+        }
     ]
 }

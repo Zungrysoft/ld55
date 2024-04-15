@@ -24,7 +24,7 @@
             "relatedTopics": ["girlfriend"]
         },
         "attourneyGeneral": {
-            "response": ["I've never met her."],
+            "response": ["I don't know what you want me to say about her."],
             "relatedTopics": []
         },
         "law": {
@@ -36,7 +36,7 @@
             "relatedTopics": ["money"]
         },
         "coworker": {
-            "response": [""],
+            "response": ["He says he was at work until 7 PM, which means he couldn't have been there when the neighbor heard the gun shots. But this alibi hinged on one of his coworkers confirming that he had stayed late.", "Unfortunately for him, he didn't."],
             "relatedTopics": []
         },
         "shotgun": {
@@ -139,6 +139,19 @@
                 "requirements": {"immediate": true},
                 "anger": 0,
                 "score": 100.0
+            }
+        ],
+        "usePreciseWording": [
+            {
+                "text": [
+                    "No need to get pedantic."
+                ],
+                "claims": ["noNeedToBePedantic"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 1.0
             }
         ]
     },

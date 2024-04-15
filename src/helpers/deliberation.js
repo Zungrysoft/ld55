@@ -174,7 +174,7 @@ export function runDeliberation(jurors) {
                 break
             }
         }
-        // console.log(bestResponse?.text || "PRESET", conclusions?.inheritance)
+        // console.log(bestResponse?.text || "PRESET", conclusions?.shotgun)
     }
     
     // Voting

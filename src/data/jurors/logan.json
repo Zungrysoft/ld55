@@ -12,19 +12,19 @@
             "relatedTopics": []
         },
         "defendant": {
-            "response": [""],
+            "response": ["He had a promising future at a promising company. And he threw it all away for some short term money.", "I can't respect a person who would do something like that."],
             "relatedTopics": []
         },
         "girlfriend": {
-            "response": [""],
+            "response": ["An innocent girl is dead and we must now decide who is responsible.", "It is a task not to be taken lightly, if one has any respect for the dead whatsoever."],
             "relatedTopics": []
         },
         "officer": {
-            "response": [""],
+            "response": ["During the trial, the prosecution showed us photos of the officer's from after the alleged assault. I couldn't believe the amount of blood he had on his face.", "Literally, I couldn't.", "I don't think it's medically possible for someone to bleed that much just from a broken nose.", "He claims he was only punched once, but he looked like he had just been attacked by a gang of animal rights activists."],
             "relatedTopics": []
         },
         "attourneyGeneral": {
-            "response": [""],
+            "response": ["She seemed fine."],
             "relatedTopics": []
         },
         "law": {
@@ -32,7 +32,7 @@
             "relatedTopics": ["attourneyGeneral"]
         },
         "inheritance": {
-            "response": [""],
+            "response": ["All this bloodshed for a few years of salary."],
             "relatedTopics": []
         },
         "coworker": {
@@ -40,7 +40,7 @@
             "relatedTopics": []
         },
         "shotgun": {
-            "response": ["I vehemently despise guns. You saw the same trial I did.", "I imagine all of those little metal pellets shredding through my body and-", "Well it's not something I like to think about."],
+            "response": ["I vehemently despise guns. You saw the same trial I did.", "I imagine all of those little metal shards shredding through my body and-", "Well it's not something I particularly like to think about."],
             "relatedTopics": []
         }
     },
@@ -74,10 +74,23 @@
         "attackedOfficer": [
             {
                 "text": [
-                    "He sure took a beating."
+                    "The officer certainly took a beating. But that really seemed like more blood than would be produced by a simple punch to the face, no?"
                 ],
-                "claims": ["officerHurtBadly"],
-                "conclusions": {},
+                "claims": ["tooMuchBlood"],
+                "conclusions": {"officer": 0.3},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 0.01
+            }
+        ],
+        "officerHurtBadly": [
+            {
+                "text": [
+                    "It was too much blood, I think. Do you really think someone would bleed that much from a simple punch to the face?"
+                ],
+                "claims": ["tooMuchBlood"],
+                "conclusions": {"officer": 0.3},
                 "receivesAgreement": false,
                 "requirements": {},
                 "anger": 0,
@@ -95,6 +108,19 @@
                 "requirements": {},
                 "anger": 0,
                 "score": 1.0
+            }
+        ],
+        "talkAboutCoworker": [
+            {
+                "text": [
+                    "He said during the trial that his coworker could attest to his presence at work until 7 PM. But the coworker denied this, saying he would have seen him if he had come in."
+                ],
+                "claims": ["coworkerDidNotBackUp"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.2
             }
         ],
         "wouldCoworkerLie": [
@@ -160,6 +186,45 @@
                 "requirements": {},
                 "anger": 0,
                 "score": 10.0
+            }
+        ],
+        "usePreciseWording": [
+            {
+                "text": [
+                    "Right. Thanks."
+                ],
+                "claims": ["noNeedToBePedantic"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 1.4
+            }
+        ],
+        "talkAboutOfficer": [
+            {
+                "text": [
+                    "The stories provided by the defense and prosecution differ slightly.", "The prosecution claims that he attacked the police officer with a punch to the nose in order to incapacitate him long enough to make an escape. But fortunately for him, another officer arrived on the scene just in time to provide assistance.", "The defense denies him having attacked the officer in any way."
+                ],
+                "claims": ["attackedOfficer", "defenseDeniedAttack"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 4.0
+            }
+        ],
+        "photosProveHeAssaulted": [
+            {
+                "text": [
+                    "Something put that blood on his face, that's for sure."
+                ],
+                "claims": ["photosProveHeAssaultedMaybe"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 4.0
             }
         ]
     },

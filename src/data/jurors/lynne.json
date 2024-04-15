@@ -16,7 +16,7 @@
             "relatedTopics": ["shotgun", "inheritance"]
         },
         "girlfriend": {
-            "response": [""],
+            "response": ["I hope she may find peace beyond the grave."],
             "relatedTopics": []
         },
         "officer": {
@@ -44,8 +44,8 @@
             "relatedTopics": []
         },
         "shotgun": {
-            "response": [""],
-            "relatedTopics": []
+            "response": ["The pawn shop owner's testimony tells us that this crime was premeditated. The pawn shop owner positively identified the defendant as having been in his store just two days before the murder.", "And importantly, this was the very next day after the will reading for the victim's father.", "The timing is too perfect to be a coincidence."],
+            "relatedTopics": ["inheritance"]
         }
     },
     "responses": {
@@ -125,6 +125,19 @@
                 "score": 100.0
             }
         ],
+        "talkAboutShotgun": [
+            {
+                "text": [
+                    "The forensics team reported a match between the defendant and the prints on the shotgun. Seems pretty cut and dry to me."
+                ],
+                "claims": ["printsOnShotgun"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 0.6
+            }
+        ],
         "shotgunIsVeryRare": [
             {
                 "text": [
@@ -175,6 +188,19 @@
                 "requirements": {},
                 "anger": 0,
                 "score": 0.3
+            }
+        ],
+        "wordAttacked": [
+            {
+                "text": [
+                    "To be more precise, the officer claimed he punched him in the nose."
+                ],
+                "claims": ["usePreciseWording"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 1.0
             }
         ],
         "attackedOfficer": [
@@ -256,14 +282,14 @@
         "wentOffOnTangent": [
             {
                 "text": [
-                    "He didn't exactly seem to be an unimpeachable witness."
+                    "That doesn't mean he has a reason to lie in a court of law."
                 ],
-                "claims": ["notUnimpeachableWitness"],
+                "claims": ["notUnimpeachableWitnessNoEvidence"],
                 "conclusions": {"coworker": 0.2},
                 "receivesAgreement": false,
                 "requirements": {"immediate": true},
                 "anger": 0,
-                "score": 2.1
+                "score": 2.4
             }
         ],
         "wouldCoworkerLie": [
@@ -279,7 +305,7 @@
                 "score": 1.0
             }
         ],
-        "notUnimpeachableWitness": [
+        "notUnimpeachableWitnessProject": [
             {
                 "text": [
                     "Maybe the coworker committed perjury against the defendant so that he would get convicted of murder. And then he would be the one assigned to the project."
@@ -290,6 +316,19 @@
                 "requirements": {},
                 "anger": 0,
                 "score": 0.3
+            }
+        ],
+        "coworkerWantedHimLockedUp": [
+            {
+                "text": [
+                    "Just because you get the feeling there was beef, it doesn't mean there actually was. Do you have a reason for why he would lie in court?", "If not, I don't see any reason to continue this topic of discussion."
+                ],
+                "claims": ["coworkerWantedHimLockedUpNoEvidence"],
+                "conclusions": {"coworker": -4.0},
+                "receivesAgreement": true,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 40.0
             }
         ]
     },

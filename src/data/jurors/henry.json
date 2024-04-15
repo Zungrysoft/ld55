@@ -12,12 +12,12 @@
             "relatedTopics": []
         },
         "defendant": {
-            "response": [""],
-            "relatedTopics": []
+            "response": ["A true idiot of I ever saw one", "This scheme of his is so hairbrained that I'm surprised he got past step one. I'd expect him to break his skull tripping over the door mat of the pawn shop where he bought that sawed-off", "This is all assuming he's guilty, of course. Hopefully he's not."],
+            "relatedTopics": ["shotgun"]
         },
         "girlfriend": {
-            "response": [""],
-            "relatedTopics": []
+            "response": ["I heard once that some people try to keep themselves anonmymous when they win the lottery. That way they don't have a thousand relatives bashing down their doors asking for money.", "Maybe the victim should have taken that advice and applied it to her recent windfall.", "Though I don't think anyone could have predicted someone would take measures this drastic."],
+            "relatedTopics": ["inheritance"]
         },
         "officer": {
             "response": ["Okay, so I'm a bit squeamish. When I saw those photos of his bloodied face after the alleged assault, I was cringing backward through time!","I do find the timeline a bit odd though. The officer mentions getting punched in the face, but then the other officer than testified and I think I remember him saying the defendant was already in cuffs.", "How can you throw a punch when you're in cuffs? Let along enough to cause that much blood.", "I dunno.", "I'm probably misremembering."],
@@ -33,15 +33,15 @@
         },
         "inheritance": {
             "response": ["This is what gets me: How dumb does the prosecution think the defendant is? The only way this supposed scheme of his works is if he inherits the money from his girlfriend after she dies.", "But that only works if they're married. The entire motive for this case hinges on the defendant not knowing even the very basics of inheritance law."],
-            "relatedTopics": []
+            "relatedTopics": ["girlfriend"]
         },
         "coworker": {
-            "response": ["The coworker's testimony seemed...aggressive?", "Like he was relishing in being able to testify against him."],
+            "response": ["The coworker's testimony seemed...aggressive?", "Like he was relishing in being able to testify against him.", "From what I recall from the trial, the defendant went over the coworker's head regarding some major company project."],
             "relatedTopics": []
         },
         "shotgun": {
-            "response": [""],
-            "relatedTopics": []
+            "response": ["His prints are the only ones on the gun. But if someone else killed the victim, they could have used gloves.", "If I were committing a murder with someone else's gun with intention of then leaving said gun at the crime scene, I would use gloves."],
+            "relatedTopics": ["girlfriend"]
         }
     },
     "responses": {
@@ -213,7 +213,7 @@
         "attackedOfficer": [
             {
                 "text": [
-                    "I had to look away when they showed those pictures of him."
+                    "I had to look away when they showed those pictures of him. So much blood."
                 ],
                 "claims": ["officerHurtBadly"],
                 "conclusions": {},
@@ -247,6 +247,19 @@
                 "score": 1.0
             }
         ],
+        "tooMuchBlood": [
+            {
+                "text": [
+                    "What, do people not normally bleed that much when socked in the face? I've seen someone bleed that much before.", "Well I think I have.", "I did pass out pretty soon after."
+                ],
+                "claims": ["tooMuchBloodNo"],
+                "conclusions": {"officer": -0.3},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 50.0
+            }
+        ],
         "weakConversationIsSilly": [
             {
                 "text": [
@@ -260,7 +273,31 @@
                 "score": 100.0
             }
         ],
-        "notUnimpeachableWitness": [
+        "wentOffOnTangent": [
+            {
+                "text": [
+                    "He mentioned something during cross examination about a company project and that he would be taking over."
+                ],
+                "claims": ["notUnimpeachableWitnessProject"],
+                "conclusions": {"coworker": 0.2},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 0.4
+            },
+            {
+                "text": [
+                    "The coworker mentioned something during cross examination about a company project and that he would be taking over."
+                ],
+                "claims": ["notUnimpeachableWitnessProject"],
+                "conclusions": {"coworker": 0.2},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 0.4
+            }
+        ],
+        "notUnimpeachableWitnessProject": [
             {
                 "text": [
                     "You don't think he lied to get the defendant off the project, do you?", "Get him indicted on murder so the big wigs fire him and put him in charge instead?"
