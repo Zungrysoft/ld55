@@ -36,7 +36,7 @@
             "relatedTopics": []
         },
         "inheritance": {
-            "response": [""],
+            "response": ["There's more to life than a little bit of money. Didn't he know that?"],
             "relatedTopics": []
         },
         "coworker": {
@@ -50,13 +50,22 @@
         "arms": {
             "response": [""],
             "relatedTopics": []
-        },
-        "money": {
-            "response": [""],
-            "relatedTopics": []
         }
     },
     "responses": {
+        "pickTopic": [
+            {
+                "text": [
+                    "I'd like to discuss the accompanying assault charge."
+                ],
+                "claims": ["talkAboutOfficer"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 0.3
+            }
+        ],
         "murderIsCool": [
             {
                 "fixedConversation": "murderIsUncool",
@@ -87,7 +96,7 @@
                     "She had a will written. Maybe he assumed he was named on it."
                 ],
                 "claims": ["girlfriendHadWill"],
-                "conclusions": {"inheritance": -0.5},
+                "conclusions": {"inheritance": -2.0},
                 "receivesAgreement": false,
                 "requirements": {},
                 "anger": 0,
@@ -107,6 +116,19 @@
                 "score": 100.0
             }
         ],
+        "shotgunIsVeryRare": [
+            {
+                "text": [
+                    "If it's worth so much, why didn't he just sell the one he had?"
+                ],
+                "claims": ["whyNotSell"],
+                "conclusions": {"shotgun": -100.0},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
         "canGlovesSmudge": [
             {
                 "text": [
@@ -115,29 +137,55 @@
                 "claims": ["canGlovesSmudgeUnsure"],
                 "conclusions": {"shotgun": 0.1},
                 "receivesAgreement": false,
-                "requirements": {},
+                "requirements": {"immediate": true},
                 "anger": 0,
                 "score": 1.0
+            }
+        ],
+        "talkAboutOfficer": [
+            {
+                "text": [
+                    "For me, the thing that's nagging me about the alleged assault is the timeline.", "I remember thinking during the trial that the timeline didn't make a whole lot of sense. It was something about the handcuffs."
+                ],
+                "claims": ["timelineIsWrong"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 0.3
             }
         ],
         "attackedOfficer": [
             {
                 "text": [
-                    "He took a beating for sure."
+                    "I remember thinking during the trial that the details of the assault didn't entirely make sense. It had something to do with the handcuffs."
                 ],
-                "claims": ["officerHurtBadly"],
+                "claims": ["timelineIsWrong"],
                 "conclusions": {},
                 "receivesAgreement": false,
                 "requirements": {},
                 "anger": 0,
-                "score": 1.1
+                "score": 0.3
+            }
+        ],
+        "heWouldHaveBeenCuffedKick": [
+            {
+                "text": [
+                    "No, the officer specifically said it was a punch. He said punch several times."
+                ],
+                "claims": ["heWouldHaveBeenCuffedKickAnswered"],
+                "conclusions": {"officer": 3.0},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.0
             }
         ],
         "officerHurtNotThatBad": [
             {
                 "fixedConversation": "justDoingHisJob",
                 "claims": ["justDoingHisJob"],
-                "conclusions": {"nullification": 100.0},
+                "conclusions": {},
                 "receivesAgreement": false,
                 "requirements": {"immediate": true},
                 "anger": 1,
@@ -160,7 +208,7 @@
         "definitelyDefinitelyTooWeak": [
             {
                 "text": [
-                    "This is a ridiculous conversation! You guys are seriously claiming that he could not have possibly broken that officer's nose just because he doesn't look like a pro wrestler?"
+                    "This is a ridiculous conversation! You guys are seriously claiming that he could not have possibly broken that officer's nose just because he doesn't look like some pro wrestler?"
                 ],
                 "claims": ["weakConversationIsSilly"],
                 "conclusions": {"officer": -100.0},
@@ -168,6 +216,58 @@
                 "requirements": {"immediate": true},
                 "anger": 0,
                 "score": 100.0
+            }
+        ],
+        "heWouldNotWantMoneyAgree": [
+            {
+                "text": [
+                    "What does any of this have to do with the facts of the case? This isn't about his personal qualities, as positive as they may be. It's about whether he committed a crime. Let's get back on track here."
+                ],
+                "claims": ["heWouldNotWantMoneySpecious"],
+                "conclusions": {"inheritance": -3.2},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 80.0
+            }
+        ],
+        "wentOffOnTangent": [
+            {
+                "text": [
+                    "He didn't exactly seem to be an unimpeachable witness."
+                ],
+                "claims": ["notUnimpeachableWitness"],
+                "conclusions": {"coworker": 0.2},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 2.1
+            }
+        ],
+        "wouldCoworkerLie": [
+            {
+                "text": [
+                    "It's certainly possible."
+                ],
+                "claims": ["wouldCoworkerLieYes"],
+                "conclusions": {"coworker": 0.4},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
+        "notUnimpeachableWitness": [
+            {
+                "text": [
+                    "Maybe the coworker committed perjury against the defendant so that he would get convicted of murder. And then he would be the one assigned to the project."
+                ],
+                "claims": ["wouldCoworkerLie"],
+                "conclusions": {"coworker": 1.0},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 0.3
             }
         ]
     },

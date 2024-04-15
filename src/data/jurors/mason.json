@@ -46,10 +46,6 @@
         "arms": {
             "response": ["I'm not a big fan of guns, myself. James tried a few times to take me rifle shooting, but I always declined. It was a hobby of his, for sure."],
             "relatedTopics": []
-        },
-        "money": {
-            "response": ["There's more to life than a little bit of money. Didn't he know that?"],
-            "relatedTopics": []
         }
     },
     "responses": {

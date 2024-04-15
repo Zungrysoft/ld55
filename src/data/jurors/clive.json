@@ -40,15 +40,11 @@
             "relatedTopics": []
         },
         "shotgun": {
-            "response": [""],
-            "relatedTopics": []
+            "response": ["The prosecution's main point regarding the firearm that was allegedly used to commit the relevant crime is that he bought the shotgun specifically to use in the murder. A pawn shop three blocks from his house reported having sold a firearm of the very same model to the defendant two days ago."],
+            "relatedTopics": ["arms"]
         },
         "arms": {
-            "response": [""],
-            "relatedTopics": []
-        },
-        "money": {
-            "response": [""],
+            "response": ["I'd consider myself an expert on all manner of firearms. Ask me any question about the history of firearms and I can probably answer it.It's a hobby of mine, for sure."],
             "relatedTopics": []
         }
     },
@@ -77,6 +73,45 @@
                 "requirements": {"immediate": true},
                 "anger": 0,
                 "score": 1
+            }
+        ],
+        "whatKindOfGun": [
+            {
+                "text": [
+                    "It was an L-FAD 960.", "Thinking about it now, aren't those things super rare?", "Funny.", "I didn't realize it before, but the L-FAD 960 is a collector's item. It was one of the HS-series models that skyrocketed in price on the speculative market last year."
+                ],
+                "claims": ["shotgunIsRare"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 100
+            }
+        ],
+        "howRareIsShotgun": [
+            {
+                "text": [
+                    "I'll put it this way. If he were to buy one of them today, it would cost him that entire inheritance he was chasing and then some.", "The fact that he owns one of these means he must have bought it before the price spike."
+                ],
+                "claims": ["shotgunIsVeryRare"],
+                "conclusions": {"shotgun": 100.0},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 100
+            }
+        ],
+        "whyNotSell": [
+            {
+                "text": [
+                    "It's possible he didn't know it was valuable at the time. Or maybe he did know and was holding onto it to see if it would go up even further."
+                ],
+                "claims": ["whyNotSellConfirm"],
+                "conclusions": {"shotgun": 100.0},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 100
             }
         ],
         "didNotUseShotgun": [
@@ -118,19 +153,6 @@
                 "score": 100.0
             }
         ],
-        "maybeUsedGloves": [
-            {
-                "text": [
-                    "Couldn't the forensic scientists tell if someone held the gun after the defendant, even if he was wearing gloves?", "Wouldn't the gloves smudge the prints?"
-                ],
-                "claims": ["canGlovesSmudge"],
-                "conclusions": {"shotgun": -0.5},
-                "receivesAgreement": false,
-                "requirements": {},
-                "anger": 0,
-                "score": 0.5
-            }
-        ],
         "sawOfficerInPerson": [
             {
                 "text": [
@@ -144,6 +166,19 @@
                 "score": 0.2
             }
         ],
+        "heWouldHaveBeenCuffedBehindBack": [
+            {
+                "text": [
+                    "You don't cuff a suspect with their hands in front. The whole point is to prevent the suspect from using their hands effectively. Cuffing in front just forces them to have their hands close together."
+                ],
+                "claims": ["heWouldHaveBeenCuffedBehindBackAnswered"],
+                "conclusions": {"officer": 3.0},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
         "weakConversationIsSilly": [
             {
                 "text": [
@@ -155,6 +190,32 @@
                 "requirements": {"immediate": true},
                 "anger": 0,
                 "score": 1.2
+            }
+        ],
+        "heWouldNotWantMoneyAgree": [
+            {
+                "text": [
+                    "This entire conversation is specious. Just because you don't think he would do such a thing because you judged him from across a court room and decided he's on the level, doesn't mean he didn't have a motive.", "Seemingly normal people do terrible things all the time. And speculating as to who would or would not do this is a matter of pure philosophy.", "And philosophy is not what we're here to perform today."
+                ],
+                "claims": ["heWouldNotWantMoneySpecious"],
+                "conclusions": {"inheritance": -3.0},
+                "receivesAgreement": true,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 100.0
+            }
+        ],
+        "wentOffOnTangent": [
+            {
+                "text": [
+                    "That's right! He called the defendant a slacker and that the project \"would hopefully be in better hands moving forward.\""
+                ],
+                "claims": ["notUnimpeachableWitness"],
+                "conclusions": {"coworker": 0.2},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 0.4
             }
         ]
     },

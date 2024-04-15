@@ -2,7 +2,8 @@ import { getJurorData, getAllJurors } from "./juror"
 import commandData from '../data/commands.json';
 import topicData from '../data/topics.json';
 import documentData from '../data/documents.json';
-import { runDeliberation } from "./deliberation";
+import { runDeliberation } from "./deliberation.js";
+import { getCombinations, getSubsets } from "./helpers.js";
 
 export function parseCommand(input, saveData) {
     // Parse input into args
@@ -18,6 +19,7 @@ export function parseCommand(input, saveData) {
     }
     
     if ('debug'.includes(argv[0])) {return commandDebug(argv.slice(1), saveData)}
+    if ('analyze'.includes(argv[0])) {return commandAnalyze(argv.slice(1), saveData)}
     if ('help'.includes(argv[0])) {return commandHelp(argv.slice(1), saveData)}
     if ('restart'.includes(argv[0])) {return commandRestart(argv.slice(1), saveData)}
     if ('interview'.includes(argv[0])) {return commandInterview(argv.slice(1), saveData)}
@@ -34,6 +36,38 @@ function commandDebug(argv, saveData) {
     // }
     return {
         logEntries: speakText('system', JSON.stringify(saveData)),
+    }
+}
+
+function commandAnalyze(argv, saveData) {
+    const jurorList = Object.keys(getAllJurors())
+    const combinations = getCombinations(jurorList).filter(c => c.length === 4)
+
+    let acquitCount = 0
+    let acquitCombinations = []
+    for (const combination of combinations) {
+        const result = runDeliberation(combination)
+        if (result.acquit) {
+            acquitCount ++
+            acquitCombinations.push(combination)
+        }
+    }
+
+    let ret = "There are " + acquitCount + " winning combinations:"
+
+    for (const combination of acquitCombinations) {
+        ret += "\n\t" + combination.toString()
+    }
+
+    ret += "\nJuror counts:"
+
+    for (const juror of jurorList) {
+        const count = acquitCombinations.filter(c => c.includes(juror)).length
+        ret += "\n\t" + getJurorData(juror).properties.name + ": " + count
+    }
+
+    return {
+        logEntries: speakText('system', ret),
     }
 }
 

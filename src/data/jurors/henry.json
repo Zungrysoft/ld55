@@ -20,19 +20,19 @@
             "relatedTopics": []
         },
         "officer": {
-            "response": ["Okay, so I'm a bit squeamish. When I saw those photos of his face after the alleged assault, I was cringing backward through time!"],
+            "response": ["Okay, so I'm a bit squeamish. When I saw those photos of his bloodied face after the alleged assault, I was cringing backward through time!","I do find the timeline a bit odd though. The officer mentions getting punched in the face, but then the other officer than testified and I think I remember him saying the defendant was already in cuffs.", "How can you throw a punch when you're in cuffs? Let along enough to cause that much blood.", "I dunno. I'm probably misremembering."],
             "relatedTopics": []
         },
         "attourneyGeneral": {
-            "response": ["She seemed nice."],
+            "response": ["She seems nice."],
             "relatedTopics": []
         },
         "law": {
-            "response": [""],
+            "response": ["Gotta keep the people in line somehow."],
             "relatedTopics": []
         },
         "inheritance": {
-            "response": [""],
+            "response": ["This is what gets me: How dumb does the prosecution think the defendant is? The only way this supposed scheme of his works is if he inherits the money from his girlfriend after she dies.", "But that only works if they're married. The entire motive for this case hinges on the defendant not knowing even the very basics of inheritance law."],
             "relatedTopics": []
         },
         "coworker": {
@@ -46,10 +46,6 @@
         "arms": {
             "response": [""],
             "relatedTopics": []
-        },
-        "money": {
-            "response": ["Money buys me all of the things I love in this world: designer clothes, chocolatey desserts, and the most important part of the day, my morning coffee.", "Never leave home without it.", "But let's pump the brakes a little bit here. Murdering your girlfriend to steal her father's inheritance is not okay. I don't care how many double-chocolate ice cream cakes it buys you."],
-            "relatedTopics": ["inheritance"]
         }
     },
     "responses": {
@@ -168,6 +164,32 @@
                 "score": 1.0
             }
         ],
+        "whatKindOfGun": [
+            {
+                "text": [
+                    "Hell if I know."
+                ],
+                "claims": ["shotgunTypeUnknown"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 1
+            }
+        ],
+        "shotgunIsRare": [
+            {
+                "text": [
+                    "So what's it worth now?"
+                ],
+                "claims": ["howRareIsShotgun"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 0.2
+            }
+        ],
         "maybeUsedGloves": [
             {
                 "text": [
@@ -194,6 +216,30 @@
                 "score": 1.1
             }
         ],
+        "timelineIsWrong": [
+            {
+                "fixedConversation": "officerTranscript",
+                "claims": ["heWouldHaveBeenCuffed"],
+                "conclusions": {"officer": 5.0},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 100.0
+            }
+        ],
+        "heWouldHaveBeenCuffedOtherOfficer": [
+            {
+                "text": [
+                    "According to that testimony, there were no other officers around. And officer Young was still reeling from the blow when officer Grady arrived.", "He must have been cuffed already when the alleged punch took place."
+                ],
+                "claims": ["heWouldHaveBeenCuffedOtherOfficerAnswered"],
+                "conclusions": {"officer": 3.5},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
         "weakConversationIsSilly": [
             {
                 "text": [
@@ -206,6 +252,19 @@
                 "anger": 0,
                 "score": 100.0
             }
+        ],
+        "notUnimpeachableWitness": [
+            {
+                "text": [
+                    "You don't think he lied to get the defendant off the project, do you?", "Get him indicted on murder so the big wigs fire him and put him in charge instead?"
+                ],
+                "claims": ["wouldCoworkerLie"],
+                "conclusions": {"coworker": 1.0},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.0
+            }
         ]
     },
     "voteJustifications": {
@@ -213,6 +272,6 @@
         "chargeWithAssault": ["He did still assault a police officer, even if he is innocent of murder."],
         "completelyGuilty": ["Guilty, as expected."],
         "guiltyShotgun": ["There's too much evidence that he fired the gun."],
-        "guiltyMotivePlusOpportunity": ["I still can't believe he was dumb enough to think he could get that inheritance money, but all the facts point to that being the case."]
+        "guiltyMotivePlusOpportunity": ["I still can't believe he was dumb enough to think he could get that inheritance money, but all the facts point to that being the case. Plus he was there at the scene of the crime."]
     }
 }

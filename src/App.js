@@ -39,6 +39,13 @@ function loadSave() {
     }
 }
 
+function vc(c) {
+    if (c === '*') {
+        return ''
+    }
+    return c
+}
+
 function App() {
     const [logData, setLogData] = useState({log: [], queue: []})
     const [isTabVisible, setIsTabVisible] = useState(true)
@@ -78,7 +85,7 @@ function App() {
 
     function advanceQueue() {
         // Sound effect
-        if (logData.queue[0]?.text.length % CHAT_SOUND_RATE === 1) {
+        if (logData.queue[0]?.text?.length % CHAT_SOUND_RATE === 1 && logData.queue[0]?.text.charAt(0) !== '*') {
             if (isTabVisible) {
                 playVoice(getSpeakerData().properties.voice)
             }
@@ -109,7 +116,7 @@ function App() {
                     if (i === prevLogData.log.length-1) {
                         const ret = {
                             ...logEntry,
-                            text: logEntry.text + prevLogData.queue[0].text[0],
+                            text: logEntry.text + vc(prevLogData.queue[0].text[0]),
                         }
                         return ret
                     }

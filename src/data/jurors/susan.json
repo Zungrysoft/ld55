@@ -12,11 +12,11 @@
             "relatedTopics": []
         },
         "defendant": {
-            "response": ["Oh, he's guilty for sure. It's just obvious! The guy's lawyers couldn't give a single bit of proof for why he's innocent!"],
+            "response": [""],
             "relatedTopics": []
         },
         "girlfriend": {
-            "response": ["This man deserves to rot for what he did to that poor lady!"],
+            "response": ["I cherish those moments when I forget just how dark this world can be."],
             "relatedTopics": []
         },
         "officer": {
@@ -24,7 +24,7 @@
             "relatedTopics": []
         },
         "attourneyGeneral": {
-            "response": ["Oh, Katie's great! We go out to dinner at least once a month. She's actually the reason I found out about this whole thing. She said I would make the perfect juror for this big case she was working on!"],
+            "response": [],
             "relatedTopics": []
         },
         "law": {
@@ -32,22 +32,18 @@
             "relatedTopics": []
         },
         "inheritance": {
-            "response": [""],
+            "response": ["Money buys me all of the things I love in this world: designer clothes, chocolatey desserts, and the most important part of the day, my morning coffee.", "Never leave home without it.", "But let's pump the brakes a little bit here. Murdering your girlfriend to steal her father's inheritance is not okay. I don't care how many double-chocolate ice cream cakes it buys you."],
             "relatedTopics": []
         },
         "coworker": {
-            "response": [""],
+            "response": ["There's something about that guy. Like he has some sort of a grudge against the defendant."],
             "relatedTopics": []
         },
         "shotgun": {
-            "response": [""],
+            "response": ["I find guns pretty interesting. Actually, I find most things interesting. I just like asking people about their hobbies."],
             "relatedTopics": []
         },
         "arms": {
-            "response": [""],
-            "relatedTopics": []
-        },
-        "money": {
             "response": [""],
             "relatedTopics": []
         }
@@ -105,6 +101,19 @@
                 "score": 100.0
             }
         ],
+        "talkAboutShotgun": [
+            {
+                "text": [
+                    "What kind of gun was it?"
+                ],
+                "claims": ["whatKindOfGun"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 100
+            }
+        ],
         "canGlovesSmudge": [
             {
                 "text": [
@@ -116,6 +125,19 @@
                 "requirements": {"immediate": true},
                 "anger": 0,
                 "score": 100
+            }
+        ],
+        "shotgunIsRare": [
+            {
+                "text": [
+                    "So it's valuable, then? How much would it cost to buy one?"
+                ],
+                "claims": ["howRareIsShotgun"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 1
             }
         ],
         "sawOfficerInPerson": [
@@ -143,6 +165,65 @@
                 "anger": 0,
                 "score": 1.3
             }
+        ],
+        "heWouldHaveBeenCuffed": [
+            {
+                "text": [
+                    "Maybe an officer put the cuffs on right after he was punched?"
+                ],
+                "claims": ["heWouldHaveBeenCuffedOtherOfficer"],
+                "conclusions": {"officer": -2.0},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
+        "talkAboutCoworker": [
+            {
+                "text": [
+                    "There was something his coworker said that really threw me.", "They asked him if the defendant had stayed late that night and he said that he handn't.", "But then they asked him if the defendant regularly stayed late after work and he started going off on some sort of tangent about the defendant's \"work ethic\"."
+                ],
+                "claims": ["coworkerHatesDefendant", "wentOffOnTangent"],
+                "conclusions": {"coworker": 1.7},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
+        "coworkerDidNotBackUp": [
+            {
+                "text": [
+                    "But there was something his coworker said that really threw me.", "They asked him if the defendant had stayed late that night and he said that he handn't.", "But then they asked him if the defendant regularly stayed late after work and he started going off on some sort of tangent about the defendant's \"work ethic\"."
+                ],
+                "claims": ["coworkerHatesDefendant", "wentOffOnTangent"],
+                "conclusions": {"coworker": 1.7},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
+        "notUnimpeachableWitness": [
+            {
+                "text": [
+                    "What if the coworker lied about not having seen him to get him indicted and off the project?"
+                ],
+                "claims": ["wouldCoworkerLie"],
+                "conclusions": {"coworker": 1.0},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 0.4
+            }
         ]
+    },
+    "voteJustifications": {
+        "acquitEntirely": ["If he later turns out to be guilty, I'll personally go over there and haul him to jail myself."],
+        "chargeWithAssault": ["That poor officer! Being arrested is no excuse for doing something like that."],
+        "completelyGuilty": ["I hope that poor lady can rest in peace with us bringing her killer to justice."],
+        "guiltyShotgun": ["It's too clear that he fired the shotgun. It was him for sure."],
+        "guiltyMotivePlusOpportunity": ["He was there at the scene of the crime and he had reason to do it."]
     }
 }

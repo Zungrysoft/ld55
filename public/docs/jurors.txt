@@ -15,7 +15,7 @@ Geoff:
 
 Eddie:
     Description: A rambin' gamblin man. Lives a bit outside the law, but cares about justice.
-    Player goal: Convince him he is innocent of the murder, then teach him about jury nullification for the assaulting a police officer charge. He is pretty in favor of acquittal in general, but he can detail conversations easily.
+    Player goal: Convince him he is innocent of the murder, then teach him about jury nullification for the assaulting a police officer charge. He is pretty in favor of acquittal in general, but he can derail conversations easily.
     Skeptical about: The shotgun
 
 Lynne:

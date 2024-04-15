@@ -65,7 +65,11 @@
             "speaker": "geoff"
         },
         {
-            "text": "Perhaps I judged him too harshly.",
+            "text": "Perhaps I **********************************may ********************have judged him a little too quickly.",
+            "speaker": "geoff"
+        },
+        {
+            "text": "Tell you what. ********************************************************************If you all think he's not guilty, I won't stand in your way.",
             "speaker": "geoff"
         },
         {
@@ -73,7 +77,7 @@
             "speaker": "eddie"
         },
         {
-            "text": "And hopefully we can move forward based on the facts, rather than the fancy.",
+            "text": "Hopefully we can move forward based on the facts, rather than the fancy.",
             "speaker": "clive"
         },
         {
@@ -204,6 +208,52 @@
         },
         {
             "text": "That's what I'm sayin'. I fasion myself a good judge of character. If that man were fixin' to kill his lover, it wouldn't be so he could get his hands on some extra pocket change.",
+            "speaker": "eddie"
+        }
+    ],
+    "officerTranscript": [
+        {
+            "text": "No, hold on, I remember thinking that too.",
+            "speaker": "henry"
+        },
+        {
+            "text": "It was when that other officer took the stand. The one who arrived later on the scene.",
+            "speaker": "henry"
+        },
+        {
+            "text": "Let me pull up the transcript here.",
+            "speaker": "henry"
+        },
+        {
+            "text": "document officer grady transcript",
+            "speaker": "henry"
+        },
+        {
+            "text": "CROSS EXAMINATION OF OFFICER M. GRADY - PAGE 2\n\nQ\tWhy not?\n\nA\tIt wasn't considered a high priority call at the time. Domestic disturbances usually aren't high priority.\n\nQ\tSo when did you show up at the crime scene?\n\nA\tI got there at 8:09 PM.\n\nQ\tAnd what was happening when you arrived?\n\nA\tOfficer Young had just been punched by the defendant. He had blood all down his face. I assisted officer Young by putting the defendant into the back of the squad car.\n\nQ\tDid you Mirandize the defendant?\n\nA\tNo, he had already been Mirandized, cuffed, and everything. I just put him into the car.\n\nQ\tWere there any other people there aside from you, officer Young, and the defendant?\n\nA\tThere were the forensics guys, but they were all still inside the house bagging up the evidence.\n",
+            "speaker": "system"
+        },
+        {
+            "text": "Okay.",
+            "speaker": "henry"
+        },
+        {
+            "text": "Interesting.",
+            "speaker": "lynne"
+        },
+        {
+            "text": "So he had handcuffs already on when officer Grady showed up.",
+            "speaker": "henry"
+        },
+        {
+            "text": "How do you suppose the defense missed that?",
+            "speaker": "logan"
+        },
+        {
+            "text": "Then how could he have broken the officer's nose with his hands cuffed behind his back?",
+            "speaker": "lynne"
+        },
+        {
+            "text": "That lying bastard!",
             "speaker": "eddie"
         }
     ]

@@ -12,19 +12,19 @@
             "relatedTopics": []
         },
         "defendant": {
-            "response": [""],
-            "relatedTopics": [""]
+            "response": ["I'm not yet sure if he's guilty, but it seems more likely than not that he is. The alibi he provided was that he was at work, yet none of his coworkers would back up his story."],
+            "relatedTopics": ["coworker"]
         },
         "girlfriend": {
-            "response": [""],
-            "relatedTopics": []
+            "response": ["Imagine being in her shoes. First your father dies, then your vulture of a boyfriend points a gun at you.", "And if he's not guilty, your killer is still at large, the police not having a single other suspect."],
+            "relatedTopics": ["shotgun"]
         },
         "officer": {
-            "response": [""],
+            "response": ["I honestly can't believe this guy. Sure, there was a lot of blood. And sure, he did get socked in the fact real good. But he acted as if he had survived some sort of near-death experience.", "It was a punch to the face, dude. Get over it."],
             "relatedTopics": []
         },
         "attourneyGeneral": {
-            "response": ["I've never met her."],
+            "response": ["I met her during the first round of jury selection. She seemed very hurried to get the whole thing done."],
             "relatedTopics": []
         },
         "law": {
@@ -36,11 +36,11 @@
             "relatedTopics": ["attourneyGeneral"]
         },
         "inheritance": {
-            "response": [""],
-            "relatedTopics": []
+            "response": ["Money is the motive to end all motives.", "People break into cars to steal the change from the cup holders. It's not a big leap to this, especially when the dollar value is so high."],
+            "relatedTopics": ["money"]
         },
         "coworker": {
-            "response": [""],
+            "response": ["He named one coworker in particular that he says he talked to that night. But when that coworker took the stand, he testified that he did not remember seeing him at all.", "Why would he name a specific person if it was all bullshit?"],
             "relatedTopics": []
         },
         "shotgun": {
@@ -48,10 +48,6 @@
             "relatedTopics": []
         },
         "arms": {
-            "response": [""],
-            "relatedTopics": []
-        },
-        "money": {
             "response": [""],
             "relatedTopics": []
         }
@@ -133,6 +129,19 @@
                 "requirements": {"immediate": true},
                 "anger": 0,
                 "score": 100.0
+            }
+        ],
+        "heWouldHaveBeenCuffed": [
+            {
+                "text": [
+                    "Maybe kicked the officer instead of punshing him?"
+                ],
+                "claims": ["heWouldHaveBeenCuffedKick"],
+                "conclusions": {"officer": -2.0},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.0
             }
         ]
     },

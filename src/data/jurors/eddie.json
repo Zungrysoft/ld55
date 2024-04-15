@@ -32,7 +32,7 @@
             "relatedTopics": []
         },
         "inheritance": {
-            "response": [""],
+            "response": ["Most people in this world got far more than they need. And then they somehow find a way to think they need even more."],
             "relatedTopics": []
         },
         "coworker": {
@@ -45,10 +45,6 @@
         },
         "arms": {
             "response": ["I don't leave home without packin'. Excludin' here, of course. I'm sure the bailiff wouldn't take too kindly to that."],
-            "relatedTopics": []
-        },
-        "money": {
-            "response": ["Most people in this world got far more than they need. And then they somehow find a way to think they need even more."],
             "relatedTopics": []
         }
     },
@@ -166,6 +162,45 @@
                 "score": 0.1
             }
         ],
+        "shotgunIsRare": [
+            {
+                "text": [
+                    "How rare are we talkin', exactly?"
+                ],
+                "claims": ["howRareIsShotgun"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 0.5
+            }
+        ],
+        "shotgunIsVeryRare": [
+            {
+                "text": [
+                    "So why didn't he hock it and save himself the trouble of a murder trial?"
+                ],
+                "claims": ["whyNotSell"],
+                "conclusions": {"shotgun": -100.0},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
+        "whyNotSellConfirm": [
+            {
+                "text": [
+                    "Does it obtain any more value by bein' a key piece of evidence in a high profile murder trial?"
+                ],
+                "claims": ["whyNotSellConfirmJoke"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
         "noOtherPrints": [
             {
                 "text": [
@@ -187,7 +222,7 @@
                 "claims": ["canGlovesSmudgeUnsure"],
                 "conclusions": {"shotgun": 0.1},
                 "receivesAgreement": false,
-                "requirements": {},
+                "requirements": {"immediate": true},
                 "anger": 0,
                 "score": 0.5
             }
@@ -277,6 +312,19 @@
                 "requirements": {},
                 "anger": 0,
                 "score": 1.3
+            }
+        ],
+        "wouldCoworkerLie": [
+            {
+                "text": [
+                    "No way. Who would lie about something like that and put a man behind bars just for some corporate project?", "If he was the owner of the company, then maybe that level of evil would make sense. But that guy's just a workin' stiff same as him. He had no reason to lie."
+                ],
+                "claims": ["wouldCoworkerLieNo"],
+                "conclusions": {"coworker": -4.0},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 11.0
             }
         ]
     }

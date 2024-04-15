@@ -81,7 +81,10 @@ export function runDeliberation(jurors) {
 
                 // Never use a default response if a juror has a valid response for it, even if it's not currently valid
                 if (jurors.filter(j => getJurorData(j).responses[claim.name]).filter(j => claim.speaker !== j).length > 0) {
-                    continue
+                    // Special case for pickTopic. We need this one to always work.
+                    if (claim.name !== 'pickTopic') {
+                        continue
+                    }
                 }
     
                 // Iterate over jurors
@@ -109,7 +112,7 @@ export function runDeliberation(jurors) {
         if (bestResponse) {
             // Add response text to log
             if (bestResponse.fixedConversation) {
-                const addedConversations = fixedConversations[bestResponse.fixedConversation].filter(e => jurors.includes(e.speaker))
+                const addedConversations = fixedConversations[bestResponse.fixedConversation].filter(e => jurors.includes(e.speaker) || e.speaker === 'system')
                 log.push(...addedConversations)
 
                 // Set previous speaker
@@ -172,7 +175,7 @@ export function runDeliberation(jurors) {
             }
         }
     }
-
+    
     // Voting
     log.push({
         speaker: 'system',

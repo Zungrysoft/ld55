@@ -33,7 +33,7 @@
             "relatedTopics": []
         },
         "inheritance": {
-            "response": [""],
+            "response": ["Money is a motivator to get the lazy man off his ass and contribute something to society. It is not a reason to kill a person."],
             "relatedTopics": []
         },
         "coworker": {
@@ -46,10 +46,6 @@
         },
         "arms": {
             "response": ["The right to bear arms is an important institution in this country. Those who misuse that right should be locked away."],
-            "relatedTopics": []
-        },
-        "money": {
-            "response": ["Money is a motivator to get the lazy man off his ass and contribute something to society. It is not a reason to kill a person."],
             "relatedTopics": []
         }
     },
@@ -102,6 +98,19 @@
                 "requirements": {"immediate": true},
                 "anger": 0,
                 "score": 100.0
+            }
+        ],
+        "motiveWasMoney": [
+            {
+                "text": [
+                    "Some people are just greedy bastards."
+                ],
+                "claims": ["somePeopleAreGreedy"],
+                "conclusions": {"inheritance": -2.0},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 0.3
             }
         ]
     }

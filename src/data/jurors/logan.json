@@ -1,0 +1,118 @@
+{
+    "properties": {
+        "name": "Logan",
+        "number": 9,
+        "textColor": "#1ad989",
+        "textSpeedMultiplier": 1.3,
+        "voice": 11
+    },
+    "topics": {
+        "default": {
+            "response": ["Sorry, I'm not sure on that one."],
+            "relatedTopics": []
+        },
+        "defendant": {
+            "response": [""],
+            "relatedTopics": [""]
+        },
+        "girlfriend": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "officer": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "attourneyGeneral": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "law": {
+            "response": ["This new \"tough on crime\" initiative spearheaded by the current administration is really having an effect on our justice system.", "Between appointing that hardline attourney general and changing the rules of the criminal process to favor conviction, we may be moving towards a more authoritarian society."],
+            "relatedTopics": ["attourneyGeneral"]
+        },
+        "inheritance": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "coworker": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "shotgun": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "arms": {
+            "response": ["I really don't care for guns. You saw the same trial I did.", "I imagine all of those little metal pellets shredding through my body and-", "Well it's not something I like to think about."],
+            "relatedTopics": []
+        }
+    },
+    "responses": {
+        "start": [
+            {
+                "text": [
+                    "Uh, um. Hey everybody. Should we get started here?"
+                ],
+                "claims": ["pickTopic"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 0.2
+            }
+        ],
+        "maybeUsedGloves": [
+            {
+                "text": [
+                    "Couldn't the forensic scientists tell if someone held the gun after the defendant, even if he was wearing gloves?", "Wouldn't the gloves smudge the prints?"
+                ],
+                "claims": ["canGlovesSmudge"],
+                "conclusions": {"shotgun": -0.5},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 0.5
+            }
+        ],
+        "attackedOfficer": [
+            {
+                "text": [
+                    "He sure took a beating."
+                ],
+                "claims": ["officerHurtBadly"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.1
+            }
+        ],
+        "heWouldHaveBeenCuffed": [
+            {
+                "text": [
+                    "Maybe he was cuffed with his hands behind his back?"
+                ],
+                "claims": ["heWouldHaveBeenCuffedBehindBack"],
+                "conclusions": {"officer": -2.0},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
+        "wouldCoworkerLie": [
+            {
+                "text": [
+                    "That can't be it. Who would lie about something like that just so they can be put on a project?"
+                ],
+                "claims": ["wouldCoworkerLieNo"],
+                "conclusions": {"coworker": -1.5},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 10.0
+            }
+        ]
+    }
+}

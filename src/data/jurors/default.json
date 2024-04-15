@@ -78,19 +78,6 @@
                 "score": 1.0
             }
         ],
-        "talkAboutOfficer": [
-            {
-                "text": [
-                    "The police officer that arrested the defendant claims he attacked him."
-                ],
-                "claims": ["attackedOfficer"],
-                "conclusions": {},
-                "receivesAgreement": false,
-                "requirements": {},
-                "anger": 0,
-                "score": 1.0
-            }
-        ],
         "differentShotgun": [
             {
                 "text": [
@@ -138,7 +125,7 @@
                 "claims": ["canGlovesSmudgeUnsure"],
                 "conclusions": {"shotgun": 0.1},
                 "receivesAgreement": false,
-                "requirements": {},
+                "requirements": {"immediate": true},
                 "anger": 0,
                 "score": 1.0
             }
@@ -150,7 +137,111 @@
                 ],
                 "claims": ["canGlovesSmudgeYesConfirm"],
                 "conclusions": {"shotgun": -100.0},
-                "receivesAgreement": true,
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
+        "whatKindOfGun": [
+            {
+                "text": [
+                    "I'm not really sure."
+                ],
+                "claims": ["shotgunTypeUnknown"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 1
+            }
+        ],
+        "shotgunIsRare": [
+            {
+                "text": [
+                    "How rare is it?"
+                ],
+                "claims": ["howRareIsShotgun"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 1
+            }
+        ],
+        "talkAboutOfficer": [
+            {
+                "text": [
+                    "The police officer who arrested the defendant claims he attacked him."
+                ],
+                "claims": ["attackedOfficer"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
+        "attackedOfficer": [
+            {
+                "text": [
+                    "We all saw the photos. He definitely assaulted the officer."
+                ],
+                "claims": ["photosProveHeAssaulted"],
+                "conclusions": {"officer": -1.0},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
+        "talkAboutCoworker": [
+            {
+                "text": [
+                    "The defendant's only alibi wouldn't back him up."
+                ],
+                "claims": ["coworkerDidNotBackUp"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
+        "coworkerDidNotBackUp": [
+            {
+                "text": [
+                    "He has no alibi for the time the crime took place. He could have been there."
+                ],
+                "claims": ["heCouldHaveBeenThere"],
+                "conclusions": {"coworker": -1.0},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
+        "talkAboutInheritance": [
+            {
+                "text": [
+                    "The prosecution claims that the motive was to steal an inheritance his girlfriend had just come into."
+                ],
+                "claims": ["motiveWasMoney"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
+        "motiveWasMoney": [
+            {
+                "text": [
+                    "That seems like a valid motive."
+                ],
+                "claims": ["motiveWasMoneyAgree"],
+                "conclusions": {"inheritance": -1.0},
+                "receivesAgreement": false,
                 "requirements": {"immediate": true},
                 "anger": 0,
                 "score": 1.0

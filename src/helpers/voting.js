@@ -1,7 +1,7 @@
 import { getJurorData } from "./juror"
 
 export function getVote(juror, conclusions) {
-    if (juror === 'susan') {return susanVote(conclusions)}
+    if (juror === 'alice') {return aliceVote(conclusions)}
     if (juror === 'geoff') {return geoffVote(conclusions)}
     if (juror === 'eddie') {return eddieVote(conclusions)}
 
@@ -57,7 +57,7 @@ function defaultVote(juror, conclusions) {
     }
 }
 
-function susanVote(conclusions) {
+function aliceVote(conclusions) {
     let noLongerTrustsFriend = gc('attourneyGeneral', conclusions) >= 10.0
 
     if (noLongerTrustsFriend) {
@@ -134,7 +134,7 @@ function geoffVote(conclusions) {
 
     if (soulOfAmerica) {
         return {
-            text: ["I may have judged the kid too quickly before."],
+            text: ["I don't really know whether or not the kid is guilty, but I no longer feel equal to the task of sending him to jail."],
             acquit: true
         }
     }

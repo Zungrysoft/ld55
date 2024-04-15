@@ -1,0 +1,118 @@
+{
+    "properties": {
+        "name": "Alice",
+        "number": 10,
+        "textColor": "#b628bd",
+        "textSpeedMultiplier": 1.0,
+        "voice": 11
+    },
+    "topics": {
+        "default": {
+            "response": ["I just don't know."],
+            "relatedTopics": []
+        },
+        "defendant": {
+            "response": ["Oh, he's guilty for sure. It's just obvious! The guy's lawyers couldn't give a single bit of proof for why he's innocent!"],
+            "relatedTopics": [""]
+        },
+        "girlfriend": {
+            "response": ["This man deserves to rot for what he did to that poor lady!"],
+            "relatedTopics": []
+        },
+        "officer": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "attourneyGeneral": {
+            "response": ["Oh, Katie's great! We go out to dinner at least once a month. She's actually the reason I found out about this whole thing. She said I would make the perfect juror for this big case she was working on!", "She said she needs a really smart person to crack this case."],
+            "relatedTopics": []
+        },
+        "law": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "inheritance": {
+            "response": ["Only when we abolish greed will we be safe from these sorts of people.", "Too bad that will never happen. Some people are just too short sighted."],
+            "relatedTopics": []
+        },
+        "coworker": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "shotgun": {
+            "response": [""],
+            "relatedTopics": []
+        },
+        "arms": {
+            "response": ["I really really really don't like guns. Those things are scary! I mean, you saw the same trial I did!", "I imagine all of those little metal pellets shredding through my body and-", "Well it's not something I like to think about."],
+            "relatedTopics": []
+        }
+    },
+    "responses": {
+        "start": [
+            {
+                "text": [
+                    "Uh, um. Hey everybody. Should we get started here?"
+                ],
+                "claims": ["pickTopic"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 0.2
+            }
+        ],
+        "maybeUsedGloves": [
+            {
+                "text": [
+                    "Couldn't the forensic scientists tell if someone held the gun after the defendant, even if he was wearing gloves?", "Wouldn't the gloves smudge the prints?"
+                ],
+                "claims": ["canGlovesSmudge"],
+                "conclusions": {"shotgun": -0.5},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 0.5
+            }
+        ],
+        "attackedOfficer": [
+            {
+                "text": [
+                    "He took a beating for sure."
+                ],
+                "claims": ["officerHurtBadly"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.1
+            }
+        ],
+        "heWouldHaveBeenCuffed": [
+            {
+                "text": [
+                    "Maybe he was cuffed with his hands behind his back?"
+                ],
+                "claims": ["heWouldHaveBeenCuffedBehindBack"],
+                "conclusions": {"officer": -2.0},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
+        "wouldCoworkerLie": [
+            {
+                "text": [
+                    "That can't be it. Who would lie about something like that just so they can be put on a project?"
+                ],
+                "claims": ["wouldCoworkerLieNo"],
+                "conclusions": {"coworker": -1.5},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 10.0
+            }
+        ]
+    }
+}
