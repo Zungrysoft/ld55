@@ -10,7 +10,9 @@ export function getVote(juror, conclusions) {
 
 function defaultVote(juror, conclusions) {
     let acquitMurderShotgun = gc('shotgun', conclusions) >= 3.0
-    let acquitMurderMotivePlusOpportunity = (gc('coworker', conclusions) >= 3.0) || (gc('inheritance', conclusions) >= 3.0)
+    let acquitMurderCoworker = gc('coworker', conclusions) >= 3.0
+    let acquitMurderInheritance = gc('inheritance', conclusions) >= 3.0
+    let acquitMurderMotivePlusOpportunity = acquitMurderCoworker || acquitMurderInheritance
 
     let acquitAssaultNullification = gc('nullification', conclusions) >= 5.0
     let acquitAssaultEvidence = gc('officer', conclusions) >= 3.0
@@ -19,8 +21,25 @@ function defaultVote(juror, conclusions) {
 
     // Acquit of murder
     if (acquitMurderShotgun && acquitMurderMotivePlusOpportunity) {
-        // Acquit entirely
-        if (acquitAssaultNullification || acquitAssaultEvidence) {
+        // Acquit
+        if (acquitAssaultEvidence || (acquitAssaultNullification && voteJustifications?.willDoJuryNullification)) {
+            // Acquit inheritance
+            if (!acquitMurderCoworker && voteJustifications?.acquitInheritance) {
+                return {
+                    text: voteJustifications?.acquitInheritance || [],
+                    acquit: true
+                }
+            }
+
+            // Acquit coworker
+            if (!acquitMurderInheritance && voteJustifications?.acquitCoworker) {
+                return {
+                    text: voteJustifications?.acquitCoworker || [],
+                    acquit: true
+                }
+            }
+
+            // Full acquittal
             return {
                 text: voteJustifications?.acquitEntirely || [],
                 acquit: true
@@ -68,7 +87,7 @@ function aliceVote(conclusions) {
     }
 
     return {
-        text: ["Katie was right, this was an easy trial. Guilty!"],
+        text: ["Katie said the guy was guilty and she knows more about the law than me. So I think I'll trust her on this one."],
         acquit: false
     }
 }
@@ -90,7 +109,7 @@ function eddieVote(conclusions) {
                 retText.push("And it's clear he didn't assault that lying police officer either.")
             }
             else {
-                retText.push("As for that assault charge, I'm gonna do me some jury nullification.")
+                retText.push("As for that assault charge, I'm just not gonna charge him. This jury nullification thing is real swell!")
             }
 
             return {

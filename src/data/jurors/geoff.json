@@ -13,7 +13,7 @@
             "relatedTopics": []
         },
         "defendant": {
-            "response": ["I swear there's something wrong with this country nowadays. Some jobless slacker sees dollar signs in his eyes and it blinds him to his morals. What kind of man kills his girlfriend of five years for some money? ", "That poor woman."],
+            "response": ["I swear there's something wrong with this country nowadays. Some jobless slacker sees dollar signs in his eyes and it blinds him to his morals. What kind of man kills his girlfriend of seven years for some money? ", "That poor woman."],
             "relatedTopics": ["girlfriend"]
         },
         "girlfriend": {
@@ -37,14 +37,10 @@
             "relatedTopics": []
         },
         "coworker": {
-            "response": [""],
+            "response": ["The defendant says his coworker would have seen him that night. The coworker says otherwise. Sounds to me like he was desperately trying to come up with some sort of alibi."],
             "relatedTopics": []
         },
         "shotgun": {
-            "response": [""],
-            "relatedTopics": []
-        },
-        "arms": {
             "response": ["The right to bear arms is an important institution in this country. Those who misuse that right should be locked away."],
             "relatedTopics": []
         }

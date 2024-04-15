@@ -2,9 +2,9 @@
     "properties": {
         "name": "Alice",
         "number": 10,
-        "textColor": "#b628bd",
+        "textColor": "#d54ddb",
         "textSpeedMultiplier": 1.0,
-        "voice": 11
+        "voice": 7
     },
     "topics": {
         "default": {
@@ -13,7 +13,7 @@
         },
         "defendant": {
             "response": ["Oh, he's guilty for sure. It's just obvious! The guy's lawyers couldn't give a single bit of proof for why he's innocent!"],
-            "relatedTopics": [""]
+            "relatedTopics": []
         },
         "girlfriend": {
             "response": ["This man deserves to rot for what he did to that poor lady!"],
@@ -28,11 +28,11 @@
             "relatedTopics": []
         },
         "law": {
-            "response": [""],
+            "response": ["They say it's not about what you know, it's who you know.", "I'm sorry, what was the question again?"],
             "relatedTopics": []
         },
         "inheritance": {
-            "response": ["Only when we abolish greed will we be safe from these sorts of people.", "Too bad that will never happen. Some people are just too short sighted."],
+            "response": ["There's more to life than a little bit of money. Didn't he know that?"],
             "relatedTopics": []
         },
         "coworker": {
@@ -40,11 +40,7 @@
             "relatedTopics": []
         },
         "shotgun": {
-            "response": [""],
-            "relatedTopics": []
-        },
-        "arms": {
-            "response": ["I really really really don't like guns. Those things are scary! I mean, you saw the same trial I did!", "I imagine all of those little metal pellets shredding through my body and-", "Well it's not something I like to think about."],
+            "response": ["The owner of that pawn shop says he sold a gun exactly like the one the defendant used only two days earlier. But his identification was very vague.", "In his initial report to the police, he described a tall, brown-haired man with blue eyes. That doesn't seem to match the defendant at all.", "He ID'ed him later in court though, so maybe I'm just crazy."],
             "relatedTopics": []
         }
     },
@@ -52,66 +48,27 @@
         "start": [
             {
                 "text": [
-                    "Uh, um. Hey everybody. Should we get started here?"
+                    "Alright everyone. Should we get started?"
                 ],
                 "claims": ["pickTopic"],
                 "conclusions": {},
                 "receivesAgreement": false,
                 "requirements": {},
                 "anger": 0,
-                "score": 0.2
+                "score": 0.4
             }
         ],
-        "maybeUsedGloves": [
+        "pawnShopOwnerId": [
             {
                 "text": [
-                    "Couldn't the forensic scientists tell if someone held the gun after the defendant, even if he was wearing gloves?", "Wouldn't the gloves smudge the prints?"
+                    "That's actually something I wanted to bring up. I think the pawn shop owner's report to the police was a bit vague and innaccurate."
                 ],
-                "claims": ["canGlovesSmudge"],
-                "conclusions": {"shotgun": -0.5},
-                "receivesAgreement": false,
-                "requirements": {},
-                "anger": 0,
-                "score": 0.5
-            }
-        ],
-        "attackedOfficer": [
-            {
-                "text": [
-                    "He took a beating for sure."
-                ],
-                "claims": ["officerHurtBadly"],
-                "conclusions": {},
-                "receivesAgreement": false,
-                "requirements": {},
-                "anger": 0,
-                "score": 1.1
-            }
-        ],
-        "heWouldHaveBeenCuffed": [
-            {
-                "text": [
-                    "Maybe he was cuffed with his hands behind his back?"
-                ],
-                "claims": ["heWouldHaveBeenCuffedBehindBack"],
-                "conclusions": {"officer": -2.0},
-                "receivesAgreement": false,
-                "requirements": {},
-                "anger": 0,
-                "score": 1.0
-            }
-        ],
-        "wouldCoworkerLie": [
-            {
-                "text": [
-                    "That can't be it. Who would lie about something like that just so they can be put on a project?"
-                ],
-                "claims": ["wouldCoworkerLieNo"],
-                "conclusions": {"coworker": -1.5},
+                "claims": ["pawnShopOwnerMistaken"],
+                "conclusions": {"shotgun": 0.2},
                 "receivesAgreement": false,
                 "requirements": {"immediate": true},
                 "anger": 0,
-                "score": 10.0
+                "score": 100.0
             }
         ]
     }

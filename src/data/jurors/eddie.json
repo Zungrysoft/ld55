@@ -24,15 +24,15 @@
             "relatedTopics": []
         },
         "attourneyGeneral": {
-            "response": ["I don't know her, sorry."],
+            "response": ["She moves likes she's always got somewhere else to be."],
             "relatedTopics": []
         },
         "law": {
             "response": ["Man, I've been all 'round this country. And in my travels I've seen every manner of stuffy law man thinking he's a big shot on account of that badge he wears. But I tell ya, there's a lot more to bein' a man than just followin' the law.", "There's a certain code in this world that any righteous individual should live by. And the law has nothin' to do with that."],
-            "relatedTopics": []
+            "relatedTopics": ["officer"]
         },
         "inheritance": {
-            "response": ["Most people in this world got far more than they need. And then they somehow find a way to think they need even more."],
+            "response": ["Most people in this world got far more than they need. And then they somehow find their way to thinkin' they need even more."],
             "relatedTopics": []
         },
         "coworker": {
@@ -40,11 +40,7 @@
             "relatedTopics": []
         },
         "shotgun": {
-            "response": ["The guy's prints were found on the shotgun. That seems pretty iron clad right there. But I'd be lyin' if I said I hadn't ended up in a few scrapes where my gun was in the other guy's hands.", "Point is, he says he owns the gun. 'Course his prints are on it. Doesn't mean he was the one who shot it."],
-            "relatedTopics": []
-        },
-        "arms": {
-            "response": ["I don't leave home without packin'. Excludin' here, of course. I'm sure the bailiff wouldn't take too kindly to that."],
+            "response": ["The guy's prints were found on the shotgun. That would seem pretty iron clad right there. But I'd be lyin' if I said I hadn't ended up in a few scrapes where my gun was in the other guy's hands.", "Point is, he says he owns the gun. 'Course his prints are on it. Doesn't mean he was the one who shot it."],
             "relatedTopics": []
         }
     },
@@ -144,7 +140,7 @@
                     "He had no record of buying the gun because he bought it at a gun show. I can't figure the last time I've seen a seller at a gun show print out a receipt. It's all cash and no questions asked."
                 ],
                 "claims": ["boughtAtGunShow"],
-                "conclusions": {"shotgun": 0.4},
+                "conclusions": {"shotgun": 1.2},
                 "receivesAgreement": false,
                 "requirements": {},
                 "anger": 0,
@@ -154,8 +150,8 @@
                 "text": [
                     "So what? It's not on him to prove he owned it. It's on the prosecution to prove he bought it recently."
                 ],
-                "claims": ["noRecordForShotgunWhoCares"],
-                "conclusions": {"shotgun": 0.4},
+                "claims": ["noRecordForShotgunNoBurdenOfProof"],
+                "conclusions": {"shotgun": 5.5},
                 "receivesAgreement": false,
                 "requirements": {},
                 "anger": 0,
@@ -201,6 +197,19 @@
                 "score": 1.0
             }
         ],
+        "pawnShopOwnerId": [
+            {
+                "text": [
+                    "I suppose that's fair enough."
+                ],
+                "claims": ["pawnShopOwnerIdAgree"],
+                "conclusions": {"shotgun": -5.0},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 0.3
+            }
+        ],
         "noOtherPrints": [
             {
                 "text": [
@@ -220,7 +229,7 @@
                     "I'm not sure 'bout that. I don't think the defense ever brought it up."
                 ],
                 "claims": ["canGlovesSmudgeUnsure"],
-                "conclusions": {"shotgun": 0.1},
+                "conclusions": {"shotgun": 0.6},
                 "receivesAgreement": false,
                 "requirements": {"immediate": true},
                 "anger": 0,

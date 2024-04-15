@@ -5,7 +5,7 @@ Clive:
 
 Susan:
     Description: Not the smartest tool in the shed, but her heart's in the right place.
-    Player goal: Turn her against the attourney general.
+    Player goal: 
     Skeptical about: 
 
 Geoff:
@@ -31,4 +31,19 @@ Henry:
 Mason:
     Description: Lives down the street from the defendant.
     Player goal: Use him to sway geoff about the defendant.
+    Skeptical about: 
+
+Kylie:
+    Description: A bright and inquisitive girl.
+    Player goal: 
+    Skeptical about: 
+
+Logan:
+    Description: A meek intellectual type.
+    Player goal: 
+    Skeptical about: 
+
+Alice:
+    Description: 
+    Player goal: Turn her against the attourney general.
     Skeptical about: 

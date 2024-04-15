@@ -18,8 +18,8 @@ export function parseCommand(input, saveData) {
         }
     }
     
-    if ('debug'.includes(argv[0])) {return commandDebug(argv.slice(1), saveData)}
-    if ('analyze'.includes(argv[0])) {return commandAnalyze(argv.slice(1), saveData)}
+    if ('debug' === argv[0]) {return commandDebug(argv.slice(1), saveData)}
+    if ('spoiler' === argv[0]) {return commandAnalyze(argv.slice(1), saveData)}
     if ('help'.includes(argv[0])) {return commandHelp(argv.slice(1), saveData)}
     if ('restart'.includes(argv[0])) {return commandRestart(argv.slice(1), saveData)}
     if ('interview'.includes(argv[0])) {return commandInterview(argv.slice(1), saveData)}
@@ -56,7 +56,7 @@ function commandAnalyze(argv, saveData) {
     let ret = "There are " + acquitCount + " winning combinations:"
 
     for (const combination of acquitCombinations) {
-        ret += "\n\t" + combination.toString()
+        ret += "\n\t" + combination.toString().replaceAll(",", " ")
     }
 
     ret += "\nJuror counts:"

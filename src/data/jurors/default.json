@@ -123,7 +123,7 @@
                     "I'm not sure."
                 ],
                 "claims": ["canGlovesSmudgeUnsure"],
-                "conclusions": {"shotgun": 0.1},
+                "conclusions": {"shotgun": 0.6},
                 "receivesAgreement": false,
                 "requirements": {"immediate": true},
                 "anger": 0,
@@ -241,6 +241,19 @@
                 ],
                 "claims": ["motiveWasMoneyAgree"],
                 "conclusions": {"inheritance": -1.0},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
+        "pawnShopOwnerId": [
+            {
+                "text": [
+                    "Good point."
+                ],
+                "claims": ["pawnShopOwnerIdAgree"],
+                "conclusions": {"shotgun": -3.0},
                 "receivesAgreement": false,
                 "requirements": {"immediate": true},
                 "anger": 0,

@@ -42,10 +42,6 @@
         "shotgun": {
             "response": ["I find guns pretty interesting. Actually, I find most things interesting. I just like asking people about their hobbies."],
             "relatedTopics": []
-        },
-        "arms": {
-            "response": [""],
-            "relatedTopics": []
         }
     },
     "responses": {

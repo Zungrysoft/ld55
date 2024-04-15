@@ -46,10 +46,6 @@
         "shotgun": {
             "response": [""],
             "relatedTopics": []
-        },
-        "arms": {
-            "response": [""],
-            "relatedTopics": []
         }
     },
     "responses": {
@@ -149,7 +145,8 @@
         "acquitEntirely": ["I'm not saying he's definitely innocent, but there just isn't enough evidence to convict."],
         "chargeWithAssault": ["It doesn't look like he was the killer, but he did assault that poor officer!"],
         "completelyGuilty": ["The guy's guilty for sure."],
-        "guiltyShotgun": ["All of the evidence puts him on the other end of that shotgun."],
-        "guiltyMotivePlusOpportunity": ["The defendant had both motive and opportunity."]
+        "guiltyShotgun": ["The prosecution's case held up to our scrutiny."],
+        "guiltyMotivePlusOpportunity": ["The defendant had both motive and opportunity."],
+        "willDoJuryNullification": true
     }
 }

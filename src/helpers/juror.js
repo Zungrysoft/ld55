@@ -10,6 +10,8 @@ import lynneData from '../data/jurors/lynne.json';
 import henryData from '../data/jurors/henry.json';
 import masonData from '../data/jurors/mason.json';
 import kylieData from '../data/jurors/kylie.json';
+import loganData from '../data/jurors/logan.json';
+import aliceData from '../data/jurors/alice.json';
 
 export function getJurorData(juror) {
     if (juror === 'error') {return errorData}
@@ -23,6 +25,8 @@ export function getJurorData(juror) {
     if (juror === 'henry') {return henryData}
     if (juror === 'mason') {return masonData}
     if (juror === 'kylie') {return kylieData}
+    if (juror === 'logan') {return loganData}
+    if (juror === 'alice') {return aliceData}
 
     return systemData
 }
@@ -37,5 +41,7 @@ export function getAllJurors() {
         henry: henryData,
         mason: masonData,
         kylie: kylieData,
+        logan: loganData,
+        alice: aliceData,
     }
 }

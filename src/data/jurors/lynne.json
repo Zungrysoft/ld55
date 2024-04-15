@@ -12,8 +12,8 @@
             "relatedTopics": []
         },
         "defendant": {
-            "response": [""],
-            "relatedTopics": []
+            "response": ["Looking at the facts, he seems guilty. His prints are on the gun and as the prosecution pointed out, he may have had the motive of taking the money from the inheritance she recently came into."],
+            "relatedTopics": ["shotgun", "inheritance"]
         },
         "girlfriend": {
             "response": [""],
@@ -36,7 +36,7 @@
             "relatedTopics": []
         },
         "inheritance": {
-            "response": ["There's more to life than a little bit of money. Didn't he know that?"],
+            "response": ["Only when we as a society can overcome our innate greed will we be safe from these sorts of people.", "Too bad that will never happen. Some people are just too short sighted."],
             "relatedTopics": []
         },
         "coworker": {
@@ -44,10 +44,6 @@
             "relatedTopics": []
         },
         "shotgun": {
-            "response": [""],
-            "relatedTopics": []
-        },
-        "arms": {
             "response": [""],
             "relatedTopics": []
         }
@@ -88,6 +84,19 @@
                 "requirements": {"immediate": true},
                 "anger": 0.1,
                 "score": 1.7
+            }
+        ],
+        "defenseDoesNotNeedToProve": [
+            {
+                "text": [
+                    "Well the defense can disprove evidence provided by the prosection. But you're right, the burden of proof is not on the defense."
+                ],
+                "claims": ["defenseDoesNotNeedToProveAgree"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 0.3
             }
         ],
         "wouldNotGetMoney": [
@@ -135,11 +144,24 @@
                     "I don't think that was ever brought up in the trial. That seems like a mistake on the part of the defense."
                 ],
                 "claims": ["canGlovesSmudgeUnsure"],
-                "conclusions": {"shotgun": 0.1},
+                "conclusions": {"shotgun": 0.6},
                 "receivesAgreement": false,
                 "requirements": {"immediate": true},
                 "anger": 0,
                 "score": 1.0
+            }
+        ],
+        "alreadyOwnedShotgun": [
+            {
+                "text": [
+                    "He says he owned it already, but the pawn shop owner testified in court that he had actaully bought it only two days earlier from his store.", "He positively identified him from the stand."
+                ],
+                "claims": ["pawnShopOwnerId"],
+                "conclusions": {"shotgun": -5.0},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 0.3
             }
         ],
         "talkAboutOfficer": [

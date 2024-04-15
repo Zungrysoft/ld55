@@ -40,11 +40,7 @@
             "relatedTopics": []
         },
         "shotgun": {
-            "response": ["James went rifle shooting a lot, but I never knew he owned a shotgun."],
-            "relatedTopics": ["arms"]
-        },
-        "arms": {
-            "response": ["I'm not a big fan of guns, myself. James tried a few times to take me rifle shooting, but I always declined. It was a hobby of his, for sure."],
+            "response": ["James went rifle shooting a lot. In fact, he tried to take me a few times though I always declined. I never knew he owned a shotgun."],
             "relatedTopics": []
         }
     },

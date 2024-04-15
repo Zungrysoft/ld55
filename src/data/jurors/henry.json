@@ -13,18 +13,18 @@
         },
         "defendant": {
             "response": [""],
-            "relatedTopics": [""]
+            "relatedTopics": []
         },
         "girlfriend": {
             "response": [""],
             "relatedTopics": []
         },
         "officer": {
-            "response": ["Okay, so I'm a bit squeamish. When I saw those photos of his bloodied face after the alleged assault, I was cringing backward through time!","I do find the timeline a bit odd though. The officer mentions getting punched in the face, but then the other officer than testified and I think I remember him saying the defendant was already in cuffs.", "How can you throw a punch when you're in cuffs? Let along enough to cause that much blood.", "I dunno. I'm probably misremembering."],
+            "response": ["Okay, so I'm a bit squeamish. When I saw those photos of his bloodied face after the alleged assault, I was cringing backward through time!","I do find the timeline a bit odd though. The officer mentions getting punched in the face, but then the other officer than testified and I think I remember him saying the defendant was already in cuffs.", "How can you throw a punch when you're in cuffs? Let along enough to cause that much blood.", "I dunno.", "I'm probably misremembering."],
             "relatedTopics": []
         },
         "attourneyGeneral": {
-            "response": ["She seems nice."],
+            "response": ["She seemed nice."],
             "relatedTopics": []
         },
         "law": {
@@ -36,14 +36,10 @@
             "relatedTopics": []
         },
         "coworker": {
-            "response": [""],
+            "response": ["The coworker's testimony seemed...aggressive?", "Like he was relishing in being able to testify against him."],
             "relatedTopics": []
         },
         "shotgun": {
-            "response": [""],
-            "relatedTopics": []
-        },
-        "arms": {
             "response": [""],
             "relatedTopics": []
         }
@@ -92,7 +88,7 @@
                     "The whole bit about wanting to kill his girlfriend for the inheritance seems shaky to me. They weren't married, so he wouldn't have gotten the money no matter what.", "Even if he had gotten away with it, how was he thinking he would get his money?"
                 ],
                 "claims": ["wouldNotGetMoney"],
-                "conclusions": {"inheritance": 0.5},
+                "conclusions": {"inheritance": 1.5},
                 "receivesAgreement": false,
                 "requirements": {},
                 "anger": 0,
@@ -105,7 +101,7 @@
                     "Even if he was willing to kill his girlfriend for the money, they weren't married. The money wouldn't have been his even if he had gotten away with it. He would have to be real dumb to think this sort of scheme would work."
                 ],
                 "claims": ["wouldNotGetMoney"],
-                "conclusions": {"inheritance": 1.0},
+                "conclusions": {"inheritance": 2.0},
                 "receivesAgreement": false,
                 "requirements": {},
                 "anger": 0,
@@ -130,8 +126,19 @@
                 "text": [
                     "Absolutely. And the prosecution was never able to prove that he bought it beforehand. They just talked about how he didn't have a receipt for it. But it's like, \"Hey buddy, proving things is your job!\"", "It's not on the defense to prove anything!"
                 ],
+                "claims": ["alreadyOwnedShotgunAgree", "defenseDoesNotNeedToProve"],
+                "conclusions": {"shotgun": 2.0},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 0.3
+            },
+            {
+                "text": [
+                    "Absolutely. And the prosecution was never able to prove that he bought it beforehand. They just talked about how he didn't have a receipt for it."
+                ],
                 "claims": ["alreadyOwnedShotgunAgree"],
-                "conclusions": {"shotgun": 1.5},
+                "conclusions": {"shotgun": 2.0},
                 "receivesAgreement": false,
                 "requirements": {"immediate": true},
                 "anger": 0,
@@ -269,9 +276,12 @@
     },
     "voteJustifications": {
         "acquitEntirely": ["Against all odds, he seems to be innocent."],
+        "acquitInheritance": ["I don't think he fired the gun and the apparent motive seems completely bogus."],
+        "acquitCoworker": ["I don't think he fired the gun and his alibi seems to check out."],
         "chargeWithAssault": ["He did still assault a police officer, even if he is innocent of murder."],
         "completelyGuilty": ["Guilty, as expected."],
-        "guiltyShotgun": ["There's too much evidence that he fired the gun."],
-        "guiltyMotivePlusOpportunity": ["I still can't believe he was dumb enough to think he could get that inheritance money, but all the facts point to that being the case. Plus he was there at the scene of the crime."]
+        "guiltyShotgun": ["There's too much evidence that he fired the gun, regardless of whether the motive makes sense."],
+        "guiltyMotivePlusOpportunity": ["I still can't believe he was dumb enough to think he could get that inheritance money, but all the facts point to that being the case. Plus he was there at the scene of the crime."],
+        "willDoJuryNullification": true
     }
 }

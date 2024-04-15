@@ -24,7 +24,7 @@
             "relatedTopics": []
         },
         "attourneyGeneral": {
-            "response": ["I've never her."],
+            "response": ["I remember reading an article in the paper about allegations of her stacking juries. I don't think anything ever came of it though."],
             "relatedTopics": []
         },
         "law": {
@@ -40,11 +40,7 @@
             "relatedTopics": []
         },
         "shotgun": {
-            "response": ["The prosecution's main point regarding the firearm that was allegedly used to commit the relevant crime is that he bought the shotgun specifically to use in the murder. A pawn shop three blocks from his house reported having sold a firearm of the very same model to the defendant two days ago."],
-            "relatedTopics": ["arms"]
-        },
-        "arms": {
-            "response": ["I'd consider myself an expert on all manner of firearms. Ask me any question about the history of firearms and I can probably answer it.It's a hobby of mine, for sure."],
+            "response": ["The prosecution's main point regarding the firearm that was allegedly used to commit the relevant crime is that he bought the shotgun specifically to use in the murder. A pawn shop three blocks from his house reported having sold a firearm of the very same model to the defendant two days prior.", "I'd consider myself an expert on all manner of firearms. Ask me any question about the history of firearms and I can probably answer it.It's a hobby of mine, for sure."],
             "relatedTopics": []
         }
     },
@@ -132,8 +128,56 @@
                 "text": [
                     "Not a single friend or family member questioned could corroborate him having owned a gun of any sort. And he had no record of having bought the gun. This leads me to believe he bought it very recently and for this particular purpose."
                 ],
-                "claims": ["doesNotOwnShotgun", "noRecordForShotgun", "boughtShotgunForMurder"],
-                "conclusions": {"shotgun": -0.3},
+                "claims": ["noRecordForShotgun", "boughtShotgunForMurder"],
+                "conclusions": {"shotgun": -5.0},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.0
+            },
+            {
+                "text": [
+                    "Not a single friend or family member questioned could corroborate him having owned a gun of any sort. And he had no record of having bought the gun."
+                ],
+                "claims": ["noRecordForShotgun"],
+                "conclusions": {"shotgun": -5.0},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
+        "boughtAtGunShow": [
+            {
+                "text": [
+                    "Well that may be the case, but it means that the defendant has no answer to the prosecution's witness. The pawn shop owner positively identified the defendant in the court room as having bought that very same gun from him two days earlier."
+                ],
+                "claims": ["pawnShopOwnerId"],
+                "conclusions": {"shotgun": -5.0},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
+        "noRecordForShotgunNoBurdenOfProof": [
+            {
+                "text": [
+                    "They did prove he bought it recently. The pawn shop owner identified the defendant in court as having bought that very same gun from him two days earlier.", "That makes the murder premeditated."
+                ],
+                "claims": ["pawnShopOwnerId", "boughtShotgunForMurder"],
+                "conclusions": {"shotgun": -5.0},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.0
+            },
+            {
+                "text": [
+                    "They did prove he bought it recently. The pawn shop owner identified the defendant in court as having bought that very same gun from him two days earlier."
+                ],
+                "claims": ["pawnShopOwnerId"],
+                "conclusions": {"shotgun": -4.7},
                 "receivesAgreement": false,
                 "requirements": {},
                 "anger": 0,
@@ -221,6 +265,8 @@
     },
     "voteJustifications": {
         "acquitEntirely": ["I hope we are doing the right thing."],
+        "acquitInheritance": ["It's clear he did not fire the gun and I don't buy the motive for the crime."],
+        "acquitCoworker": ["It's clear he did not fire the gun and I don't think he was there when the crime occurred."],
         "chargeWithAssault": ["Guilty of assault, not guilty of murder."],
         "completelyGuilty": ["He's clearly guilty. A man like that needs to be locked away."],
         "guiltyShotgun": ["Regardless of the other facts, he definitely fired the shotgun."],
