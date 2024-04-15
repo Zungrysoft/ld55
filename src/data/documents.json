@@ -9,7 +9,7 @@
     },
     "procedure": {
         "name": "Jury Selection Procedure",
-        "text": ["The Jury Selection Procedure is simple. Twenty jurors are summoned from around the country to hear the case. Afterwards, the prosecution dismisses half of them. Then the defense gets the last pick, selecting four jurors out of the remaining ten to serve on the jury.\n\nThe prosecution has already picked their ten. Now you have the opportunity to interview them and decide which ones to put on the jury. Use the \"select\" command to make your selection. Note that the order in which you list the jurors has no effect on the outcome.\n\nAfter you select the jurors, you will get to hear their deliberations. The jurors will then vote. If at least three of the four jurors vote \"Not Guilty\", your client will be acquitted!"]
+        "text": ["The Jury Selection Procedure is simple. Twenty jurors are summoned from around the country to hear the case. Afterwards, the prosecution dismisses half of them. Then the defense gets the last pick, selecting four jurors out of the remaining ten to serve on the jury.\n\nThe prosecution has already picked their ten. Now you have the opportunity to interview them and decide which ones to put on the jury. Use the \"select\" command to make your selection. Note that the order in which you list the jurors has no effect on the outcome.\n\nAfter you select the jurors, you will get to hear their deliberations. The jurors will then vote. If all four jurors vote \"Not Guilty\", your client will be acquitted!"]
     },
     "controls": {
         "name": "Controls",

@@ -82,7 +82,7 @@
                 "text": [
                     "I got to see his face in person during all the commotion. I didn't know he had so much power behind those fists!"
                 ],
-                "claims": ["sawOfficerInPerson"],
+                "claims": ["sawOfficerInPerson", "mightBeTooWeak"],
                 "conclusions": {},
                 "receivesAgreement": false,
                 "requirements": {},
@@ -90,12 +90,25 @@
                 "score": 2.0
             }
         ],
-        "voteJustifications": {
-            "acquitEntirely": ["It's a real relief to be able to vote not guilty in good conscience. I just hope James can move past all of this darkness."],
-            "chargeWithAssault": ["We have to find him guilty of assault."],
-            "completelyGuilty": ["I wish there was some other way of seeing the facts. But they're plain as day. He is guilty."],
-            "guiltyShotgun": ["I wish there was another explanation, but he was indisputably the one who fired the gun."],
-            "guiltyMotivePlusOpportunity": ["I guess I misjudged James. He really is the kind of person who would commit murder for a little bit of money."]
-        }
+        "maybeUsedGloves": [
+            {
+                "text": [
+                    "You could be right about that."
+                ],
+                "claims": ["maybeUsedGlovesAgree"],
+                "conclusions": {"shotgun": 0.3},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 0.2
+            }
+        ]
+    },
+    "voteJustifications": {
+        "acquitEntirely": ["It's a real relief to be able to vote not guilty in good conscience. I just hope James can move past all of this darkness."],
+        "chargeWithAssault": ["We have to find him guilty of assault."],
+        "completelyGuilty": ["I wish there was some other way of seeing the facts. But they're plain as day. He is guilty."],
+        "guiltyShotgun": ["I wish there was another explanation, but he was indisputably the one who fired the gun."],
+        "guiltyMotivePlusOpportunity": ["I guess I misjudged James. He really is the kind of person who would commit murder for a little bit of money."]
     }
 }

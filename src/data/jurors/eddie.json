@@ -69,9 +69,22 @@
         "pickTopic": [
             {
                 "text": [
-                    "I suppose we should talk about that shotgun they say he used to kill the girl. Personally, I don't buy it. The persecution says that he must have bought the gun recently and for this specific task. But he says he owned it for years beforehand."
+                    "I suppose we should talk about that shotgun they say he used to kill the girl."
                 ],
-                "claims": ["talkAboutShotgun", "didNotUseShotgun", "alreadyOwnedShotgun", "persecution"],
+                "claims": ["talkAboutShotgun"],
+                "conclusions": {"shotgun": 0.1},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1
+            }
+        ],
+        "talkAboutShotgun": [
+            {
+                "text": [
+                    "Personally, I don't buy it. The persecution says that he must have bought the gun recently and for this specific task. But he says he owned it for years beforehand."
+                ],
+                "claims": ["didNotUseShotgun", "alreadyOwnedShotgun", "persecution"],
                 "conclusions": {"shotgun": 0.4},
                 "receivesAgreement": false,
                 "requirements": {},
@@ -116,6 +129,17 @@
                 "requirements": {},
                 "anger": 0,
                 "score": 1.5
+            },
+            {
+                "text": [
+                    "Just 'cause his prints are on the gun doesn't mean he was the one who shot it at the scene of the crime. Maybe the real killer used gloves."
+                ],
+                "claims": ["maybeUsedGloves"],
+                "conclusions": {"shotgun": 0.9},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 0.4
             }
         ],
         "noRecordForShotgun": [
@@ -129,6 +153,17 @@
                 "requirements": {},
                 "anger": 0,
                 "score": 1.0
+            },
+            {
+                "text": [
+                    "So what? It's not on him to prove he owned it. It's on the prosecution to prove he bought it recently."
+                ],
+                "claims": ["noRecordForShotgunWhoCares"],
+                "conclusions": {"shotgun": 0.4},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 0.1
             }
         ],
         "noOtherPrints": [
@@ -137,7 +172,7 @@
                     "It's possible someone else shot the woman and saw their way clear to puttin' on gloves before they did it."
                 ],
                 "claims": ["maybeUsedGloves"],
-                "conclusions": {"shotgun": 0.3},
+                "conclusions": {"shotgun": 0.7},
                 "receivesAgreement": false,
                 "requirements": {},
                 "anger": 0,
@@ -196,12 +231,12 @@
                 "score": 1.1
             }
         ],
-        "sawOfficerInPerson": [
+        "mightBeTooWeak": [
             {
                 "text": [
                     "I hardly believed it either. He's a real scrawny guy, isn't he?"
                 ],
-                "claims": ["sawOfficerInPersonReply"],
+                "claims": ["definitelyTooWeak"],
                 "conclusions": {},
                 "receivesAgreement": false,
                 "requirements": {"immediate": true},

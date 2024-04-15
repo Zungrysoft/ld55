@@ -78,6 +78,11 @@ export function runDeliberation(jurors) {
                 if (answeredClaims.has(claim.name)) {
                     continue
                 }
+
+                // Never use a default response if a juror has a valid response for it, even if it's not currently valid
+                if (jurors.filter(j => getJurorData(j).responses[claim.name]).filter(j => claim.speaker !== j).length > 0) {
+                    continue
+                }
     
                 // Iterate over jurors
                 const response = getResponseToClaim('default', claim, allClaims)
@@ -155,7 +160,7 @@ export function runDeliberation(jurors) {
         else {
             if (topicChanges > 0) {
                 topicChanges --
-                claims = [{name: 'pickTopic', speaker: 'system', age: 1}]
+                claims = [{name: 'pickTopic', speaker: 'system', age: 0}]
 
                 // Remove pickTopic from the list of answered claims so it can be answered again
                 answeredClaims.delete('pickTopic')
@@ -204,12 +209,6 @@ export function runDeliberation(jurors) {
             text: "The jury has unanimously voted for acquittal! Congratulations!"
         })
     }
-    else if (acquittalVotes >= 3) {
-        log.push({
-            speaker: 'system',
-            text: `The vote is ${acquittalVotes} to ${jurors.length-acquittalVotes} in favor of acquittal! Congratulations!.`
-        })
-    }
     else if (acquittalVotes === 0) {
         log.push({
             speaker: 'system',
@@ -219,7 +218,7 @@ export function runDeliberation(jurors) {
     else {
         log.push({
             speaker: 'system',
-            text: `Only ${acquittalVotes} juror${acquittalVotes === 1 ? "" : "s"} voted for acquittal. Three votes are needed.`
+            text: `Only ${acquittalVotes} juror${acquittalVotes === 1 ? "" : "s"} voted for acquittal. A vote to acquit must be unanimous.`
         })
     }
 

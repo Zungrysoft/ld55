@@ -89,7 +89,7 @@
                     "If you hold something while wearing gloves, would it smudge any existing fingerprints?", "Would it be possible to tell whether someone wearing gloves held the gun at some point after the defendant?"
                 ],
                 "claims": ["canGlovesSmudge"],
-                "conclusions": {"shotgun": -0.1},
+                "conclusions": {"shotgun": -0.5},
                 "receivesAgreement": false,
                 "requirements": {},
                 "anger": 0,

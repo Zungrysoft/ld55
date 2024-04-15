@@ -146,7 +146,7 @@
         "canGlovesSmudgeYes": [
             {
                 "text": [
-                    "That would mean he must have been the last person to hold the shotgun. So he's the only one who could have fired it!"
+                    "That would mean he must have been the last person to hold the shotgun. So he's the only one who could have fired it at the scene of the crime!"
                 ],
                 "claims": ["canGlovesSmudgeYesConfirm"],
                 "conclusions": {"shotgun": -100.0},

@@ -111,7 +111,7 @@
                     "I think so! I heard about this!", "If you hold something with those rubbery latex gloves, it wipes off all of the fingerprints!"
                 ],
                 "claims": ["canGlovesSmudgeYes"],
-                "conclusions": {"shotgun": -2.0},
+                "conclusions": {"shotgun": -1.0},
                 "receivesAgreement": false,
                 "requirements": {"immediate": true},
                 "anger": 0,

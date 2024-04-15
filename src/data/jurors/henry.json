@@ -98,11 +98,37 @@
                     "You think he went out and bought a shotgun just to waste his old lady? If I were gonna kill someone, that wouldn't be my weapon of choice. Just saying."
                 ],
                 "claims": ["didNotBuyShotgunForMurder"],
-                "conclusions": {"shotgun": -0.7},
+                "conclusions": {"shotgun": 0.7},
                 "receivesAgreement": true,
                 "requirements": {"immediate": true},
                 "anger": 0,
                 "score": 1.3
+            }
+        ],
+        "alreadyOwnedShotgun": [
+            {
+                "text": [
+                    "Absolutely. And the prosecution was never able to prove that he bought it beforehand. They just talked about how he didn't have a receipt for it. But it's like, \"Hey buddy, proving things is your job!\"", "It's not on the defense to prove anything!"
+                ],
+                "claims": ["alreadyOwnedShotgunAgree"],
+                "conclusions": {"shotgun": 1.5},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 0.3
+            }
+        ],
+        "printsOnShotgun": [
+            {
+                "text": [
+                    "And nobody else's prints were found on the gun. Just his."
+                ],
+                "claims": ["noOtherPrints"],
+                "conclusions": {"shotgun": -0.2},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 1.0
             }
         ],
         "noOtherPrints": [
@@ -111,11 +137,24 @@
                     "They could have used gloves so that their prints wouldn't end up on the gun."
                 ],
                 "claims": ["maybeUsedGloves"],
-                "conclusions": {"shotgun": 0.3},
+                "conclusions": {"shotgun": 0.7},
                 "receivesAgreement": false,
                 "requirements": {},
                 "anger": 0,
                 "score": 1.0
+            }
+        ],
+        "maybeUsedGloves": [
+            {
+                "text": [
+                    "Absolutely."
+                ],
+                "claims": ["maybeUsedGlovesAgree"],
+                "conclusions": {"shotgun": 0.3},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 0.1
             }
         ],
         "attackedOfficer": [

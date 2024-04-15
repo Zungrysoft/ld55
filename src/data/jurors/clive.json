@@ -124,7 +124,7 @@
                     "Couldn't the forensic scientists tell if someone held the gun after the defendant, even if he was wearing gloves?", "Wouldn't the gloves smudge the prints?"
                 ],
                 "claims": ["canGlovesSmudge"],
-                "conclusions": {"shotgun": -0.1},
+                "conclusions": {"shotgun": -0.5},
                 "receivesAgreement": false,
                 "requirements": {},
                 "anger": 0,
