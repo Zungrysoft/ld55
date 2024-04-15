@@ -164,6 +164,8 @@ export function runDeliberation(jurors) {
 
                 // Remove pickTopic from the list of answered claims so it can be answered again
                 answeredClaims.delete('pickTopic')
+
+                previousSpeaker = null
             }
             else {
                 break

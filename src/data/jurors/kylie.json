@@ -96,6 +96,19 @@
                 "score": 1.0
             }
         ],
+        "sawOfficerInPerson": [
+            {
+                "text": [
+                    "You saw the crime scene? That's pretty sweet."
+                ],
+                "claims": ["crimeSceneIsExciting"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
         "attackedOfficer": [
             {
                 "text": [
@@ -109,7 +122,7 @@
                 "score": 0.2
             }
         ],
-        "officerHurtNotThatBad": [
+        "canWeNotCharge": [
             {
                 "text": [
                     "There's always jury nullification."

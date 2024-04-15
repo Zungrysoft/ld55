@@ -156,6 +156,19 @@
                 "anger": 0,
                 "score": 100.0
             }
+        ],
+        "definitelyDefinitelyTooWeak": [
+            {
+                "text": [
+                    "This is a ridiculous conversation! You guys are seriously claiming that he could not have possibly broken that officer's nose just because he doesn't look like a pro wrestler?"
+                ],
+                "claims": ["weakConversationIsSilly"],
+                "conclusions": {"officer": -100.0},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 100.0
+            }
         ]
     },
     "voteJustifications": {

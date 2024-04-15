@@ -74,7 +74,7 @@
                 "claims": ["talkAboutCoworker"],
                 "conclusions": {},
                 "receivesAgreement": false,
-                "requirements": {},
+                "requirements": {"immediate": true},
                 "anger": 0,
                 "score": 1
             }
@@ -116,6 +116,19 @@
                 "requirements": {"immediate": true},
                 "anger": 0,
                 "score": 100
+            }
+        ],
+        "sawOfficerInPerson": [
+            {
+                "text": [
+                    "You got to see a real life crime scene? That's so exciting!"
+                ],
+                "claims": ["crimeSceneIsExciting"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 1.7
             }
         ],
         "attackedOfficer": [

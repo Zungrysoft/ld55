@@ -27,7 +27,7 @@
                 "claims": ["talkAboutShotgun"],
                 "conclusions": {},
                 "receivesAgreement": false,
-                "requirements": {},
+                "requirements": {"immediate": true},
                 "anger": 0,
                 "score": 1
             },

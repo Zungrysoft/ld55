@@ -74,7 +74,7 @@
                 "claims": ["talkAboutShotgun", "usedShotgun"],
                 "conclusions": {},
                 "receivesAgreement": false,
-                "requirements": {},
+                "requirements": {"immediate": true},
                 "anger": 0,
                 "score": 1
             }
@@ -129,6 +129,32 @@
                 "requirements": {},
                 "anger": 0,
                 "score": 0.5
+            }
+        ],
+        "sawOfficerInPerson": [
+            {
+                "text": [
+                    "Wow, you saw the aftermath of the crime?"
+                ],
+                "claims": ["crimeSceneIsExciting"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 0.2
+            }
+        ],
+        "weakConversationIsSilly": [
+            {
+                "text": [
+                    "Well you have to admit there's room for reasonable doubt."
+                ],
+                "claims": ["weakConversationIsNotSoSilly"],
+                "conclusions": {"officer": 1.0},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 1.2
             }
         ]
     },

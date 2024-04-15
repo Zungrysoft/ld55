@@ -162,5 +162,49 @@
             "text": "He was kind of an tool in that court room though.",
             "speaker": "henry"
         }
+    ],
+    "tooWeakToPunch": [
+        {
+            "text": "That's the only part of this case I don't get. I'll eat my damn shoe if that undernourished little punk could cause that much damage.",
+            "speaker": "geoff"
+        },
+        {
+            "text": "Hey, you may be on to something, pops! I've seen my fair share of boxing matches and I'll be damned if that kid would weigh in any higher than a bantamweight.",
+            "speaker": "eddie"
+        },
+        {
+            "text": "He looked very undernourished in general.",
+            "speaker": "clive"
+        },
+        {
+            "text": "Absolutely.",
+            "speaker": "henry"
+        },
+        {
+            "text": "And now you got me thinkin', is there any universe where this kid could knock out a trained police officer with those twiggy little arms of his?",
+            "speaker": "eddie"
+        },
+        {
+            "text": "Certainly not the one we're in, that's for damn sure.",
+            "speaker": "geoff"
+        },
+        {
+            "text": "Shit, you're right. Thinking back on it, whoever threw that punch must have been one big badass. And I hate to say it, but James definitely does not fit that bill.",
+            "speaker": "mason"
+        }
+    ],
+    "heWouldNotWantMoney": [
+        {
+            "text": "From what I know of him, he's really not the money-grubbing sort.",
+            "speaker": "mason"
+        },
+        {
+            "text": "He was saving up to buy a house, but he said it was so he would have somewhere to start a family when he proposed to Megan.",
+            "speaker": "mason"
+        },
+        {
+            "text": "That's what I'm sayin'. I fasion myself a good judge of character. If that man were fixin' to kill his lover, it wouldn't be so he could get his hands on some extra pocket change.",
+            "speaker": "eddie"
+        }
     ]
 }

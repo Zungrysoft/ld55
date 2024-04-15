@@ -92,6 +92,17 @@
                 "anger": 0,
                 "score": 100.0
             }
+        ],
+        "definitelyTooWeak": [
+            {
+                "fixedConversation": "tooWeakToPunch",
+                "claims": ["definitelyDefinitelyTooWeak"],
+                "conclusions": {"officer": 100.0},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 100.0
+            }
         ]
     }
 }

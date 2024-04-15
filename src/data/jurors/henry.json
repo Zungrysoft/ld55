@@ -20,11 +20,11 @@
             "relatedTopics": []
         },
         "officer": {
-            "response": [""],
+            "response": ["Okay, so I'm a bit squeamish. When I saw those photos of his face after the alleged assault, I was cringing backward through time!"],
             "relatedTopics": []
         },
         "attourneyGeneral": {
-            "response": ["I've never met her."],
+            "response": ["She seemed nice."],
             "relatedTopics": []
         },
         "law": {
@@ -48,8 +48,8 @@
             "relatedTopics": []
         },
         "money": {
-            "response": [""],
-            "relatedTopics": []
+            "response": ["Money buys me all of the things I love in this world: designer clothes, chocolatey desserts, and the most important part of the day, my morning coffee.", "Never leave home without it.", "But let's pump the brakes a little bit here. Murdering your girlfriend to steal her father's inheritance is not okay. I don't care how many double-chocolate ice cream cakes it buys you."],
+            "relatedTopics": ["inheritance"]
         }
     },
     "responses": {
@@ -69,27 +69,51 @@
         "pickTopic": [
             {
                 "text": [
-                    "I'd like to discuss the motive. The whole bit about wanting to kill his girlfriend for the inheritance seems shaky to me. He wouldn't have gotten the money no matter what. Even if he had gotten away with it, how was he thinking he would get his money?"
+                    "I think we should talk about the motive here."
                 ],
-                "claims": ["talkAboutInheritance", "motiveDoesNotMakeSense", "wouldNotGetMoney"],
+                "claims": ["talkAboutInheritance"],
                 "conclusions": {},
                 "receivesAgreement": false,
-                "requirements": {},
+                "requirements": {"immediate": true},
                 "anger": 0,
-                "score": 1.05
+                "score": 0.6
+            },
+            {
+                "text": [
+                    "I think we should talk about the motive here. The whole bit about wanting to kill his girlfriend for the inheritance seems shaky to me. They weren't married, so he wouldn't have gotten the money no matter what.", "Even if he had gotten away with it, how was he thinking he would get his money?"
+                ],
+                "claims": ["talkAboutInheritance", "wouldNotGetMoney"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 0.6
             }
         ],
         "talkAboutInheritance": [
             {
                 "text": [
-                    "The whole bit about wanting to kill his girlfriend for the inheritance seems shaky to me. He wouldn't have gotten the money no matter what. Even if he had gotten away with it, how was he thinking he would get his money?"
+                    "The whole bit about wanting to kill his girlfriend for the inheritance seems shaky to me. They weren't married, so he wouldn't have gotten the money no matter what.", "Even if he had gotten away with it, how was he thinking he would get his money?"
                 ],
-                "claims": ["motiveDoesNotMakeSense", "wouldNotGetMoney"],
+                "claims": ["wouldNotGetMoney"],
                 "conclusions": {"inheritance": 0.5},
                 "receivesAgreement": false,
                 "requirements": {},
                 "anger": 0,
-                "score": 1.3
+                "score": 0.3
+            }
+        ],
+        "heWouldNotWantMoney": [
+            {
+                "text": [
+                    "Even if he was willing to kill his girlfriend for the money, they weren't married. The money wouldn't have been his even if he had gotten away with it. He would have to be real dumb to think this sort of scheme would work."
+                ],
+                "claims": ["wouldNotGetMoney"],
+                "conclusions": {"inheritance": 1.0},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 0.3
             }
         ],
         "boughtShotgunForMurder": [
@@ -168,6 +192,19 @@
                 "requirements": {},
                 "anger": 0,
                 "score": 1.1
+            }
+        ],
+        "weakConversationIsSilly": [
+            {
+                "text": [
+                    "What's that bit? \"Beyond a reasonable doubt?\"", "I have reason to doubt that that guy could knock out my aunt Fanny, let alone an experienced man of the law."
+                ],
+                "claims": ["weakConversationIsNotSoSilly"],
+                "conclusions": {"officer": 1.3},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 100.0
             }
         ]
     },

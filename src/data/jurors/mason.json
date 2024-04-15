@@ -20,7 +20,7 @@
             "relatedTopics": ["money"]
         },
         "officer": {
-            "response": ["I was one of the gawkers seeing what all of the fuss was about when James was arrested. That cop was bleeding something awful all over his face.", "He was probably angrier about the broken nose than the murdered girl laying 20 feet away."],
+            "response": ["I was one of the gawkers seeing what all of the fuss was about when James was arrested. That cop was bleeding something awful all over his face.", "He was probably angrier about the broken nose than about the murdered girl laying 20 feet away."],
             "relatedTopics": ["girlfriend"]
         },
         "attourneyGeneral": {
@@ -66,6 +66,19 @@
                 "score": 0.1
             }
         ],
+        "pickTopic": [
+            {
+                "text": [
+                    "I'd like to talk about the assault charges. I was actually there when the defendant was arrested and the alleged assault took place."
+                ],
+                "claims": ["sawOfficerInPerson", "talkAboutOfficer"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 0.8
+            }
+        ],
         "lookAtHimHeIsGuilty": [
             {
                 "fixedConversation": "moralFabricOfAmerica",
@@ -88,6 +101,28 @@
                 "requirements": {},
                 "anger": 0,
                 "score": 2.0
+            },
+            {
+                "text": [
+                    "I did a double-take when I saw the officer's face. I didn't know James had so much power behind those fists!"
+                ],
+                "claims": ["mightBeTooWeak"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 2.0
+            },
+            {
+                "text": [
+                    "I got to see his face in person during all the commotion. The blood was dripping all down his face onto his uniform!"
+                ],
+                "claims": ["sawOfficerInPerson"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 0.3
             }
         ],
         "maybeUsedGloves": [
@@ -101,6 +136,17 @@
                 "requirements": {"immediate": true},
                 "anger": 0,
                 "score": 0.2
+            }
+        ],
+        "heWouldNotWantMoney": [
+            {
+                "fixedConversation": "heWouldNotWantMoney",
+                "claims": ["heWouldNotWantMoneyAgree"],
+                "conclusions": {"inheritance": 3.0},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 100.0
             }
         ]
     },

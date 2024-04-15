@@ -69,12 +69,12 @@
         "pickTopic": [
             {
                 "text": [
-                    "I suppose we should talk about that shotgun they say he used to kill the girl."
+                    "I figure we should talk about that shotgun they say he used to kill the girl."
                 ],
                 "claims": ["talkAboutShotgun"],
                 "conclusions": {"shotgun": 0.1},
                 "receivesAgreement": false,
-                "requirements": {},
+                "requirements": {"immediate": true},
                 "anger": 0,
                 "score": 1
             }
@@ -221,14 +221,25 @@
         "officerHurtBadly": [
             {
                 "text": [
-                    "Big deal. It looks bad, but I've seen worse and I've gotten worse.", "The way that guy talked on the stand, it was like he had just gotten back from Vietnam. He probably deserved to get his lights knocked out for once.", "Is there any way we could just not charge him for the assault?"
+                    "Big deal. So the cop was roughed up a bit. But hell, I've seen worse and I've gotten worse myself.", "The way that guy talked on the stand, it was like he had just gotten back from Vietnam. He probably deserved to get his lights knocked out for once.", "Is there any way we could just not charge our defendant here for the assault?"
                 ],
-                "claims": ["officerHurtNotThatBad"],
+                "claims": ["officerHurtNotThatBad", "canWeNotCharge"],
                 "conclusions": {},
                 "receivesAgreement": false,
                 "requirements": {},
                 "anger": 0,
                 "score": 1.1
+            },
+            {
+                "text": [
+                    "Is there any way we could just not charge our defendant here for the assault? I don't feel right about sendin' a man to prison over that, given the circustances at the time."
+                ],
+                "claims": ["canWeNotCharge"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 0.3
             }
         ],
         "mightBeTooWeak": [
@@ -237,7 +248,7 @@
                     "I hardly believed it either. He's a real scrawny guy, isn't he?"
                 ],
                 "claims": ["definitelyTooWeak"],
-                "conclusions": {},
+                "conclusions": {"officer": 0.5},
                 "receivesAgreement": false,
                 "requirements": {"immediate": true},
                 "anger": 0,
@@ -253,6 +264,19 @@
                 "requirements": {"immediate": true},
                 "anger": 0,
                 "score": 50.0
+            }
+        ],
+        "talkAboutInheritance": [
+            {
+                "text": [
+                    "He doesn't seem like the kinda guy who would only be interested in money. That's just my opinion, anyway."
+                ],
+                "claims": ["heWouldNotWantMoney"],
+                "conclusions": {"inheritance": 0.4},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 1.3
             }
         ]
     }
