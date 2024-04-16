@@ -24,6 +24,7 @@ export function parseCommand(input, saveData) {
     if ('restart'.includes(argv[0])) {return commandRestart(argv.slice(1), saveData)}
     if ('interview'.includes(argv[0])) {return commandInterview(argv.slice(1), saveData)}
     if ('document'.includes(argv[0])) {return commandDocument(argv.slice(1), saveData)}
+    if ('stats'.includes(argv[0])) {return commandStats(argv.slice(1), saveData)}
     if ('select'.includes(argv[0])) {return commandSelect(argv.slice(1), saveData)}
 
     return commandError(argv, saveData)
@@ -36,6 +37,23 @@ function commandDebug(argv, saveData) {
     // }
     return {
         logEntries: speakText('system', JSON.stringify(saveData)),
+    }
+}
+
+function commandStats(argv, saveData) {
+    if (saveData.solvedJurors.length === 0) {
+        return {
+            logEntries: speakText('system', "You have not found any acquitting juries yet."),
+        }
+    }
+
+    let ret = "You have solved the following jurors:"
+    for (const juror of saveData.solvedJurors) {
+        ret += "\n\t" + getJurorData(juror).properties.name
+    }
+
+    return {
+        logEntries: speakText('system', ret),
     }
 }
 
@@ -316,8 +334,14 @@ function commandSelect(argv, saveData) {
     }
 
     // Perform the deliberation
+    const result = runDeliberation(jurors)
+    let jurorsComplete = []
+    if (result.acquit) {
+        jurorsComplete = jurors
+    }
     return {
-        logEntries: runDeliberation(jurors).log,
+        logEntries: result.log,
+        solvedJurors: jurorsComplete,
     }
 }
 

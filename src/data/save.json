@@ -1,7 +1,8 @@
 {
     "history": [],
-    "commands": ["help", "interview", "document", "select", "setting", "restart"],
+    "commands": ["help", "interview", "document", "select", "stats", "restart"],
     "topics": ["defendant", "law"],
+    "solvedJurors": [],
     "attributes": {},
     "settings": {
         "volume": 80

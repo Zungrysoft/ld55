@@ -190,7 +190,7 @@ function App() {
                 if (commandResult.wipeSave) {
                     wipeSaveData()
                 }
-
+                
                 // Unlock new topics
                 if (commandResult.newTopics) {
                     for (const topic of commandResult.newTopics) {
@@ -202,6 +202,11 @@ function App() {
                             addEntryToSaveList('topics', topic)
                         }
                     }
+                }
+
+                // Solve jurors
+                if (commandResult.solvedJurors) {
+                    writeSolvedJurors(commandResult.solvedJurors)
                 }
             }
         }
@@ -229,6 +234,19 @@ function App() {
         setGameSave(prevGameSave => {
             let ret = defaultSaveData
 
+            localStorage.setItem("save", JSON.stringify(ret))
+
+            return ret
+        });
+    }
+
+    function writeSolvedJurors(solvedJurorsNew) {
+        
+        setGameSave(prevGameSave => {
+            let ret = {
+                ...prevGameSave,
+                solvedJurors: Array.from(new Set([...prevGameSave.solvedJurors, ...solvedJurorsNew]))
+            }
             localStorage.setItem("save", JSON.stringify(ret))
 
             return ret

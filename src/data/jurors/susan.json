@@ -178,7 +178,7 @@
         "talkAboutCoworker": [
             {
                 "text": [
-                    "There was something his coworker said that really threw me.", "They asked him if the defendant had stayed late that night and he said that he handn't.", "But then they asked him if the defendant regularly stayed late after work and he started going off on some sort of tangent about the defendant's \"work ethic\"."
+                    "There was something his coworker said that really threw me.", "They asked him if the defendant had stayed late that night and he said that he hadn't.", "But then they asked him if the defendant regularly stayed late after work and he started going off on some sort of tangent about the defendant's \"work ethic\"."
                 ],
                 "claims": ["coworkerHatesDefendant", "wentOffOnTangent"],
                 "conclusions": {"coworker": 1.7},
@@ -191,7 +191,7 @@
         "coworkerDidNotBackUp": [
             {
                 "text": [
-                    "But there was something his coworker said that really threw me.", "They asked him if the defendant had stayed late that night and he said that he handn't.", "But then they asked him if the defendant regularly stayed late after work and he started going off on some sort of tangent about the defendant's \"work ethic\"."
+                    "But there was something his coworker said that really threw me.", "They asked him if the defendant had stayed late that night and he said that he hadn't.", "But then they asked him if the defendant regularly stayed late after work and he started going off on some sort of tangent about the defendant's \"work ethic\"."
                 ],
                 "claims": ["coworkerHatesDefendant", "wentOffOnTangent"],
                 "conclusions": {"coworker": 1.7},

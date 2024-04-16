@@ -14,6 +14,9 @@
     "select": {
         "description": "Select your jury and hear their deliberation"
     },
+    "stats": {
+        "description": "View your progress"
+    },
     "restart": {
         "description": "Wipe all of your saved data"
     }

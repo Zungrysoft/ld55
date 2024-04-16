@@ -145,12 +145,38 @@
                 "text": [
                     "Let's assume he's guilty: Why would he have named a specific coworker if he knew he wouldn't back him up? Was he just hoping he would lie for him?"
                 ],
+                "claims": ["whyNameCoworker", "coworkerDidNotBackUp"],
+                "conclusions": {"coworker": 2.0},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 4.0
+            }
+        ],
+        "coworkerDidNotBackUp": [
+            {
+                "text": [
+                    "Why would he have named a specific coworker if he knew he wouldn't back him up? Was he just hoping he would lie for him?"
+                ],
                 "claims": ["whyNameCoworker"],
                 "conclusions": {"coworker": 2.0},
                 "receivesAgreement": false,
                 "requirements": {},
                 "anger": 0,
                 "score": 4.0
+            }
+        ],
+        "attourneyGeneralPickedMeReally": [
+            {
+                "text": [
+                    "That's insane.", "We have to acquit."
+                ],
+                "claims": ["attourneyGeneralAcquit"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 1.0
             }
         ],
         "tooMuchBlood": [
