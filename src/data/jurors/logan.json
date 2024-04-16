@@ -226,6 +226,19 @@
                 "anger": 0,
                 "score": 4.0
             }
+        ],
+        "attourneyGeneralPickedMeReally": [
+            {
+                "text": [
+                    "I heard about her being a bit corrupt, but this completey over the line!", "This trial is tainted. We have to acquit."
+                ],
+                "claims": ["attourneyGeneralAcquit"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 1.0
+            }
         ]
     },
     "voteJustifications": {

@@ -134,6 +134,19 @@
                 "anger": 0,
                 "score": 0.5
             }
+        ],
+        "defenseMissed": [
+            {
+                "text": [
+                    "I'm not surprised they missed it. What's the point in defending someone when you know they're guilty? This whole trial was a waste of time for them and it's a waste of time for us."
+                ],
+                "claims": ["caseIsWasteOfTime"],
+                "conclusions": {"shotgun": 0.6},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 100.0
+            }
         ]
     }
 }

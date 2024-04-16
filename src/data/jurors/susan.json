@@ -33,7 +33,7 @@
         },
         "inheritance": {
             "response": ["Money buys me all of the things I love in this world: designer clothes, chocolatey desserts, and the most important part of the day, my morning coffee.", "Never leave home without it.", "But let's pump the brakes a little bit here. Murdering your girlfriend to steal her father's inheritance is not okay. I don't care how many double-chocolate ice cream cakes it buys you."],
-            "relatedTopics": []
+            "relatedTopics": ["girlfriend"]
         },
         "coworker": {
             "response": ["There's something about that guy. Like he has some sort of a grudge against the defendant."],

@@ -81,6 +81,52 @@
                 "anger": 0,
                 "score": 0.6
             }
+        ],
+        "caseIsWasteOfTime": [
+            {
+                "text": [
+                    "I wouldn't say it's a waste of time. Even if he's guilty, I this was still an interesting experience! I'm glad Katie recommended this to me."
+                ],
+                "claims": ["katiePickedMe"],
+                "conclusions": {"shotgun": 0.6},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 100.0
+            }
+        ],
+        "katiePickedMeYes": [
+            {
+                "text": [
+                    "Yeah. She said I would be perfect for this case."
+                ],
+                "claims": ["attourneyGeneralPickedMe"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
+        "attourneyGeneralPickedYou": [
+            {
+                "text": [
+                    "...yes?"
+                ],
+                "claims": ["attourneyGeneralPickedMeReally"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 1.0
+            }
         ]
+    },
+    "voteJustifications": {
+        "acquitEntirely": ["I hope this is the right verdict."],
+        "chargeWithAssault": ["He attacked that police man!"],
+        "completelyGuilty": ["Lock him up and throw away the key."],
+        "guiltyShotgun": ["The evidence says he killed her with a shotgun."],
+        "guiltyMotivePlusOpportunity": ["Motive plus opportunity equals guilty"]
     }
 }

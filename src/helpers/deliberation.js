@@ -158,6 +158,11 @@ export function runDeliberation(jurors) {
 
             // Count number of responses
             responseNumber ++
+
+            // If response ends deliberation
+            if (bestResponse.endsDeliberation) {
+                break
+            }
         }
         // If the jurors have nothing to say, change the topic
         else {

@@ -228,7 +228,7 @@
                 "text": [
                     "I'm not sure 'bout that. I don't think the defense ever brought it up."
                 ],
-                "claims": ["canGlovesSmudgeUnsure"],
+                "claims": ["canGlovesSmudgeUnsure", "defenseMissed"],
                 "conclusions": {"shotgun": 0.6},
                 "receivesAgreement": false,
                 "requirements": {"immediate": true},
@@ -386,6 +386,33 @@
                 "requirements": {"immediate": true},
                 "anger": 0,
                 "score": 0.1
+            }
+        ],
+        "attourneyGeneralPickedMeReally": [
+            {
+                "text": [
+                    "I thought I'd seen every manner of corrupt law man in my life, but this just takes the cake. We can't throw a guy in prison on a trial that's been messed with.", "I say we acquit"
+                ],
+                "claims": ["attourneyGeneralAcquit"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 0.4
+            }
+        ],
+        "attourneyGeneralAcquit": [
+            {
+                "text": [
+                    "Agreed"
+                ],
+                "claims": ["attourneyGeneralAcquitAgree"],
+                "conclusions": {"attourneyGeneral": 99999999},
+                "endsDeliberation": true,
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 1.0
             }
         ]
     }

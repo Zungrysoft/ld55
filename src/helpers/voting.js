@@ -1,7 +1,6 @@
 import { getJurorData } from "./juror"
 
 export function getVote(juror, conclusions) {
-    if (juror === 'alice') {return aliceVote(conclusions)}
     if (juror === 'geoff') {return geoffVote(conclusions)}
     if (juror === 'eddie') {return eddieVote(conclusions)}
 
@@ -9,6 +8,14 @@ export function getVote(juror, conclusions) {
 }
 
 function defaultVote(juror, conclusions) {
+    // Attourney general
+    if (gc('attourneyGeneral', conclusions) >= 100.0) {
+        return {
+            text: [],
+            acquit: true
+        }
+    }
+
     let acquitMurderShotgun = gc('shotgun', conclusions) >= 3.0
     let acquitMurderCoworker = gc('coworker', conclusions) >= 3.0
     let acquitMurderInheritance = gc('inheritance', conclusions) >= 3.0
@@ -76,23 +83,15 @@ function defaultVote(juror, conclusions) {
     }
 }
 
-function aliceVote(conclusions) {
-    let noLongerTrustsFriend = gc('attourneyGeneral', conclusions) >= 10.0
-
-    if (noLongerTrustsFriend) {
+function eddieVote(conclusions) {
+    // Attourney general
+    if (gc('attourneyGeneral', conclusions) >= 100.0) {
         return {
-            text: ["Katie's a total liar. This guy didn't kill anybody!"],
+            text: [],
             acquit: true
         }
     }
 
-    return {
-        text: ["Katie said the guy was guilty and she knows more about the law than me. So I think I'll trust her on this one."],
-        acquit: false
-    }
-}
-
-function eddieVote(conclusions) {
     let acquitMurderShotgun = gc('shotgun', conclusions) >= 3.0
     let acquitMurderMotivePlusOpportunity = (gc('coworker', conclusions) >= 3.0) || (gc('inheritance', conclusions) >= 3.0)
 
@@ -149,6 +148,14 @@ function eddieVote(conclusions) {
 }
 
 function geoffVote(conclusions) {
+    // Attourney general
+    if (gc('attourneyGeneral', conclusions) >= 100.0) {
+        return {
+            text: [],
+            acquit: true
+        }
+    }
+
     let soulOfAmerica = gc('defendant', conclusions) >= 10.0
 
     if (soulOfAmerica) {

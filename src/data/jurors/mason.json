@@ -17,7 +17,7 @@
         },
         "girlfriend": {
             "response": ["I only talked to her a couple of times, mostly when shooting the shit with James. Real nice girl and a damn shame.", "Seeing those two together, it just seems unfathomable that either of them could have killed the other.", "They say the motive was money, but I never saw him as the money-grubbing sort. He knew there was more to life than that.", "I just can't make sense of it."],
-            "relatedTopics": ["money"]
+            "relatedTopics": ["inheritance"]
         },
         "officer": {
             "response": ["I was one of the gawkers seeing what all of the fuss was about when James was arrested. That cop was bleeding something awful all over his face.", "He was probably angrier about the broken nose than about the murdered girl laying 20 feet away."],
@@ -33,7 +33,7 @@
         },
         "inheritance": {
             "response": ["I didn't think James was the money-grubbing sort. Even for that amount of money."],
-            "relatedTopics": ["money"]
+            "relatedTopics": []
         },
         "coworker": {
             "response": ["He says he was at work until 7 PM, which means he couldn't have been there when the neighbor heard the gun shots. But this alibi hinged on one of his coworkers confirming that he had stayed late.", "Unfortunately for him, he didn't."],

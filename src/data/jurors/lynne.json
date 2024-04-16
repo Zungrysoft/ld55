@@ -156,10 +156,23 @@
                 "text": [
                     "I don't think that was ever brought up in the trial. That seems like a mistake on the part of the defense."
                 ],
-                "claims": ["canGlovesSmudgeUnsure"],
+                "claims": ["canGlovesSmudgeUnsure", "defenseMissed"],
                 "conclusions": {"shotgun": 0.6},
                 "receivesAgreement": false,
                 "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
+        "printsOnShotgun": [
+            {
+                "text": [
+                    "His prints were the only ones found on the gun."
+                ],
+                "claims": ["noOtherPrints"],
+                "conclusions": {"shotgun": -0.2},
+                "receivesAgreement": false,
+                "requirements": {},
                 "anger": 0,
                 "score": 1.0
             }
