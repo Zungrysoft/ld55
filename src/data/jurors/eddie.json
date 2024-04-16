@@ -105,6 +105,17 @@
                 "claims": ["didNotUseShotgun"],
                 "conclusions": {"shotgun": 0.2},
                 "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 1.5
+            },
+            {
+                "text": [
+                    "We don't know for sure it was him that fired it."
+                ],
+                "claims": ["didNotUseShotgun"],
+                "conclusions": {"shotgun": 0.2},
+                "receivesAgreement": false,
                 "requirements": {},
                 "anger": 0,
                 "score": 1.5
@@ -153,7 +164,7 @@
                 "claims": ["noRecordForShotgunNoBurdenOfProof"],
                 "conclusions": {"shotgun": 5.5},
                 "receivesAgreement": false,
-                "requirements": {},
+                "requirements": {"immediate": true},
                 "anger": 0,
                 "score": 0.1
             }

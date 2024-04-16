@@ -189,6 +189,19 @@
                 "anger": 0,
                 "score": 1.0
             }
+        ],
+        "caseIsWasteOfTime": [
+            {
+                "text": [
+                    "Well it was interesting at least."
+                ],
+                "claims": ["caseWasExciting"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 2000.0
+            }
         ]
     },
     "voteJustifications": {

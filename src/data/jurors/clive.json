@@ -36,11 +36,11 @@
             "relatedTopics": []
         },
         "coworker": {
-            "response": ["That coworker character seemed a bit too happy to get is former colleague locked up.", "It was like he was trying really hard to make himself look neutral, but inside he was celebrating."],
+            "response": ["That coworker character seemed a bit too happy to get his former colleague locked up.", "It was like he was trying really hard to make himself look neutral, but inside he was celebrating."],
             "relatedTopics": []
         },
         "shotgun": {
-            "response": ["The prosecution's main point regarding the firearm that was allegedly used to commit the relevant crime is that he bought the shotgun specifically to use in the murder. A pawn shop three blocks from his house reported having sold a firearm of the very same model to the defendant two days prior.", "I'd consider myself an expert on all manner of firearms. Ask me any question about the history of firearms and I can probably answer it.It's a hobby of mine, for sure."],
+            "response": ["The prosecution's main point regarding the firearm that was allegedly used to commit the relevant crime is that he bought the shotgun specifically to use in the murder. A pawn shop three blocks from his house reported having sold a firearm of the very same model to the defendant two days prior.", "I'd consider myself an expert on all manner of firearms. Ask me any question about the history of firearms and I can probably answer it. It's a hobby of mine, for sure."],
             "relatedTopics": []
         }
     },
@@ -126,7 +126,7 @@
         "alreadyOwnedShotgun": [
             {
                 "text": [
-                    "Not a single friend or family member questioned could corroborate him having owned a gun of any sort. And he had no record of having bought the gun. This leads me to believe he bought it very recently and for this particular purpose."
+                    "Not a single friend or family member questioned could corroborate him having owned a shotgun of any sort. And he had no record of having bought the gun. This leads me to believe he bought it very recently and for this particular purpose."
                 ],
                 "claims": ["noRecordForShotgun", "boughtShotgunForMurder"],
                 "conclusions": {"shotgun": -5.0},
@@ -137,7 +137,7 @@
             },
             {
                 "text": [
-                    "Not a single friend or family member questioned could corroborate him having owned a gun of any sort. And he had no record of having bought the gun."
+                    "Not a single friend or family member questioned could corroborate him having owned a shotgun of any sort. And he had no record of having bought the gun."
                 ],
                 "claims": ["noRecordForShotgun"],
                 "conclusions": {"shotgun": -5.0},
