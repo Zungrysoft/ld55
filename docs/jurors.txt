@@ -1,0 +1,49 @@
+Clive:
+    Description: Practical guy.
+    Player goal: He's simple. Just convince him of the facts of the case.
+    Skeptical about: the coworker
+
+Susan:
+    Description: Not the smartest tool in the shed, but her heart's in the right place.
+    Player goal: 
+    Skeptical about: 
+
+Geoff:
+    Description: A gruff older guy. Not a big talker unless he has something to say.
+    Player goal: Make the defendant seem sympathetic. This is about the soul of America for Geoff, and the defendant represents everything he is against.
+    Skeptical about: 
+
+Eddie:
+    Description: A rambin' gamblin man. Lives a bit outside the law, but cares about justice.
+    Player goal: Convince him he is innocent of the murder, then teach him about jury nullification for the assaulting a police officer charge. He is pretty in favor of acquittal in general, but he can derail conversations easily.
+    Skeptical about: The shotgun
+
+Lynne:
+    Description: An idealist who wants to see justice done. She is very informed on the law.
+    Player goal: Convince her of the facts of the case. 
+    Skeptical about: The police officer
+
+Henry:
+    Description: Laid back kinda guy. More suburban in his dialect.
+    Player goal: Convince him of the facts of the case.
+    Skeptical about: The motives. ie: the inheritance.
+
+Mason:
+    Description: Lives down the street from the defendant.
+    Player goal: Use him to sway geoff about the defendant.
+    Skeptical about: 
+
+Kylie:
+    Description: A bright and inquisitive girl.
+    Player goal: 
+    Skeptical about: 
+
+Logan:
+    Description: A meek intellectual type.
+    Player goal: 
+    Skeptical about: 
+
+Alice:
+    Description: 
+    Player goal: Turn her against the attourney general.
+    Skeptical about: 

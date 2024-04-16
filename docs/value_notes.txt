@@ -1,0 +1,12 @@
+Response scores:
+0.0 - 0.2: Expect to never say this
+0.2 - 0.5: Rarely say this
+0.5 - 0.8: A little lower priority
+0.8 - 1.2: Regular line
+1.2 - 1.8: Higher priority
+2.0+     : Definitely say this
+
+Conclusion scores:
++0.2: Nice point
++0.5: Great point
++2.0: Won an argument
