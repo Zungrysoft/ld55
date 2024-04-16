@@ -52,6 +52,10 @@ function commandStats(argv, saveData) {
         ret += "\n\t" + getJurorData(juror).properties.name
     }
 
+    if (saveData.solvedJurors.length >= 10) {
+        ret += "\n\nYou solved all of them. Congratulations!"
+    }
+
     return {
         logEntries: speakText('system', ret),
     }
