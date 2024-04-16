@@ -218,10 +218,6 @@ export function runDeliberation(jurors) {
             speaker: 'system',
             text: "The jury has unanimously voted for acquittal! Congratulations!"
         })
-        log.push({
-            speaker: 'system',
-            text: "Bonus Goal: Try to find solutions with all ten jurors!"
-        })
     }
     else if (acquittalVotes === 0) {
         log.push({
