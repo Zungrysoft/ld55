@@ -349,6 +349,19 @@
                 "score": 0.2
             }
         ],
+        "caseIsWasteOfTime": [
+            {
+                "text": [
+                    "Can't say it's been a thrill."
+                ],
+                "claims": ["katiePickedMe"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 1.0
+            }
+        ],
         "wouldCoworkerLie": [
             {
                 "text": [
