@@ -388,23 +388,10 @@
                 "score": 0.1
             }
         ],
-        "attourneyGeneralPickedMeReally": [
-            {
-                "text": [
-                    "I thought I'd seen every manner of corrupt law man in my life, but this just takes the cake. We can't throw a guy in prison on a trial that's been messed with.", "I say we acquit"
-                ],
-                "claims": ["attourneyGeneralAcquit"],
-                "conclusions": {},
-                "receivesAgreement": false,
-                "requirements": {"immediate": true},
-                "anger": 0,
-                "score": 0.4
-            }
-        ],
         "attourneyGeneralAcquit": [
             {
                 "text": [
-                    "Agreed"
+                    "Agreed. I thought I'd seen every manner of corrupt law man in my life, but this just takes the cake. We can't throw a guy in prison on a trial that's been messed with."
                 ],
                 "claims": ["attourneyGeneralAcquitAgree"],
                 "conclusions": {"attourneyGeneral": 99999999},
@@ -412,7 +399,7 @@
                 "receivesAgreement": false,
                 "requirements": {"immediate": true},
                 "anger": 0,
-                "score": 1.0
+                "score": 650.4
             }
         ]
     }
