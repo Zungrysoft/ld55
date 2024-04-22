@@ -19,3 +19,10 @@ export function getCombinations(arr) {
     combine([], 0);
     return result;
 }
+
+export function isFirefox() {
+    if (typeof navigator !== 'undefined' && navigator.userAgent) {
+        return navigator.userAgent.indexOf("Firefox") > -1
+    }
+    return false;
+}

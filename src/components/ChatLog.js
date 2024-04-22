@@ -1,6 +1,7 @@
 import '../App.css';
 import { useEffect, useRef } from 'react';
 import { getJurorData } from '../helpers/juror';
+import { isFirefox } from '../helpers/helpers';
 
 function paragraphToElement(paragraph) {
     const textString = paragraph?.text || ""
@@ -21,7 +22,13 @@ function ChatLog({ logData }) {
     }, [logData]);
 
     function scrollToBottom() {
-        endRef.current?.scrollIntoView({ behavior: "smooth" });
+        // Firefox seems to be the only browser that handles smooth scrolling correctly
+        if (isFirefox()) {
+            endRef.current?.scrollIntoView({ behavior: "smooth" });
+        }
+        else {
+            endRef.current?.scrollIntoView();
+        }
     }
 
     function isScrolledToBottom() {
