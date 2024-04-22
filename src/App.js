@@ -141,7 +141,7 @@ function App() {
                 if (i === prevLogData.log.length-1) {
                     const ret = {
                         ...logEntry,
-                        text: logEntry.text + prevLogData.queue[0].text,
+                        text: logEntry.text + prevLogData.queue[0].text.replaceAll('*', ''),
                     }
                     return ret
                 }
