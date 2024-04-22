@@ -47,7 +47,8 @@ function getSoundObject(voice) {
 export function playVoice(voice) {
   const soundObject = getSoundObject(voice)
   if (soundObject) {
-    const audio = new Audio(soundObject)
+    let audio = new Audio(soundObject)
+    audio.volume = 0.2
     audio.play()
   }
 }
