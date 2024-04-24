@@ -365,7 +365,7 @@
                 "text": [
                     "Can't say it's been a thrill."
                 ],
-                "claims": ["katiePickedMe"],
+                "claims": ["notBeenAThrill"],
                 "conclusions": {},
                 "receivesAgreement": false,
                 "requirements": {"immediate": true},
