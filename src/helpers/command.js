@@ -7,7 +7,7 @@ import { getCombinations, getSubsets } from "./helpers.js";
 
 export function parseCommand(input, saveData) {
     // Parse input into args
-    const argv = input.toLowerCase().split(" ").filter(e => e.length > 0)
+    const argv = input.toLowerCase().replaceAll("'", "").replaceAll(".", "").split(" ").filter(e => e.length > 0)
 
     if (argv[0] === 'ls') {return commandUnix(argv.slice(1), saveData)}
     if (argv[0] === 'pwd') {return commandUnix(argv.slice(1), saveData)}

@@ -123,6 +123,6 @@
         "chargeWithAssault": ["He attacked that police man!"],
         "completelyGuilty": ["Lock him up and throw away the key."],
         "guiltyShotgun": ["The evidence says he killed her with a shotgun."],
-        "guiltyMotivePlusOpportunity": ["Motive plus opportunity equals guilty"]
+        "guiltyMotivePlusOpportunity": ["Motive plus opportunity equals guilty."]
     }
 }
