@@ -23,13 +23,13 @@
             "response": ["During the trial, the prosecution showed us photos of the officer's from after the alleged assault. I couldn't believe the amount of blood he had on his face.", "Literally, I couldn't.", "I don't think it's medically possible for someone to bleed that much just from a broken nose.", "He claims he was only punched once, but he looked like he had just been attacked by a gang of animal rights activists."],
             "relatedTopics": []
         },
-        "attourneyGeneral": {
+        "attorneyGeneral": {
             "response": ["She seemed fine."],
             "relatedTopics": []
         },
         "law": {
-            "response": ["This new \"tough on crime\" initiative spearheaded by the current administration is really having an effect on our justice system.", "Between appointing that hardline attourney general and changing the rules of the criminal process to favor conviction, we may be moving towards a more authoritarian society."],
-            "relatedTopics": ["attourneyGeneral"]
+            "response": ["This new \"tough on crime\" initiative spearheaded by the current administration is really having an effect on our justice system.", "Between appointing that hardline attorney general and changing the rules of the criminal process to favor conviction, we may be moving towards a more authoritarian society."],
+            "relatedTopics": ["attorneyGeneral"]
         },
         "inheritance": {
             "response": ["All this bloodshed for a few years of salary."],
@@ -227,12 +227,12 @@
                 "score": 4.0
             }
         ],
-        "attourneyGeneralPickedMeReally": [
+        "attorneyGeneralPickedMeReally": [
             {
                 "text": [
                     "I heard about her being a bit corrupt, but this completey over the line!", "This trial is tainted. We have to acquit."
                 ],
-                "claims": ["attourneyGeneralAcquit"],
+                "claims": ["attorneyGeneralAcquit"],
                 "conclusions": {},
                 "receivesAgreement": false,
                 "requirements": {"immediate": true},

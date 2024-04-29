@@ -23,7 +23,7 @@
             "response": ["A stuffy law man if I ever saw one.", "Maybe he deserved a good punch in the face."],
             "relatedTopics": []
         },
-        "attourneyGeneral": {
+        "attorneyGeneral": {
             "response": ["She moves likes she's always got somewhere else to be."],
             "relatedTopics": []
         },
@@ -412,13 +412,13 @@
                 "score": 0.1
             }
         ],
-        "attourneyGeneralAcquit": [
+        "attorneyGeneralAcquit": [
             {
                 "text": [
                     "Agreed. I thought I'd seen every manner of corrupt law man in my life, but this just takes the cake. We can't throw a guy in prison on a trial that's been messed with."
                 ],
-                "claims": ["attourneyGeneralAcquitAgree"],
-                "conclusions": {"attourneyGeneral": 99999999},
+                "claims": ["attorneyGeneralAcquitAgree"],
+                "conclusions": {"attorneyGeneral": 99999999},
                 "endsDeliberation": true,
                 "receivesAgreement": false,
                 "requirements": {"immediate": true},

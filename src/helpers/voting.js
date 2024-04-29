@@ -8,8 +8,8 @@ export function getVote(juror, conclusions) {
 }
 
 function defaultVote(juror, conclusions) {
-    // Attourney general
-    if (gc('attourneyGeneral', conclusions) >= 100.0) {
+    // Attorney general
+    if (gc('attorneyGeneral', conclusions) >= 100.0) {
         return {
             text: [],
             acquit: true
@@ -84,8 +84,8 @@ function defaultVote(juror, conclusions) {
 }
 
 function eddieVote(conclusions) {
-    // Attourney general
-    if (gc('attourneyGeneral', conclusions) >= 100.0) {
+    // Attorney general
+    if (gc('attorneyGeneral', conclusions) >= 100.0) {
         return {
             text: [],
             acquit: true
@@ -148,8 +148,8 @@ function eddieVote(conclusions) {
 }
 
 function geoffVote(conclusions) {
-    // Attourney general
-    if (gc('attourneyGeneral', conclusions) >= 100.0) {
+    // Attorney general
+    if (gc('attorneyGeneral', conclusions) >= 100.0) {
         return {
             text: [],
             acquit: true

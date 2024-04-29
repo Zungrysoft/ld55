@@ -5,6 +5,6 @@ coworker
 officer
 nullification
 
-attourneyGeneral
+attorneyGeneral
 
 defendant

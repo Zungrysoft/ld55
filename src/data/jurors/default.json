@@ -276,7 +276,7 @@
         "katiePickedMe": [
             {
                 "text": [
-                    "Wait, you mean Kaitlyn Ross?", "The attourney general?"
+                    "Wait, you mean Kaitlyn Ross?", "The attorney general?"
                 ],
                 "claims": ["katiePickedMeYes"],
                 "conclusions": {"shotgun": 0.6},
@@ -286,12 +286,12 @@
                 "score": 100.0
             }
         ],
-        "attourneyGeneralPickedMe": [
+        "attorneyGeneralPickedMe": [
             {
                 "text": [
                     "Are you telling us the prosecution hand picked you for jury summons?"
                 ],
-                "claims": ["attourneyGeneralPickedYou"],
+                "claims": ["attorneyGeneralPickedYou"],
                 "conclusions": {},
                 "receivesAgreement": false,
                 "requirements": {"immediate": true},
@@ -299,12 +299,12 @@
                 "score": 1000.0
             }
         ],
-        "attourneyGeneralPickedMeReally": [
+        "attorneyGeneralPickedMeReally": [
             {
                 "text": [
                     "That's insane.", "We have to acquit."
                 ],
-                "claims": ["attourneyGeneralAcquit"],
+                "claims": ["attorneyGeneralAcquit"],
                 "conclusions": {},
                 "receivesAgreement": false,
                 "requirements": {"immediate": true},
@@ -312,13 +312,13 @@
                 "score": 1.0
             }
         ],
-        "attourneyGeneralAcquit": [
+        "attorneyGeneralAcquit": [
             {
                 "text": [
                     "Agreed"
                 ],
-                "claims": ["attourneyGeneralAcquitAgree"],
-                "conclusions": {"attourneyGeneral": 99999999},
+                "claims": ["attorneyGeneralAcquitAgree"],
+                "conclusions": {"attorneyGeneral": 99999999},
                 "endsDeliberation": true,
                 "receivesAgreement": false,
                 "requirements": {"immediate": true},

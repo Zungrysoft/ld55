@@ -45,5 +45,5 @@ Logan:
 
 Alice:
     Description: 
-    Player goal: Turn her against the attourney general.
+    Player goal: Turn her against the attorney general.
     Skeptical about: 

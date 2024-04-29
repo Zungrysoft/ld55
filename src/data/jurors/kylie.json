@@ -23,7 +23,7 @@
             "response": ["I honestly can't believe this guy. Sure, there was a lot of blood. And sure, he did get socked in the fact real good. But he acted as if he had survived some sort of near-death experience.", "It was a punch to the face, dude. Get over it.", "I wouldn't be surprised if they had dumped some red paint on him before snapping those photos just to make the whole thing seem more gruesome."],
             "relatedTopics": []
         },
-        "attourneyGeneral": {
+        "attorneyGeneral": {
             "response": ["I met her during the first round of jury selection. She seemed very hurried to get the whole thing done and over with."],
             "relatedTopics": []
         },
@@ -32,8 +32,8 @@
             "relatedTopics": []
         },
         "nullification": {
-            "response": ["Oh, I've heard of that! It's that thing where jurors can decide to acquit a defendant even they know he's guilty. If the jurors think the defendant had a good reason for what they did, they can vote not guilty in spite of the facts.", "I'm surprised the attourney general didn't ask me about that when she interviewed me. Normally they always ask."],
-            "relatedTopics": ["attourneyGeneral"]
+            "response": ["Oh, I've heard of that! It's that thing where jurors can decide to acquit a defendant even they know he's guilty. If the jurors think the defendant had a good reason for what they did, they can vote not guilty in spite of the facts.", "I'm surprised the attorney general didn't ask me about that when she interviewed me. Normally they always ask."],
+            "relatedTopics": ["attorneyGeneral"]
         },
         "inheritance": {
             "response": ["Money is the motive to end all motives.", "People break into cars to steal the change from the cup holders. It's not a big leap to this, especially when the dollar value is so high."],
@@ -166,12 +166,12 @@
                 "score": 4.0
             }
         ],
-        "attourneyGeneralPickedMeReally": [
+        "attorneyGeneralPickedMeReally": [
             {
                 "text": [
                     "That's insane.", "We have to acquit."
                 ],
-                "claims": ["attourneyGeneralAcquit"],
+                "claims": ["attorneyGeneralAcquit"],
                 "conclusions": {},
                 "receivesAgreement": false,
                 "requirements": {"immediate": true},

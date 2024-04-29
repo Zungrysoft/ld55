@@ -19,7 +19,7 @@
             "response": ["This man deserves to rot for what he did to that poor lady!"],
             "relatedTopics": []
         },
-        "attourneyGeneral": {
+        "attorneyGeneral": {
             "response": ["Oh, Katie's great! We go out to dinner at least once a month. She's actually the reason I found out about this whole thing. She said I would make the perfect juror for this big case she was working on!", "She said she needs a really smart person to crack this case."],
             "relatedTopics": []
         },
@@ -96,7 +96,7 @@
                 "text": [
                     "Yeah. She said I would be perfect for this case."
                 ],
-                "claims": ["attourneyGeneralPickedMe"],
+                "claims": ["attorneyGeneralPickedMe"],
                 "conclusions": {},
                 "receivesAgreement": false,
                 "requirements": {"immediate": true},
@@ -104,12 +104,12 @@
                 "score": 1.0
             }
         ],
-        "attourneyGeneralPickedYou": [
+        "attorneyGeneralPickedYou": [
             {
                 "text": [
                     "...yes?"
                 ],
-                "claims": ["attourneyGeneralPickedMeReally"],
+                "claims": ["attorneyGeneralPickedMeReally"],
                 "conclusions": {},
                 "receivesAgreement": false,
                 "requirements": {"immediate": true},
