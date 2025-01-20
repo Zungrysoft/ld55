@@ -130,6 +130,19 @@
                 "score": 0.2
             }
         ],
+        "heWouldHaveBeenCuffed": [
+            {
+                "text": [
+                    "Even if he's cuffed, couldn't he still punch out in front of him?", "It might be less effective with your arms cuffed together, but I bet you could still cause some damage."
+                ],
+                "claims": ["maybeHeWasCuffedInFront"],
+                "conclusions": {"officer": -2.0},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 100.0
+            }
+        ],
         "heWouldNotWantMoney": [
             {
                 "fixedConversation": "heWouldNotWantMoney",

@@ -88,6 +88,19 @@
                 "score": 1.0
             }
         ],
+        "talkAboutOfficer": [
+            {
+                "text": [
+                    "Can we talk about what an absolute tool that officer was?", "He just kept talking, bigging himself up."
+                ],
+                "claims": ["officerIsATool"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 0.2
+            }
+        ],
         "sawOfficerInPerson": [
             {
                 "text": [
@@ -130,7 +143,7 @@
         "heWouldHaveBeenCuffed": [
             {
                 "text": [
-                    "Maybe kicked the officer instead of punching him?"
+                    "Maybe he kicked the officer instead of punching him?"
                 ],
                 "claims": ["heWouldHaveBeenCuffedKick"],
                 "conclusions": {"officer": -2.0},

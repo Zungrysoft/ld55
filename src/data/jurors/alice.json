@@ -54,6 +54,19 @@
                 "score": 0.4
             }
         ],
+        "heWouldHaveBeenCuffed": [
+            {
+                "text": [
+                    "I think you could still hit someone even if you're handcuffed. Just because your hands are tied together doesn't mean you couldn't hit someone in front of you."
+                ],
+                "claims": ["maybeHeWasCuffedInFront"],
+                "conclusions": {"officer": -2.0},
+                "receivesAgreement": false,
+                "requirements": {"immediate": true},
+                "anger": 0,
+                "score": 100.0
+            }
+        ],
         "pawnShopOwnerId": [
             {
                 "fixedConversation": "pawnShopOwnerMistaken",

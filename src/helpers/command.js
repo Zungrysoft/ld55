@@ -55,6 +55,9 @@ function commandStats(argv, saveData) {
     if (saveData.solvedJurors.length >= 10) {
         ret += "\n\nYou solved all of them. Congratulations!"
     }
+    else {
+        ret += `\n\nYou solved ${saveData.solvedJurors.length} out of 10 Jurors.`
+    }
 
     return {
         logEntries: speakText('system', ret),

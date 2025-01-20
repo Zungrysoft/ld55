@@ -19,12 +19,8 @@
             "response": ["I heard once that some people try to keep themselves anonmymous when they win the lottery. That way they don't have a thousand relatives bashing down their doors asking for money.", "Maybe the victim should have taken that advice and applied it to her recent windfall.", "Though I don't think anyone could have predicted someone would take measures this drastic."],
             "relatedTopics": ["inheritance"]
         },
-        "officer": {
+        "officerOld": {
             "response": ["Okay, so I'm a bit squeamish. When I saw those photos of his bloodied face after the alleged assault, I was cringing backward through time!","I do find the timeline a bit odd though. The officer mentions getting punched in the face, but then the other officer testified and I think I remember him saying the defendant was already in cuffs.", "How can you throw a punch when you're in cuffs? Let along enough to cause that much blood.", "I dunno.", "I'm probably misremembering."],
-            "relatedTopics": []
-        },
-        "attorneyGeneral": {
-            "response": ["She seemed nice."],
             "relatedTopics": []
         },
         "law": {
@@ -86,6 +82,19 @@
             {
                 "text": [
                     "The whole bit about wanting to kill his girlfriend for the inheritance seems shaky to me. They weren't married, so he wouldn't have gotten the money no matter what.", "Even if he had gotten away with it, how was he thinking he would get his money?"
+                ],
+                "claims": ["wouldNotGetMoney"],
+                "conclusions": {"inheritance": 1.5},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 0.3
+            }
+        ],
+        "motiveWasMoney": [
+            {
+                "text": [
+                    "I just don't buy it. They weren't married, so he wouldn't have gotten the money no matter what.", "Even if he had gotten away with it, how was he thinking he would get his money?"
                 ],
                 "claims": ["wouldNotGetMoney"],
                 "conclusions": {"inheritance": 1.5},
@@ -226,7 +235,7 @@
         "timelineIsWrong": [
             {
                 "fixedConversation": "officerTranscript",
-                "claims": ["heWouldHaveBeenCuffed"],
+                "claims": ["heWouldHaveBeenCuffed", "heWouldHaveBeenCuffedBehindBack"],
                 "conclusions": {"officer": 5.0},
                 "receivesAgreement": false,
                 "requirements": {"immediate": true},

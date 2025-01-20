@@ -210,12 +210,12 @@
                 "score": 0.2
             }
         ],
-        "heWouldHaveBeenCuffedBehindBack": [
+        "maybeHeWasCuffedInFront": [
             {
                 "text": [
-                    "You don't cuff a suspect with their hands in front. The whole point is to prevent the suspect from using their hands effectively. Cuffing in front just forces them to have their hands close together."
+                    "You don't cuff a suspect with their hands in front. The whole point is to prevent the suspect from using their hands effectively.", "Cuffing in front just forces them to have their hands close together. You cuff in back so they can't use their hands at all."
                 ],
-                "claims": ["heWouldHaveBeenCuffedBehindBackAnswered"],
+                "claims": ["maybeHeWasCuffedInFrontAnswered"],
                 "conclusions": {"officer": 3.0},
                 "receivesAgreement": false,
                 "requirements": {},

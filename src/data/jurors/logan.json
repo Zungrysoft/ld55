@@ -227,6 +227,17 @@
                 "score": 4.0
             }
         ],
+        "officerIsATool": [
+            {
+                "fixedConversation": "churchillQuote",
+                "claims": ["churchillQuote"],
+                "conclusions": {},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 0.2
+            }
+        ],
         "attorneyGeneralPickedMeReally": [
             {
                 "text": [
@@ -238,6 +249,19 @@
                 "requirements": {"immediate": true},
                 "anger": 0,
                 "score": 1.0
+            }
+        ],
+        "whyNameCoworker": [
+            {
+                "text": [
+                    "I couldn't say."
+                ],
+                "claims": ["whyNameCoworkerWhoKnows"],
+                "conclusions": {"coworker": -1.0},
+                "receivesAgreement": false,
+                "requirements": {},
+                "anger": 0,
+                "score": 4.0
             }
         ]
     },
